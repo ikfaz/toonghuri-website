@@ -1,660 +1,1131 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ToonGhuri Studio — Global 11-Language YouTube Localization & CTR Agency</title>
+  <title>ToonGhuri Studio — 11-Language YouTube Dubbing & Studio Optimization Architecture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --background: #090d16;
-      --card: #111827;
-      --border: #1f2937;
-      --foreground: #f9fafb;
-      --muted-foreground: #9ca3af;
+      --paper: #F5F2EB;
+      --paper-card: #EFECE4;
+      --ink: #121211;
+      --muted: #5A5852;
+      --rule: #D5D0C5;
+      --vermilion: #D9381E;
+      --emerald: #15803D;
     }
     body {
-      background-color: var(--background);
-      color: var(--foreground);
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .font-serif-editorial {
+      font-family: 'Instrument Serif', Georgia, serif;
+    }
+    .font-mono-tech {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .hairline-t { border-top: 1px solid var(--rule); }
+    .hairline-b { border-bottom: 1px solid var(--rule); }
+    .hairline-l { border-left: 1px solid var(--rule); }
+    .hairline-r { border-right: 1px solid var(--rule); }
+    .hairline-box { border: 1px solid var(--rule); }
+    input[type="range"] {
+      accent-color: #D9381E;
+    }
+    .blueprint-grid {
+      background-image: radial-gradient(#D5D0C5 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+    .dark-blueprint-grid {
+      background-image: radial-gradient(#2E2E2B 1px, transparent 1px);
+      background-size: 18px 18px;
     }
   </style>
 </head>
-<body class="bg-[#090d16] text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
+<body class="antialiased selection:bg-[#D9381E] selection:text-white">
 
-  <!-- Top Navigation -->
-  <header class="sticky top-0 z-50 border-b border-gray-800 bg-[#090d16]/90 backdrop-blur-md">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-base shadow-sm">
-          DF
-        </div>
-        <div>
-          <span class="font-bold text-base tracking-tight text-white">ToonGhuri Studio</span>
-          <span class="hidden sm:inline-block ml-2 text-xs px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-400 border border-indigo-500/30 font-medium">
-            11-Language YouTube Growth Engine
-          </span>
-        </div>
+  <!-- Top Studio Masthead -->
+  <header class="sticky top-0 z-50 bg-[#F5F2EB]/95 backdrop-blur-sm hairline-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <a href="#" class="flex items-baseline gap-2">
+          <span class="font-extrabold text-lg tracking-tight uppercase">ToonGhuri</span>
+          <span class="font-serif-editorial italic text-xl text-[#D9381E]">Studio</span>
+        </a>
+        <span class="hidden lg:inline-block font-mono-tech text-xs text-[#5A5852] pl-6 hairline-l">
+          POST-PRODUCTION &amp; 11-LANGUAGE YOUTUBE LOCALIZATION HOUSE
+        </span>
       </div>
-      <nav class="hidden md:flex items-center gap-6 text-sm text-gray-400">
-        <a href="#calculator" class="hover:text-white transition">60-Hour Output Calculator</a>
-        <a href="#demo" class="hover:text-white transition">11-Language Demo</a>
-        <a href="#case-study" class="hover:text-white transition">60-Video Proof</a>
-        <a href="#pricing" class="hover:text-white transition">Pricing</a>
-        <a href="#security" class="hover:text-white transition">Editor Security</a>
+
+      <nav class="hidden md:flex items-center gap-7 text-xs font-mono-tech uppercase tracking-wider text-[#5A5852]">
+        <a href="#screening-room" class="hover:text-[#121211] transition">01 / Live Player</a>
+        <a href="#visual-blueprint" class="hover:text-[#121211] transition text-[#D9381E] font-semibold">02 / 8-Layer Visual Blueprint</a>
+        <a href="#volume-calculator" class="hover:text-[#121211] transition">03 / 60-Hr Math</a>
+        <a href="#retainers" class="hover:text-[#121211] transition">04 / Pricing</a>
       </nav>
-      <a href="#sample-form" class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs sm:text-sm transition shadow-sm">
-        Get Free 10-Lang Sample
+
+      <a href="#commission" class="px-4 py-2 bg-[#121211] hover:bg-[#D9381E] text-[#F5F2EB] font-mono-tech text-xs uppercase tracking-wider transition">
+        Free 90s Test Reel
       </a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-12">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-      <div class="lg:col-span-7 space-y-5">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
-          <span>● Verified Live on 60+ Animation Episodes (645 Audio Tracks Processed)</span>
+  <!-- Editorial Hero Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-8 pt-10 pb-14">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Left Editorial Column (7 cols) -->
+      <div class="lg:col-span-7 space-y-7">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#EFECE4] hairline-box font-mono-tech text-xs uppercase tracking-widest text-[#D9381E]">
+          <span class="w-2 h-2 rounded-full bg-[#D9381E] inline-block"></span>
+          <span>VERIFIED ON @TOONGHURI: 60 EPISODES • 645 AUDIO TRACKS • 720 SRTs LIVE</span>
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
-          Turn Your Single-Language YouTube Channel Into an <span class="text-indigo-400">11-Language Global Studio</span>.
+
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.04] text-[#121211]">
+          Turn every episode into an <span class="font-serif-editorial italic font-normal text-[#D9381E]">11-language</span> global release—fully engineered inside your YouTube Studio.
         </h1>
-        <p class="text-base sm:text-lg text-gray-400 leading-relaxed">
-          Built specifically for <strong class="text-white">20–45 minute Animation, Moral Story, Horror &amp; Documentary channels</strong>. We preserve 100% of your original background music &amp; sound effects, lock distinct voices to every character across 11 languages, publish 12 search-indexed <code class="text-xs px-1.5 py-0.5 rounded bg-gray-900 border border-gray-800">.srt</code> captions, run 3-Arm A/B/C thumbnail experiments, and upload everything directly into your YouTube Studio.
+
+        <p class="text-base sm:text-lg text-[#5A5852] leading-relaxed max-w-2xl">
+          YouTube’s built-in auto-dubbing flattens all your characters into one robotic voice and mutes your background music. We do the opposite: we isolate your original Music &amp; Effects stem, lock unique voices to every character across <strong>11 languages</strong>, publish <strong>12 search-indexed subtitle tracks</strong>, localized titles, <code class="font-mono-tech text-xs bg-[#EFECE4] px-1.5 py-0.5 hairline-box">0:00</code> chapters, End Screens, and <strong>3-Arm A/B/C thumbnail experiments</strong>.
         </p>
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-          <div class="bg-gray-900 border border-gray-800 rounded-xl p-3">
-            <div class="text-xl font-bold text-indigo-400">11 Tracks</div>
-            <div class="text-xs text-gray-400">Dubbed Audio / Video</div>
+        <!-- Visual Deliverables Summary Strip (8 Concrete Outputs Per Video) -->
+        <div class="bg-[#EFECE4] hairline-box p-4 space-y-3">
+          <div class="flex items-center justify-between font-mono-tech text-xs uppercase text-[#5A5852]">
+            <span>WHAT WE DELIVER INSIDE YOUR YOUTUBE STUDIO ON EVERY EPISODE:</span>
+            <a href="#visual-blueprint" class="text-[#D9381E] font-semibold hover:underline">SEE ALL 8 VISUAL DIAGRAMS ↓</a>
           </div>
-          <div class="bg-gray-900 border border-gray-800 rounded-xl p-3">
-            <div class="text-xl font-bold text-emerald-400">60 Hours</div>
-            <div class="text-xs text-gray-400">Monthly Output (300m Pool)</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 font-mono-tech text-xs">
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="text-[#D9381E] font-bold">01. M&amp;E Stem Split</div>
+              <div class="text-[11px] text-[#5A5852] mt-0.5">100% intact music &amp; SFX</div>
+            </div>
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="text-[#D9381E] font-bold">02. 11 Audio Tracks</div>
+              <div class="text-[11px] text-[#5A5852] mt-0.5">Character-locked voices</div>
+            </div>
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="text-[#D9381E] font-bold">03. 10-Min Windows</div>
+              <div class="text-[11px] text-[#5A5852] mt-0.5">Zero drift on 30m+ videos</div>
+            </div>
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="text-[#D9381E] font-bold">04. -80ms Clamp</div>
+              <div class="text-[11px] text-[#5A5852] mt-0.5">0 tracks stuck in Pending</div>
+            </div>
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="text-[#D9381E] font-bold">05. 12 .SRT Tracks</div>
+              <div class="text-[11px] text-[#5A5852] mt-0.5">Synced closed captions</div>
+            </div>
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="text-[#D9381E] font-bold">06. 12 SEO Titles</div>
+              <div class="text-[11px] text-[#5A5852] mt-0.5">+ 0:00 scene chapters</div>
+            </div>
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="text-[#D9381E] font-bold">07. 3-Arm A/B/C</div>
+              <div class="text-[11px] text-[#5A5852] mt-0.5">Text-free test thumbnails</div>
+            </div>
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="text-[#D9381E] font-bold">08. Cards &amp; Endscreen</div>
+              <div class="text-[11px] text-[#5A5852] mt-0.5">+ Pinned 11-lang comment</div>
+            </div>
           </div>
-          <div class="bg-gray-900 border border-gray-800 rounded-xl p-3">
-            <div class="text-xl font-bold text-amber-400">€0.28/min</div>
-            <div class="text-xs text-gray-400">vs €2.50/min SaaS Tools</div>
+        </div>
+
+        <!-- Film Strip of Real @ToonGhuri Production Stills -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between font-mono-tech text-xs text-[#5A5852]">
+            <span>PRODUCTION FRAMES FROM OUR FLAGSHIP CHANNEL — @TOONGHURI (60 EPISODES)</span>
+            <a href="https://www.youtube.com/@ToonGhuri" target="_blank" class="underline hover:text-[#D9381E]">VERIFY ON YOUTUBE ↗</a>
           </div>
-          <div class="bg-gray-900 border border-gray-800 rounded-xl p-3">
-            <div class="text-xl font-bold text-purple-400">100% DFY</div>
-            <div class="text-xs text-gray-400">Uploaded in YT Studio</div>
+          <div class="grid grid-cols-3 gap-2">
+            <div class="aspect-video bg-[#121211] overflow-hidden hairline-box relative">
+              <img src="assets/still_1.jpg" alt="Patapukur Production Frame 1" class="w-full h-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 bg-[#121211]/90 text-[#F5F2EB] font-mono-tech text-[10px] px-1.5 py-0.5">DEMUCS M&amp;E ISOLATED</span>
+            </div>
+            <div class="aspect-video bg-[#121211] overflow-hidden hairline-box relative">
+              <img src="assets/still_2.jpg" alt="Patapukur Production Frame 2" class="w-full h-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 bg-[#121211]/90 text-[#F5F2EB] font-mono-tech text-[10px] px-1.5 py-0.5">6 VOICE ACTORS LOCKED</span>
+            </div>
+            <div class="aspect-video bg-[#121211] overflow-hidden hairline-box relative">
+              <img src="assets/still_3.jpg" alt="Patapukur Production Frame 3" class="w-full h-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 bg-[#121211]/90 text-[#F5F2EB] font-mono-tech text-[10px] px-1.5 py-0.5">11 AUDIO / 12 SRT LIVE</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Instant Free Sample Request Card -->
-      <div id="sample-form" class="lg:col-span-5 bg-gray-900 border-2 border-indigo-500/40 rounded-2xl p-6 shadow-lg space-y-4">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Risk-Free Proof of Concept</span>
-          <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 font-medium">100% Free Pilot</span>
+      <!-- Right Work-Order / Test Reel Request Column (5 cols) -->
+      <div id="commission" class="lg:col-span-5 bg-[#EFECE4] hairline-box p-6 sm:p-8 space-y-5">
+        <div class="flex items-center justify-between hairline-b pb-3 font-mono-tech text-xs">
+          <span class="uppercase font-semibold text-[#121211]">WORK ORDER // FREE 90-SEC TEST REEL</span>
+          <span class="text-[#D9381E] font-semibold">DELIVERED IN 24H</span>
         </div>
-        <h2 class="text-xl font-bold text-white">
-          Claim Your Free 90-Second 10-Language Sample Pack
+
+        <h2 class="text-2xl font-bold tracking-tight text-[#121211]">
+          Hear your own video dubbed into 10 languages before paying a cent.
         </h2>
-        <p class="text-xs text-gray-400">
-          Paste a link to one of your YouTube videos below. Within 24 hours, we will send you a Google Drive folder with your video dubbed into <strong>Spanish, English, Arabic, Hindi, Portuguese, French, German &amp; Japanese</strong> (with your original music &amp; SFX intact) + 3 A/B/C test thumbnails.
+        <p class="text-xs text-[#5A5852] leading-relaxed">
+          Paste any YouTube link from your channel. We will extract a 90-second scene, isolate your original Music &amp; SFX stem, dub your characters into <strong>English, Spanish, Portuguese, Arabic, Hindi, French, German, Indonesian, Italian, and Japanese</strong>, and send you a private screening folder + 3 A/B/C test thumbnails.
         </p>
 
-        <div class="space-y-3">
+        <div class="space-y-3.5 pt-1">
           <div>
-            <label class="block text-xs font-medium text-gray-200 mb-1">Your YouTube Video or Channel URL *</label>
-            <input id="inp-url" type="url" placeholder="https://www.youtube.com/watch?v=..." class="w-full px-3 py-2 rounded-lg bg-[#090d16] border border-gray-800 text-sm text-white focus:outline-none focus:border-indigo-500" />
+            <label class="block font-mono-tech text-xs uppercase text-[#121211] mb-1">01. Your YouTube Video URL *</label>
+            <input id="inp-url" type="url" placeholder="https://www.youtube.com/watch?v=..." class="w-full px-3.5 py-2.5 bg-[#F5F2EB] hairline-box text-sm text-[#121211] focus:outline-none focus:border-[#121211]" />
           </div>
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label class="block text-xs font-medium text-gray-200 mb-1">Channel Name *</label>
-              <input id="inp-channel" type="text" placeholder="e.g., MJV Animations" class="w-full px-3 py-2 rounded-lg bg-[#090d16] border border-gray-800 text-sm text-white focus:outline-none focus:border-indigo-500" />
+              <label class="block font-mono-tech text-xs uppercase text-[#121211] mb-1">02. Channel Name *</label>
+              <input id="inp-channel" type="text" placeholder="e.g. Wansee / StoryToons" class="w-full px-3.5 py-2.5 bg-[#F5F2EB] hairline-box text-sm text-[#121211] focus:outline-none focus:border-[#121211]" />
             </div>
             <div>
-              <label class="block text-xs font-medium text-gray-200 mb-1">Typical Video Length</label>
-              <select id="inp-length" class="w-full px-3 py-2 rounded-lg bg-[#090d16] border border-gray-800 text-sm text-white focus:outline-none focus:border-indigo-500">
-                <option value="20-30 mins (2x/week -> 300 Original Mins/mo)">20–30 mins (Standard Animation/Doc)</option>
-                <option value="8-15 mins (2-3x/week -> 150-300 Original Mins/mo)">8–15 mins (Story / Episode)</option>
-                <option value="30-45+ mins (Long-Form Documentary / Compilation)">30–45+ mins (Mega Episode / Doc)</option>
+              <label class="block font-mono-tech text-xs uppercase text-[#121211] mb-1">03. Typical Video Length</label>
+              <select id="inp-length" class="w-full px-3 py-2.5 bg-[#F5F2EB] hairline-box text-sm text-[#121211] focus:outline-none focus:border-[#121211]">
+                <option value="20–30 min episodes (2x/week -> 300m Pool)">20–30 mins (Animation / Doc)</option>
+                <option value="8–15 min episodes (150m–300m Pool)">8–15 mins (Story / Episode)</option>
+                <option value="30–45+ min episodes (Long-Form / Compilation)">30–45+ mins (Mega Episode)</option>
               </select>
             </div>
           </div>
+
           <div>
-            <label class="block text-xs font-medium text-gray-200 mb-1">Your Best Email or WhatsApp *</label>
-            <input id="inp-contact" type="text" placeholder="you@channel.com or +1 555..." class="w-full px-3 py-2 rounded-lg bg-[#090d16] border border-gray-800 text-sm text-white focus:outline-none focus:border-indigo-500" />
+            <label class="block font-mono-tech text-xs uppercase text-[#121211] mb-1">04. Studio Email or WhatsApp *</label>
+            <input id="inp-contact" type="text" placeholder="producer@channel.com or +1 ..." class="w-full px-3.5 py-2.5 bg-[#F5F2EB] hairline-box text-sm text-[#121211] focus:outline-none focus:border-[#121211]" />
           </div>
 
-          <button onclick="handleSampleSubmit()" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition shadow-md cursor-pointer">
-            Send My Free 10-Language Sample Pack →
+          <button onclick="handleSampleSubmit()" class="w-full py-3.5 bg-[#D9381E] hover:bg-[#121211] text-white font-mono-tech text-xs uppercase tracking-widest font-semibold transition cursor-pointer">
+            Produce My Free 90-Second Test Reel →
           </button>
 
-          <div class="flex items-center justify-between pt-1 text-xs text-gray-400">
-            <span>✓ No password required</span>
-            <span>✓ Music &amp; SFX 100% preserved</span>
+          <div class="pt-2 flex items-center justify-between font-mono-tech text-[11px] text-[#5A5852]">
+            <span>NO PASSWORD REQUIRED</span>
+            <span>YOUTUBE STUDIO EDITOR WORKFLOW</span>
           </div>
         </div>
 
-        <!-- Instant Output Modal / Drawer -->
-        <div id="sample-result" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 space-y-3">
-          <div class="text-xs font-bold text-emerald-400">✓ Sample Request Ready! Choose how to send:</div>
+        <!-- Submission Confirmation Drawer -->
+        <div id="sample-result" class="hidden mt-4 p-4 bg-[#F5F2EB] hairline-box space-y-3">
+          <div class="font-mono-tech text-xs font-semibold text-[#121211]">
+            [ REQUEST LOGGED ] — Send directly via Email or WhatsApp for priority queue:
+          </div>
           <div class="flex flex-wrap gap-2">
-            <a id="mailto-link" href="#" class="px-3 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-500 transition">
-              ✉ Open Pre-Filled Email
+            <a id="mailto-link" href="#" class="px-3.5 py-2 bg-[#121211] text-[#F5F2EB] font-mono-tech text-xs uppercase hover:bg-[#D9381E] transition">
+              Send via Email (studio@toonghuri.com)
             </a>
-            <a id="wa-link" href="#" target="_blank" class="px-3 py-2 rounded-lg bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-500 transition">
-              💬 Send via WhatsApp
+            <a id="wa-link" href="#" target="_blank" class="px-3.5 py-2 hairline-box bg-[#EFECE4] text-[#121211] font-mono-tech text-xs uppercase hover:bg-[#121211] hover:text-white transition">
+              Send via WhatsApp
             </a>
           </div>
-          <div class="pt-2 border-t border-gray-800">
-            <div class="text-xs text-gray-400 mb-1">Agency Owner Quick-Run Command (Copy &amp; run in terminal):</div>
-            <pre id="owner-cmd" class="p-2 rounded bg-[#090d16] border border-gray-800 text-xs overflow-x-auto text-indigo-300 font-mono"></pre>
-          </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- Interactive 300 Original Minutes -> 60 Hours Output Calculator -->
-  <section id="calculator" class="max-w-6xl mx-auto px-4 sm:px-6 py-10 border-t border-gray-800">
-    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 sm:p-8 space-y-6">
-      <div class="max-w-3xl space-y-2">
-        <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">The 60-Hour Output Multiplier</span>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white">
-          See How Many Hours of Global Content Your Channel Unlocks Every Month
-        </h2>
-        <p class="text-sm text-gray-400">
-          Most animation and documentary channels upload 20 to 30-minute episodes. Drag the sliders below to see how our <strong>Original Source Minute Pool</strong> turns your monthly uploads into 55–60+ hours of studio-dubbed international content for less than <strong>€0.28 per localized minute</strong>.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <!-- Sliders -->
-        <div class="lg:col-span-6 space-y-5">
-          <div class="p-4 rounded-xl bg-[#090d16] border border-gray-800 space-y-2">
-            <div class="flex justify-between text-sm font-semibold">
-              <span>Episodes You Upload / Upgrade Per Month:</span>
-              <span id="lbl-eps" class="text-indigo-400 font-bold">10 episodes / mo</span>
-            </div>
-            <input id="rng-eps" type="range" min="2" max="24" value="10" oninput="updateCalculator()" class="w-full accent-indigo-500 cursor-pointer" />
-            <div class="flex justify-between text-xs text-gray-400">
-              <span>2 videos/mo</span>
-              <span>8 new + 2 old (10/mo)</span>
-              <span>24 videos/mo</span>
-            </div>
-          </div>
-
-          <div class="p-4 rounded-xl bg-[#090d16] border border-gray-800 space-y-2">
-            <div class="flex justify-between text-sm font-semibold">
-              <span>Average Length Per Episode:</span>
-              <span id="lbl-mins" class="text-indigo-400 font-bold">30 minutes</span>
-            </div>
-            <input id="rng-mins" type="range" min="5" max="45" step="5" value="30" oninput="updateCalculator()" class="w-full accent-indigo-500 cursor-pointer" />
-            <div class="flex justify-between text-xs text-gray-400">
-              <span>5 mins (Short Cartoon)</span>
-              <span>25–30 mins (Full Episode/Doc)</span>
-              <span>45 mins (Mega Special)</span>
-            </div>
-          </div>
-
-          <div class="p-3.5 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-xs text-gray-200 leading-relaxed">
-            <strong>⚡ Long-Video (&gt;12 Min) 10-Minute Window Engine:</strong> Whether your video is 8 minutes, 25 minutes, or a 45-minute documentary, our pipeline automatically processes videos over 12 minutes in 10-minute windows (<code class="px-1 py-0.5 rounded bg-gray-900">00:00–10:00</code>, <code class="px-1 py-0.5 rounded bg-gray-900">10:00–20:00</code>, etc.) so long episodes never lose lip-sync accuracy or hit timeouts.
-          </div>
-        </div>
-
-        <!-- Live Calculated Output -->
-        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="p-4 rounded-xl bg-[#090d16] border border-gray-800">
-            <div class="text-xs text-gray-400">Monthly Original Source Pool</div>
-            <div id="out-source-mins" class="text-2xl font-extrabold text-white mt-1">300 Mins</div>
-            <div class="text-xs text-emerald-400 mt-1">Covers 100% of your schedule</div>
-          </div>
-
-          <div class="p-4 rounded-xl bg-[#090d16] border border-gray-800">
-            <div class="text-xs text-gray-400">11-Language Dubbed Audio Output</div>
-            <div id="out-dub-hours" class="text-2xl font-extrabold text-indigo-400 mt-1">3,300 Mins (55.0 hrs)</div>
-            <div class="text-xs text-gray-400 mt-1">With original Music &amp; SFX intact</div>
-          </div>
-
-          <div class="p-4 rounded-xl bg-[#090d16] border border-gray-800">
-            <div class="text-xs text-gray-400">12-Language Subtitled Video Output</div>
-            <div id="out-sub-hours" class="text-2xl font-extrabold text-emerald-400 mt-1">3,600 Mins (60.0 hrs)</div>
-            <div class="text-xs text-gray-400 mt-1">+ 12 Localized Titles &amp; Chapters</div>
-          </div>
-
-          <div class="p-4 rounded-xl bg-indigo-600/15 border-2 border-indigo-500/50">
-            <div class="text-xs font-semibold text-indigo-300">Recommended Plan &amp; Rate</div>
-            <div id="out-plan-price" class="text-2xl font-extrabold text-white mt-1">€1,000 / mo</div>
-            <div id="out-per-min" class="text-xs text-emerald-400 font-semibold mt-1">Only €0.28 / localized min</div>
-          </div>
-
-          <div class="sm:col-span-2 p-4 rounded-xl bg-[#090d16] border border-gray-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <div>
-              <div class="text-xs text-gray-400">Cost on DIY SaaS Tools (ElevenLabs / Rask at €2.20/min + 40 hrs manual uploading):</div>
-              <div id="out-saas-cost" class="text-sm font-bold text-rose-400 line-through">€7,260 / month + 40 hours of your time</div>
-            </div>
-            <div id="out-savings" class="px-3 py-1.5 rounded-lg bg-emerald-500/15 text-emerald-400 font-bold text-xs whitespace-nowrap">
-              You Save €6,260 / mo
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive 11-Language Localization & Voice-Lock Simulator -->
-  <section id="demo" class="max-w-6xl mx-auto px-4 sm:px-6 py-10 border-t border-gray-800 space-y-6">
-    <div class="max-w-3xl space-y-2">
-      <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Why Creators Switch From YouTube Auto-Dub</span>
-      <h2 class="text-2xl sm:text-3xl font-bold text-white">
-        Click Any Language Below to Inspect Our 8-Point Studio Localization Stack
-      </h2>
-      <p class="text-sm text-gray-400">
-        YouTube's free built-in auto-dubbing uses a single flat robotic voice for every character and mutes your background music. Click through the 11 languages below to see how ToonGhuri Studio localizes a real episode across audio, character voices, titles, and chapters:
-      </p>
-    </div>
-
-    <!-- 11 Language Pills -->
-    <div id="lang-pills" class="flex flex-wrap gap-2"></div>
-
-    <!-- Simulated Studio Preview Card -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-gray-900 border border-gray-800 rounded-2xl p-6">
-      <div class="lg:col-span-7 space-y-4">
-        <div class="flex items-center justify-between border-b border-gray-800 pb-3">
-          <div>
-            <span id="sim-lang-badge" class="text-xs font-bold px-2.5 py-1 rounded bg-indigo-500/20 text-indigo-300">Spanish (es)</span>
-            <span class="text-xs text-gray-400 ml-2">Status: <strong class="text-emerald-400">AUDIO_TRACK_STATUS_PROCESSED</strong></span>
-          </div>
-          <span class="text-xs text-gray-400">Clamped: <code class="px-1 py-0.5 rounded bg-[#090d16]">-80ms Ogg Opus</code></span>
-        </div>
-
-        <div>
-          <div class="text-xs text-gray-400 mb-1">Localized High-CTR YouTube Title (<code class="text-xs">VOTE_PUBLISH</code>):</div>
-          <div id="sim-title" class="text-lg font-bold text-white p-3 rounded-xl bg-[#090d16] border border-gray-800"></div>
-        </div>
-
-        <div>
-          <div class="text-xs text-gray-400 mb-1">Character-Locked Dialogue Sample (With 100% Original Demucs Music &amp; SFX Intact):</div>
-          <div id="sim-dialogue" class="space-y-2"></div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-5 space-y-4 bg-[#090d16] border border-gray-800 rounded-xl p-4">
-        <div class="text-xs font-bold uppercase tracking-wider text-indigo-400">Localized 0:00 Chapters &amp; SEO Signals</div>
-        <pre id="sim-chapters" class="text-xs text-gray-200 font-mono whitespace-pre-wrap leading-relaxed bg-gray-900 p-3 rounded-lg border border-gray-800"></pre>
-        <div class="space-y-1.5 text-xs text-gray-400">
-          <div class="flex items-center justify-between">
-            <span>Background Music &amp; Village SFX:</span>
-            <span class="text-emerald-400 font-semibold">100% Preserved (Demucs htdemucs)</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span>Closed Captions (<code class="text-xs">.srt</code>):</span>
-            <span class="text-emerald-400 font-semibold">PUBLISHED &amp; Search-Indexed</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span>3-Arm Thumbnail A/B/C Test:</span>
-            <span class="text-emerald-400 font-semibold">Text-Free Universal (STARTED)</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span>Target AdSense RPM Multiplier:</span>
-            <span id="sim-rpm" class="text-amber-400 font-bold">$3.50 – $6.50 RPM</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Live Case Study: @ToonGhuri (60 Videos Verified) -->
-  <section id="case-study" class="max-w-6xl mx-auto px-4 sm:px-6 py-10 border-t border-gray-800">
-    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 sm:p-8 space-y-6">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-800 pb-5">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Live Production Case Study</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">
-            @ToonGhuri — 60 Full Animation Episodes Localized Into 11 Languages
+  <!-- ===================================================================== -->
+  <!-- 01 // LIVE SCREENING ROOM (Real YouTube Multi-Track Player)           -->
+  <!-- ===================================================================== -->
+  <section id="screening-room" class="bg-[#121211] text-[#F5F2EB] py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2E2E2B] pb-6">
+        <div class="space-y-2 max-w-2xl">
+          <div class="font-mono-tech text-xs uppercase tracking-widest text-[#D9381E]">01 // LIVE SCREENING ROOM (REAL YOUTUBE PLAYER)</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+            Don’t take our word for it. Switch audio tracks live inside YouTube.
           </h2>
-          <p class="text-sm text-gray-400 mt-1">
-            Don't just take our word for it. Inspect our flagship 60-video animated catalog live on YouTube right now—switch the audio track and subtitles on any episode.
+          <p class="text-sm text-[#A09D95]">
+            Play any episode below, click the <strong>YouTube Settings Gear (⚙) → Audio track (11)</strong>, and toggle between Bangla, English, Spanish, Arabic, Hindi, French, German, Indonesian, Italian, Japanese, and Portuguese. Listen to how the village flute score and ambient foley never duck or cut out.
           </p>
         </div>
-        <a href="https://www.youtube.com/@ToonGhuri" target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm whitespace-nowrap transition shadow-sm">
-          Verify Live on YouTube (@ToonGhuri) ↗
-        </a>
+
+        <!-- Episode Selector Tabs -->
+        <div class="flex flex-wrap gap-2 font-mono-tech text-xs">
+          <button onclick="switchScreeningVideo('lEYH4lCVTFs', 'EP.37 // Bodu’s Mango Theft (10:03)', '11 Audio Tracks • 12 SRTs • 3-Arm A/B/C Test')" id="tab-1" class="px-3.5 py-2 bg-[#D9381E] text-white uppercase cursor-pointer">
+            EP.37 (10:03)
+          </button>
+          <button onclick="switchScreeningVideo('53p-_uyKDL4', 'EP.32 // The Injured Doel Bird (08:02)', '11 Audio Tracks • 12 SRTs • 3-Arm A/B/C Test')" id="tab-2" class="px-3.5 py-2 bg-[#1E1E1C] text-[#A09D95] hover:text-white border border-[#2E2E2B] uppercase cursor-pointer">
+            EP.32 (08:02)
+          </button>
+          <button onclick="switchScreeningVideo('gUSHk2UQHrQ', 'EP.31 // The Missing Village Bell (03:08)', '11 Audio Tracks • 12 SRTs • 3-Arm A/B/C Test')" id="tab-3" class="px-3.5 py-2 bg-[#1E1E1C] text-[#A09D95] hover:text-white border border-[#2E2E2B] uppercase cursor-pointer">
+            EP.31 (03:08)
+          </button>
+        </div>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div class="p-3.5 rounded-xl bg-[#090d16] border border-gray-800">
-          <div class="text-xl font-extrabold text-white">60 / 60</div>
-          <div class="text-xs text-gray-400">Episodes Optimized (100%)</div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-8 space-y-3">
+          <div class="aspect-video bg-black border border-[#2E2E2B] overflow-hidden">
+            <iframe id="yt-screening-frame" class="w-full h-full" src="https://www.youtube.com/embed/lEYH4lCVTFs?rel=0" title="ToonGhuri Studio 11-Language Screening Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="flex flex-wrap items-center justify-between gap-2 font-mono-tech text-xs text-[#A09D95] bg-[#1A1A18] px-4 py-2.5 border border-[#2E2E2B]">
+            <span id="screening-caption" class="text-white font-semibold">NOW SCREENING: EP.37 // Bodu’s Mango Theft (10:03)</span>
+            <span class="text-[#D9381E]">CLICK ⚙ IN PLAYER → AUDIO TRACK (11) &amp; SUBTITLES (12)</span>
+          </div>
         </div>
-        <div class="p-3.5 rounded-xl bg-[#090d16] border border-gray-800">
-          <div class="text-xl font-extrabold text-emerald-400">645 / 645</div>
-          <div class="text-xs text-gray-400">Audio Tracks PROCESSED</div>
-        </div>
-        <div class="p-3.5 rounded-xl bg-[#090d16] border border-gray-800">
-          <div class="text-xl font-extrabold text-indigo-400">720 / 720</div>
-          <div class="text-xs text-gray-400">.srt Subtitles PUBLISHED</div>
-        </div>
-        <div class="p-3.5 rounded-xl bg-[#090d16] border border-gray-800">
-          <div class="text-xl font-extrabold text-amber-400">720 / 720</div>
-          <div class="text-xs text-gray-400">Localized Titles &amp; Chapters</div>
-        </div>
-        <div class="p-3.5 rounded-xl bg-[#090d16] border border-gray-800">
-          <div class="text-xl font-extrabold text-purple-400">180 / 180</div>
-          <div class="text-xs text-gray-400">A/B/C Experiment Arms</div>
-        </div>
-        <div class="p-3.5 rounded-xl bg-[#090d16] border border-gray-800">
-          <div class="text-xl font-extrabold text-emerald-400">0 Failed</div>
-          <div class="text-xs text-gray-400">Zero Stuck in Pending</div>
+
+        <!-- Visual Checklist of What Is Active on This Exact Video -->
+        <div class="lg:col-span-4 bg-[#1A1A18] border border-[#2E2E2B] p-5 space-y-4">
+          <div class="font-mono-tech text-xs text-[#D9381E] uppercase border-b border-[#2E2E2B] pb-2.5">
+            ACTIVE INSIDE THIS VIDEO’S YOUTUBE STUDIO:
+          </div>
+          <div class="space-y-2.5 font-mono-tech text-xs">
+            <div class="flex items-center justify-between p-2.5 bg-[#121211] border border-[#2E2E2B]">
+              <span class="text-[#A09D95]">Audio Tracks (BN + 10 Int'l)</span>
+              <span class="px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-800">11 PROCESSED</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 bg-[#121211] border border-[#2E2E2B]">
+              <span class="text-[#A09D95]">Closed Captions (.SRT)</span>
+              <span class="px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-800">12 PUBLISHED</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 bg-[#121211] border border-[#2E2E2B]">
+              <span class="text-[#A09D95]">Localized Titles &amp; 0:00 Chapters</span>
+              <span class="px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-800">12 LANGUAGES</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 bg-[#121211] border border-[#2E2E2B]">
+              <span class="text-[#A09D95]">Thumbnail A/B/C Experiment</span>
+              <span class="px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-800">3 ARMS ACTIVE</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 bg-[#121211] border border-[#2E2E2B]">
+              <span class="text-[#A09D95]">End Screen + 2 Mid-Roll Cards</span>
+              <span class="px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-800">CONFIGURED</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 bg-[#121211] border border-[#2E2E2B]">
+              <span class="text-[#A09D95]">Pinned 11-Language Comment</span>
+              <span class="px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-800">PINNED TOP</span>
+            </div>
+          </div>
+          <div class="pt-1 text-[11px] font-mono-tech text-[#A09D95] leading-relaxed">
+            Channel-Wide Audit across all 60 @ToonGhuri videos: <strong class="text-white">645 / 645</strong> audio tracks processed, <strong class="text-white">720 / 720</strong> SRTs published, <strong class="text-white">180 / 180</strong> A/B/C test arms active.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3-Tier Monthly Retainer Pricing -->
-  <section id="pricing" class="max-w-6xl mx-auto px-4 sm:px-6 py-10 border-t border-gray-800 space-y-8">
-    <div class="text-center max-w-3xl mx-auto space-y-2">
-      <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Simple Monthly Minute-Pool Pricing</span>
-      <h2 class="text-2xl sm:text-3xl font-bold text-white">
-        Predictable Monthly Plans Built for 10 to 45-Minute Videos
+  <!-- ===================================================================== -->
+  <!-- 02 // VISUAL BLUEPRINT: EVERY LAYER WE IMPLEMENT (STEP-BY-STEP)       -->
+  <!-- ===================================================================== -->
+  <section id="visual-blueprint" class="max-w-7xl mx-auto px-4 sm:px-8 py-20 space-y-16 hairline-b">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl space-y-3">
+      <div class="font-mono-tech text-xs uppercase tracking-widest text-[#D9381E]">
+        02 // VISUAL ARCHITECTURE — INSIDE OUR 8-LAYER IMPLEMENTATION
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#121211] leading-[1.08]">
+        Everything we engineer and upload on every single episode—explained visually.
       </h2>
-      <p class="text-sm text-gray-400">
-        We measure by <strong>Original Source Video Minutes</strong>—so whether you upload eight 30-minute episodes, twelve 25-minute episodes, or twenty 15-minute episodes, your entire schedule + back-catalog upgrades are covered.
+      <p class="text-base text-[#5A5852] leading-relaxed">
+        Most agencies just run your video through a generic translator and hand you an MP3 file. Below is the exact visual breakdown of all <strong>8 production and YouTube Studio layers</strong> we execute on every video in your monthly pool.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Tier 1 -->
-      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 flex flex-col justify-between space-y-6">
-        <div class="space-y-4">
-          <div>
-            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Starter Global Plan</span>
-            <div class="mt-2 flex items-baseline gap-1">
-              <span class="text-3xl font-extrabold text-white">€600</span>
-              <span class="text-xs text-gray-400">/ month</span>
-            </div>
-            <div class="text-xs text-emerald-400 font-medium mt-1">Only €0.33 per localized minute</div>
-          </div>
+    <!-- =============================================================== -->
+    <!-- LAYER 01 + LAYER 02 (2-Column Visual Blueprint Row)             -->
+    <!-- =============================================================== -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-          <div class="p-3 rounded-xl bg-[#090d16] border border-gray-800 space-y-1">
-            <div class="text-xs font-bold text-white">Up to 150 Original Video Mins / mo</div>
-            <div class="text-xs text-gray-400">
-              • Produces <strong>27.5 Hours</strong> of 11-Lang Audio<br/>
-              • Produces <strong>30.0 Hours</strong> of 12-Lang Subtitles<br/>
-              • Ideal for 1x 30-min video/week + 1 old video/mo
-            </div>
+      <!-- LAYER 01: DEMUCS M&E STEM SEPARATION VISUALIZER -->
+      <div class="bg-[#EFECE4] hairline-box p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between font-mono-tech text-xs">
+            <span class="px-2.5 py-1 bg-[#121211] text-[#F5F2EB] font-semibold">LAYER 01 // AUDIO STEM SURGERY</span>
+            <span class="text-[#5A5852]">HTDEMUCS NEURAL SEPARATION</span>
           </div>
-
-          <ul class="space-y-2 text-xs text-gray-400">
-            <li>✓ <strong class="text-white">11 Dubbed Audio Tracks</strong> (Demucs Music &amp; SFX intact)</li>
-            <li>✓ <strong class="text-white">Character-Locked Voices</strong> across your series</li>
-            <li>✓ <strong class="text-white">12 Published .srt Subtitles</strong> for global search</li>
-            <li>✓ <strong class="text-white">12 Localized Viral Titles &amp; 0:00 Chapters</strong></li>
-            <li>✓ <strong class="text-white">100% Done-For-You Upload</strong> via YT Studio Editor</li>
-          </ul>
+          <h3 class="text-2xl font-extrabold tracking-tight pt-1">
+            We isolate your original Music &amp; Sound Effects so background audio never cuts out.
+          </h3>
+          <p class="text-xs sm:text-sm text-[#5A5852] leading-relaxed">
+            YouTube’s native auto-dubbing lowers your entire audio track whenever a character speaks, killing your music score and sound effects. We split your master audio into separate stems before mixing:
+          </p>
         </div>
-        <a href="#sample-form" onclick="selectPlan('Starter Global (€600/mo - 150 Original Mins)')" class="w-full py-2.5 rounded-xl bg-[#090d16] hover:bg-indigo-600 hover:text-white border border-gray-800 text-center text-xs font-bold transition">
-          Start With Free 1-Video Pilot →
-        </a>
+
+        <!-- Visual DAW Waveform Schematic -->
+        <div class="bg-[#121211] text-[#F5F2EB] p-4 sm:p-5 border border-[#2E2E2B] space-y-3 font-mono-tech text-xs">
+          <div class="flex items-center justify-between text-[11px] text-[#A09D95] border-b border-[#2E2E2B] pb-2">
+            <span>STUDIO DAW SIGNAL ROUTING</span>
+            <span>48kHz / 24-BIT STEREO BED</span>
+          </div>
+
+          <!-- Track 1: Original Vocals (Muted) -->
+          <div class="p-2.5 bg-[#1A1A18] border border-[#2E2E2B] space-y-1.5 opacity-60">
+            <div class="flex items-center justify-between">
+              <span class="text-[#A09D95]">STEM A: Original Dialogue (`vocals.wav`)</span>
+              <span class="px-1.5 py-0.5 bg-red-950 text-red-400 text-[10px]">MUTED IN DUBS</span>
+            </div>
+            <!-- SVG Waveform -->
+            <svg viewBox="0 0 400 28" class="w-full h-6">
+              <path d="M0 14 L20 14 L25 4 L30 24 L35 6 L40 22 L45 14 L90 14 L95 3 L100 25 L105 5 L110 23 L115 8 L120 14 L180 14 L185 5 L190 23 L195 4 L200 24 L205 14 L270 14 L275 6 L280 22 L285 4 L290 24 L295 14 L400 14" stroke="#6B7280" stroke-width="1.5" fill="none" stroke-dasharray="3 2"/>
+            </svg>
+          </div>
+
+          <!-- Track 2: Preserved M&E Stem (100% Intact) -->
+          <div class="p-2.5 bg-[#1A1A18] border border-emerald-700/60 space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-emerald-400 font-semibold">STEM B: Isolated Music &amp; Foley (`no_vocals.wav`)</span>
+              <span class="px-1.5 py-0.5 bg-emerald-950 text-emerald-300 text-[10px]">100% PRESERVED (-1.5 dB)</span>
+            </div>
+            <svg viewBox="0 0 400 28" class="w-full h-6">
+              <path d="M0 14 Q10 2, 20 14 T40 14 T60 14 T80 14 T100 14 T120 14 T140 14 T160 14 T180 14 T200 14 T220 14 T240 14 T260 14 T280 14 T300 14 T320 14 T340 14 T360 14 T380 14 T400 14" stroke="#10B981" stroke-width="1.75" fill="none"/>
+              <path d="M0 14 Q5 8, 10 14 T20 14 T30 14 T40 14 T50 14 T60 14 T70 14 T80 14 T90 14 T100 14 T110 14 T120 14 T130 14 T140 14 T150 14 T160 14 T170 14 T180 14 T190 14 T200 14 T210 14 T220 14 T230 14 T240 14 T250 14 T260 14 T270 14 T280 14 T290 14 T300 14 T310 14 T320 14 T330 14 T340 14 T350 14 T360 14 T370 14 T380 14 T390 14 T400 14" stroke="#059669" stroke-width="1" fill="none"/>
+            </svg>
+            <div class="text-[10px] text-[#A09D95]">Flute score, rain ambience, footsteps, and cartoon SFX remain continuous across the entire episode.</div>
+          </div>
+
+          <!-- Track 3: 11 New Character-Locked Vocal Stems -->
+          <div class="p-2.5 bg-[#1A1A18] border border-[#D9381E] space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[#D9381E] font-semibold">STEM C1–C11: 11 Localized Character Tracks</span>
+              <span class="px-1.5 py-0.5 bg-[#D9381E] text-white text-[10px]">+3.0 dB BROADCAST MIX</span>
+            </div>
+            <svg viewBox="0 0 400 28" class="w-full h-6">
+              <rect x="22" y="4" width="60" height="20" fill="#D9381E" fill-opacity="0.25" stroke="#D9381E" stroke-width="1"/>
+              <text x="27" y="17" fill="#F5F2EB" font-size="9" font-family="monospace">Dadi (Aoede)</text>
+              <rect x="94" y="4" width="76" height="20" fill="#3B82F6" fill-opacity="0.25" stroke="#3B82F6" stroke-width="1"/>
+              <text x="99" y="17" fill="#F5F2EB" font-size="9" font-family="monospace">Bodu (Puck)</text>
+              <rect x="184" y="4" width="84" height="20" fill="#F59E0B" fill-opacity="0.25" stroke="#F59E0B" stroke-width="1"/>
+              <text x="189" y="17" fill="#F5F2EB" font-size="9" font-family="monospace">Raju (Orus)</text>
+              <rect x="280" y="4" width="105" height="20" fill="#D9381E" fill-opacity="0.25" stroke="#D9381E" stroke-width="1"/>
+              <text x="285" y="17" fill="#F5F2EB" font-size="9" font-family="monospace">Dadi (Aoede)</text>
+            </svg>
+          </div>
+        </div>
       </div>
 
-      <!-- Tier 2 (Most Popular - Core Offer) -->
-      <div class="bg-gray-900 border-2 border-indigo-500 rounded-2xl p-6 flex flex-col justify-between space-y-6 shadow-xl relative">
-        <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-indigo-600 text-white text-xs font-bold shadow">
-          ★ MOST POPULAR
+      <!-- LAYER 02: VISUAL LIP-SYNC DIARIZATION & CHARACTER VOICE BIBLE -->
+      <div class="bg-[#EFECE4] hairline-box p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between font-mono-tech text-xs">
+            <span class="px-2.5 py-1 bg-[#121211] text-[#F5F2EB] font-semibold">LAYER 02 // VISUAL SPEAKER &amp; LIP-SYNC MAP</span>
+            <span class="text-[#5A5852]">PERSISTENT CHARACTER BIBLE</span>
+          </div>
+          <h3 class="text-2xl font-extrabold tracking-tight pt-1">
+            We track whose mouth is moving on-screen and lock unique voices across your whole series.
+          </h3>
+          <p class="text-xs sm:text-sm text-[#5A5852] leading-relaxed">
+            Audio-only dubbers confuse characters when two people argue or when a child speaks off-screen. We scan a <code class="font-mono-tech text-xs">360p</code> visual proxy frame-by-frame to detect active mouth movement and lock each character to your permanent <code class="font-mono-tech text-xs">characters.json</code> voice registry:
+          </p>
         </div>
-        <div class="space-y-4">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Growth Studio Plan</span>
-            <div class="mt-2 flex items-baseline gap-1">
-              <span class="text-3xl font-extrabold text-white">€1,000</span>
-              <span class="text-xs text-gray-400">/ month</span>
+
+        <!-- Visual Frame with Speaker Detection Overlay + Voice Matrix -->
+        <div class="space-y-3">
+          <div class="relative aspect-video bg-[#121211] hairline-box overflow-hidden">
+            <img src="assets/still_4.jpg" alt="Visual Lip-Sync Speaker Detection" class="w-full h-full object-cover opacity-90" />
+            
+            <!-- Visual Bounding Callouts Overlaid on Frame -->
+            <div class="absolute top-3 left-3 bg-[#121211]/90 border border-[#D9381E] px-2.5 py-1.5 font-mono-tech text-[11px] text-white">
+              <div class="text-[#D9381E] font-bold">SPEAKER 01: DADI (ELDER FEMALE)</div>
+              <div class="text-[10px] text-[#A09D95]">VOICE LOCK: AOEDE • ATEMPO: 1.04x</div>
             </div>
-            <div class="text-xs text-emerald-400 font-semibold mt-1">Only €0.28 per localized minute (Save 88% vs SaaS)</div>
+
+            <div class="absolute bottom-3 right-3 bg-[#121211]/90 border border-emerald-500 px-2.5 py-1.5 font-mono-tech text-[11px] text-white">
+              <div class="text-emerald-400 font-bold">SPEAKER 02: BODU (YOUNG BOY)</div>
+              <div class="text-[10px] text-[#A09D95]">VOICE LOCK: PUCK • MOUTH SYNC: 04:12.40 → 04:16.85</div>
+            </div>
           </div>
 
-          <div class="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/30 space-y-1">
-            <div class="text-xs font-bold text-white">Up to 300 Original Video Mins / mo</div>
-            <div class="text-xs text-gray-400">
-              • Produces <strong class="text-indigo-300">55.0 Hours (3,300m)</strong> of Dubbed Audio<br/>
-              • Produces <strong class="text-emerald-300">60.0 Hours (3,600m)</strong> of Subtitles<br/>
-              • Covers <strong>2x 30-min videos/week</strong> (240m) + <strong>60m back-catalog</strong>!
+          <!-- Character Registry Table -->
+          <div class="grid grid-cols-3 gap-2 font-mono-tech text-[11px]">
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="font-bold text-[#121211]">Elders / Narrator</div>
+              <div class="text-[#D9381E]">Aoede / Charon</div>
+              <div class="text-[10px] text-[#5A5852]">Locked Ep.1 → Ep.60</div>
+            </div>
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="font-bold text-[#121211]">Kids / Heroes</div>
+              <div class="text-[#D9381E]">Puck / Leda</div>
+              <div class="text-[10px] text-[#5A5852]">Playful high-energy</div>
+            </div>
+            <div class="p-2.5 bg-[#F5F2EB] hairline-box">
+              <div class="font-bold text-[#121211]">Adult Villagers</div>
+              <div class="text-[#D9381E]">Orus / Zephyr</div>
+              <div class="text-[10px] text-[#5A5852]">Dynamic atempo fit</div>
             </div>
           </div>
-
-          <ul class="space-y-2 text-xs text-gray-400">
-            <li>✓ <strong class="text-white">Everything in Starter Plan</strong> (11 Audio + 12 SRTs)</li>
-            <li>✓ <strong class="text-white">3 Custom Text-Free A/B/C Thumbnails</strong> per video</li>
-            <li>✓ <strong class="text-white">3-Arm YouTube Test &amp; Compare Experiments</strong></li>
-            <li>✓ <strong class="text-white">3-Element End Screens &amp; 2 Mid-Video Info Cards</strong></li>
-            <li>✓ <strong class="text-white">Pinned 11-Language Creator Comment</strong> on every video</li>
-            <li>✓ <strong class="text-white">10-Min Window Long-Video Engine</strong> (up to 45m/video)</li>
-          </ul>
         </div>
-        <a href="#sample-form" onclick="selectPlan('Growth Studio (€1,000/mo - 300 Original Mins = 60 Hours Output)')" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-center text-xs font-bold transition shadow-md">
-          Claim Free Pilot for Growth Plan →
-        </a>
       </div>
 
-      <!-- Tier 3 -->
-      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6 flex flex-col justify-between space-y-6">
-        <div class="space-y-4">
-          <div>
-            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Scale / MCN Studio Plan</span>
-            <div class="mt-2 flex items-baseline gap-1">
-              <span class="text-3xl font-extrabold text-white">€1,750</span>
-              <span class="text-xs text-gray-400">/ month</span>
-            </div>
-            <div class="text-xs text-emerald-400 font-medium mt-1">Only €0.24 per localized minute</div>
-          </div>
+    </div>
 
-          <div class="p-3 rounded-xl bg-[#090d16] border border-gray-800 space-y-1">
-            <div class="text-xs font-bold text-white">Up to 600 Original Video Mins / mo</div>
-            <div class="text-xs text-gray-400">
-              • Produces <strong>110 Hours (6,600m)</strong> of Dubbed Audio<br/>
-              • Produces <strong>120 Hours (7,200m)</strong> of Subtitles<br/>
-              • Ideal for daily/4x weekly studios or back-catalogs
-            </div>
-          </div>
+    <!-- =============================================================== -->
+    <!-- LAYER 03 + LAYER 04 (Long-Video Windowing & -80ms Clamping)     -->
+    <!-- =============================================================== -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-          <ul class="space-y-2 text-xs text-gray-400">
-            <li>✓ <strong class="text-white">Everything in Growth Studio Plan</strong></li>
-            <li>✓ <strong class="text-white">Rapid Back-Catalog Transformation</strong> (20+ eps/mo)</li>
-            <li>✓ <strong class="text-white">Custom Series Character Voice Bible</strong></li>
-            <li>✓ <strong class="text-white">Priority 24-Hour Turnaround SLA</strong></li>
-            <li>✓ <strong class="text-white">Optional Hybrid Rev-Share</strong> (€450/mo + 25% Intl AdSense) for 500k+ sub channels</li>
-          </ul>
+      <!-- LAYER 03: 10-MINUTE WINDOWED CHUNKING FOR 20–45+ MIN VIDEOS -->
+      <div class="bg-[#EFECE4] hairline-box p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between font-mono-tech text-xs">
+            <span class="px-2.5 py-1 bg-[#121211] text-[#F5F2EB] font-semibold">LAYER 03 // 10-MIN WINDOWED ENGINE</span>
+            <span class="text-[#5A5852]">BUILT FOR 20–45+ MIN EPISODES</span>
+          </div>
+          <h3 class="text-2xl font-extrabold tracking-tight pt-1">
+            Zero timestamp drift on 30-minute episodes and 45-minute compilations.
+          </h3>
+          <p class="text-xs sm:text-sm text-[#5A5852] leading-relaxed">
+            When you feed a 30-minute video into a standard AI dubber, its context window overflows after ~12 minutes—causing missing lines or severe lip-sync drift in the second half. Our pipeline automatically slices any video over 12 minutes into <strong>10-minute (`600s`) windows</strong> and merges offset-adjusted timestamps into a single master manifest:
+          </p>
         </div>
-        <a href="#sample-form" onclick="selectPlan('Scale Studio (€1,750/mo - 600 Original Mins = 120 Hours Output)')" class="w-full py-2.5 rounded-xl bg-[#090d16] hover:bg-indigo-600 hover:text-white border border-gray-800 text-center text-xs font-bold transition">
-          Start With Free 1-Video Pilot →
-        </a>
+
+        <!-- Visual 30-Minute Window Slicing Diagram -->
+        <div class="bg-[#F5F2EB] hairline-box p-4 sm:p-5 space-y-4 font-mono-tech text-xs">
+          <div class="flex items-center justify-between text-[11px] text-[#5A5852] hairline-b pb-2">
+            <span>SOURCE TIMELINE: 30:00 EPISODE (`1,800 SECONDS`)</span>
+            <span class="text-[#D9381E] font-semibold">0 TOKEN TRUNCATION</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2">
+            <div class="p-3 bg-[#EFECE4] hairline-box space-y-1">
+              <div class="text-[10px] text-[#5A5852]">WINDOW 01</div>
+              <div class="font-bold text-[#121211]">00:00 – 10:00</div>
+              <div class="text-[10px] text-[#D9381E]">Offset: +0.0s</div>
+              <div class="text-[10px] text-[#5A5852]">~95 dialogue turns</div>
+            </div>
+            <div class="p-3 bg-[#EFECE4] hairline-box space-y-1">
+              <div class="text-[10px] text-[#5A5852]">WINDOW 02</div>
+              <div class="font-bold text-[#121211]">10:00 – 20:00</div>
+              <div class="text-[10px] text-[#D9381E]">Offset: +600.0s</div>
+              <div class="text-[10px] text-[#5A5852]">~92 dialogue turns</div>
+            </div>
+            <div class="p-3 bg-[#EFECE4] hairline-box space-y-1">
+              <div class="text-[10px] text-[#5A5852]">WINDOW 03</div>
+              <div class="font-bold text-[#121211]">20:00 – 30:00</div>
+              <div class="text-[10px] text-[#D9381E]">Offset: +1200.0s</div>
+              <div class="text-[10px] text-[#5A5852]">~98 dialogue turns</div>
+            </div>
+          </div>
+
+          <div class="p-3 bg-[#121211] text-[#F5F2EB] flex items-center justify-between text-[11px]">
+            <span>MERGED OUTPUT: `dub_manifest.json` (285 Lip-Synced Segments)</span>
+            <span class="text-emerald-400 font-semibold">±40ms PRECISION AT MIN 29:59</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAYER 04: THE -80ms OGG OPUS HARDWARE CLAMP -->
+      <div class="bg-[#EFECE4] hairline-box p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between font-mono-tech text-xs">
+            <span class="px-2.5 py-1 bg-[#121211] text-[#F5F2EB] font-semibold">LAYER 04 // -80ms HARDWARE CLAMP</span>
+            <span class="text-[#5A5852]">0% STUCK-IN-PENDING BUG</span>
+          </div>
+          <h3 class="text-2xl font-extrabold tracking-tight pt-1">
+            Why DIY `.m4a` uploads hang in YouTube Studio “Pending”—and how we fix it.
+          </h3>
+          <p class="text-xs sm:text-sm text-[#5A5852] leading-relaxed">
+            If an uploaded audio track exceeds your video container duration by even <strong>1 millisecond</strong> (which FFmpeg AAC `.m4a` exports do automatically due to trailing frame padding), YouTube Studio leaves the track stuck in <code class="font-mono-tech text-xs">PENDING</code> forever. We clamp every track in-browser via <code class="font-mono-tech text-xs">OfflineAudioContext</code> to <code class="font-mono-tech text-xs">(videoDurationMs / 1000) - 0.08s</code>:
+          </p>
+        </div>
+
+        <!-- Visual Comparison Schematic of Video End Boundary -->
+        <div class="bg-[#121211] text-[#F5F2EB] p-4 sm:p-5 border border-[#2E2E2B] space-y-4 font-mono-tech text-xs">
+          <div class="flex items-center justify-between text-[11px] text-[#A09D95] border-b border-[#2E2E2B] pb-2">
+            <span>VIDEO CONTAINER END BOUNDARY: `603.200s` (10:03.20)</span>
+            <span>YOUTUBE INGEST VALIDATOR</span>
+          </div>
+
+          <!-- Bad DIY Track -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-[11px]">
+              <span class="text-red-400">DIY AAC Export (`603.224s` → +24ms overflow)</span>
+              <span class="text-red-400 font-bold">× STUCK IN PENDING</span>
+            </div>
+            <div class="w-full h-5 bg-[#1E1E1C] relative overflow-hidden border border-[#2E2E2B]">
+              <div class="h-full bg-red-900/70 w-full"></div>
+              <div class="absolute top-0 bottom-0 right-6 w-0.5 bg-white"></div>
+              <div class="absolute top-0 bottom-0 right-0 w-6 bg-red-500 animate-pulse"></div>
+            </div>
+          </div>
+
+          <!-- Our Clamped Track -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-[11px]">
+              <span class="text-emerald-400">ToonGhuri -80ms Ogg Opus (`603.120s` → -80ms safe margin)</span>
+              <span class="text-emerald-400 font-bold">✓ PROCESSED IN 12s</span>
+            </div>
+            <div class="w-full h-5 bg-[#1E1E1C] relative overflow-hidden border border-[#2E2E2B]">
+              <div class="h-full bg-emerald-600/80" style="width: 92%;"></div>
+              <div class="absolute top-0 bottom-0 right-6 w-0.5 bg-white"></div>
+            </div>
+          </div>
+
+          <div class="text-[10px] text-[#A09D95] flex justify-between pt-1">
+            <span>Result across @ToonGhuri: 645 / 645 Tracks PROCESSED</span>
+            <span class="text-white">24kbps Mono Ogg Opus</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =============================================================== -->
+    <!-- LAYER 05: INTERACTIVE 12-LANGUAGE YOUTUBE SEARCH & CHAPTERS     -->
+    <!-- =============================================================== -->
+    <div class="bg-[#EFECE4] hairline-box p-6 sm:p-10 space-y-8">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 hairline-b pb-6">
+        <div class="space-y-2 max-w-2xl">
+          <div class="flex items-center gap-3 font-mono-tech text-xs">
+            <span class="px-2.5 py-1 bg-[#121211] text-[#F5F2EB] font-semibold">LAYER 05 &amp; 06 // 12-LANGUAGE SEARCH SEO, CHAPTERS &amp; .SRT CAPTIONS</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight pt-1">
+            How a viewer in Madrid, São Paulo, Riyadh, or Tokyo discovers your video in YouTube Search.
+          </h3>
+          <p class="text-xs sm:text-sm text-[#5A5852] leading-relaxed">
+            Audio tracks alone don’t bring new clicks if your title and description are only in your native language. For every episode, we publish <strong>12 culturally adapted High-CTR Titles</strong>, <strong>12 Descriptions with localized `0:00` Key Moments Scene Chapters</strong>, and <strong>12 synced `.srt` subtitle files</strong>. Click any language below to preview the live localized metadata:
+          </p>
+        </div>
+
+        <!-- Interactive Language Switcher Buttons -->
+        <div class="flex flex-wrap gap-1.5 font-mono-tech text-xs" id="seo-lang-tabs">
+          <button onclick="setSeoPreview('es')" id="seo-btn-es" class="px-3 py-1.5 bg-[#D9381E] text-white font-semibold cursor-pointer">ES Español</button>
+          <button onclick="setSeoPreview('en')" id="seo-btn-en" class="px-3 py-1.5 bg-[#F5F2EB] text-[#121211] hairline-box hover:bg-[#121211] hover:text-white cursor-pointer">EN English</button>
+          <button onclick="setSeoPreview('pt')" id="seo-btn-pt" class="px-3 py-1.5 bg-[#F5F2EB] text-[#121211] hairline-box hover:bg-[#121211] hover:text-white cursor-pointer">PT Português</button>
+          <button onclick="setSeoPreview('ar')" id="seo-btn-ar" class="px-3 py-1.5 bg-[#F5F2EB] text-[#121211] hairline-box hover:bg-[#121211] hover:text-white cursor-pointer">AR العربية</button>
+          <button onclick="setSeoPreview('hi')" id="seo-btn-hi" class="px-3 py-1.5 bg-[#F5F2EB] text-[#121211] hairline-box hover:bg-[#121211] hover:text-white cursor-pointer">HI हिन्दी</button>
+          <button onclick="setSeoPreview('fr')" id="seo-btn-fr" class="px-3 py-1.5 bg-[#F5F2EB] text-[#121211] hairline-box hover:bg-[#121211] hover:text-white cursor-pointer">FR Français</button>
+          <button onclick="setSeoPreview('de')" id="seo-btn-de" class="px-3 py-1.5 bg-[#F5F2EB] text-[#121211] hairline-box hover:bg-[#121211] hover:text-white cursor-pointer">DE Deutsch</button>
+          <button onclick="setSeoPreview('ja')" id="seo-btn-ja" class="px-3 py-1.5 bg-[#F5F2EB] text-[#121211] hairline-box hover:bg-[#121211] hover:text-white cursor-pointer">JA 日本語</button>
+        </div>
+      </div>
+
+      <!-- Simulated YouTube Search Result + Localized Key Moments Chapters + Closed Caption Preview -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-[#F5F2EB] hairline-box p-5 sm:p-6 items-center">
+        
+        <!-- Left: Video Frame with Live Burned-in SRT Subtitle Bar -->
+        <div class="lg:col-span-5 relative aspect-video bg-[#121211] hairline-box overflow-hidden">
+          <img src="assets/still_5.jpg" alt="Localized SRT Preview Frame" class="w-full h-full object-cover" />
+          <div class="absolute top-2.5 left-2.5 bg-[#121211]/90 text-white font-mono-tech text-[10px] px-2 py-0.5" id="seo-badge">
+            AUDIO TRACK: ESPAÑOL (LATAM) • CC: ES.SRT
+          </div>
+          <div class="absolute bottom-3 left-4 right-4 bg-black/85 text-white text-center px-3 py-1.5 text-xs sm:text-sm font-medium rounded-sm" id="seo-srt-line">
+            "¡Si el abuelo descubre que tomamos los mangos del jardín, estaremos en problemas!"
+          </div>
+          <div class="absolute bottom-2 right-2 bg-black/90 text-white font-mono-tech text-[10px] px-1.5 py-0.5">
+            10:03
+          </div>
+        </div>
+
+        <!-- Right: Localized YouTube Search Card & Google Key Moments Chapters -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="font-mono-tech text-[11px] text-[#D9381E] uppercase" id="seo-region-label">
+            YOUTUBE SEARCH PREVIEW // MADRID, MEXICO CITY &amp; BOGOTÁ
+          </div>
+          <h4 class="text-xl sm:text-2xl font-bold text-[#121211] leading-snug" id="seo-title">
+            El Robo de Mangos de Bodu | Historias Animadas de la Aldea Patapukur (Doblaje Español)
+          </h4>
+          <p class="text-xs text-[#5A5852] leading-relaxed" id="seo-desc">
+            Bodu y sus amigos planean robar los mangos más dulces del huerto antes de la tormenta, pero un inesperado guardián cambia todo en la aldea de Patapukur...
+          </p>
+
+          <!-- Google / YouTube Key Moments Chapter Carousel -->
+          <div class="space-y-2 pt-1">
+            <div class="font-mono-tech text-[11px] text-[#5A5852] uppercase">
+              INDEXED GOOGLE &amp; YOUTUBE "KEY MOMENTS" CHAPTERS (4 LOCALIZED TIMESTAMPS):
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono-tech text-[11px]">
+              <div class="p-2 bg-[#EFECE4] hairline-box">
+                <div class="text-[#D9381E] font-bold">00:00</div>
+                <div class="text-[#121211] truncate mt-0.5" id="seo-ch1">El huerto prohibido</div>
+              </div>
+              <div class="p-2 bg-[#EFECE4] hairline-box">
+                <div class="text-[#D9381E] font-bold">02:45</div>
+                <div class="text-[#121211] truncate mt-0.5" id="seo-ch2">El plan secreto de Bodu</div>
+              </div>
+              <div class="p-2 bg-[#EFECE4] hairline-box">
+                <div class="text-[#D9381E] font-bold">06:10</div>
+                <div class="text-[#121211] truncate mt-0.5" id="seo-ch3">Atrapados en el árbol</div>
+              </div>
+              <div class="p-2 bg-[#EFECE4] hairline-box">
+                <div class="text-[#D9381E] font-bold">08:50</div>
+                <div class="text-[#121211] truncate mt-0.5" id="seo-ch4">La lección de la abuela</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =============================================================== -->
+    <!-- LAYER 07 + LAYER 08 (3-Arm A/B/C Thumbnails & Retention Timeline)-->
+    <!-- =============================================================== -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- LAYER 07: 3-ARM UNIVERSAL TEXT-FREE A/B/C THUMBNAIL TESTING -->
+      <div class="bg-[#EFECE4] hairline-box p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between font-mono-tech text-xs">
+            <span class="px-2.5 py-1 bg-[#121211] text-[#F5F2EB] font-semibold">LAYER 07 // 3-ARM A/B/C THUMBNAIL LAB</span>
+            <span class="text-[#5A5852]">YOUTUBE TEST &amp; COMPARE</span>
+          </div>
+          <h3 class="text-2xl font-extrabold tracking-tight pt-1">
+            3 universal text-free thumbnails per video—tested automatically for watch-time share.
+          </h3>
+          <p class="text-xs sm:text-sm text-[#5A5852] leading-relaxed">
+            If your thumbnail has English or Hindi text written on it, viewers in Brazil, Japan, or Saudi Arabia scroll past it. We design <strong>3 text-free, high-contrast `1280×720` visual variants</strong> per episode and launch them inside YouTube Studio’s native <strong>Test &amp; Compare</strong> (`TITLE_AND_THUMBNAIL_EXPERIMENT`):
+          </p>
+        </div>
+
+        <!-- Visual Mockup of YouTube Studio Test & Compare Results -->
+        <div class="bg-[#121211] text-[#F5F2EB] p-4 sm:p-5 border border-[#2E2E2B] space-y-4 font-mono-tech text-xs">
+          <div class="flex items-center justify-between text-[11px] text-[#A09D95] border-b border-[#2E2E2B] pb-2">
+            <span>YOUTUBE STUDIO // TEST &amp; COMPARE (WATCH-TIME SHARE)</span>
+            <span class="text-emerald-400">3 ARMS RUNNING</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3">
+            <!-- Arm A -->
+            <div class="space-y-1.5">
+              <div class="aspect-video border border-[#2E2E2B] overflow-hidden relative">
+                <img src="assets/ab_test_A.jpg" alt="Thumbnail Arm A" class="w-full h-full object-cover" />
+                <span class="absolute top-1 left-1 bg-black/80 text-white text-[10px] px-1.5 py-0.5">ARM A</span>
+              </div>
+              <div class="text-[10px] text-[#A09D95]">Hero Action Climax</div>
+              <div class="w-full bg-[#1E1E1C] h-2"><div class="bg-[#A09D95] h-2" style="width: 31%;"></div></div>
+              <div class="text-xs font-bold">31.2% Share</div>
+            </div>
+
+            <!-- Arm B (Winner) -->
+            <div class="space-y-1.5">
+              <div class="aspect-video border-2 border-emerald-500 overflow-hidden relative">
+                <img src="assets/ab_test_B.jpg" alt="Thumbnail Arm B" class="w-full h-full object-cover" />
+                <span class="absolute top-1 left-1 bg-emerald-600 text-white text-[10px] px-1.5 py-0.5 font-bold">WINNER</span>
+              </div>
+              <div class="text-[10px] text-emerald-400">Emotional Close-Up</div>
+              <div class="w-full bg-[#1E1E1C] h-2"><div class="bg-emerald-500 h-2" style="width: 45%;"></div></div>
+              <div class="text-xs font-bold text-emerald-400">45.1% Share</div>
+            </div>
+
+            <!-- Arm C -->
+            <div class="space-y-1.5">
+              <div class="aspect-video border border-[#2E2E2B] overflow-hidden relative">
+                <img src="assets/ab_test_C.jpg" alt="Thumbnail Arm C" class="w-full h-full object-cover" />
+                <span class="absolute top-1 left-1 bg-black/80 text-white text-[10px] px-1.5 py-0.5">ARM C</span>
+              </div>
+              <div class="text-[10px] text-[#A09D95]">Mystery / Split Twist</div>
+              <div class="w-full bg-[#1E1E1C] h-2"><div class="bg-[#A09D95] h-2" style="width: 24%;"></div></div>
+              <div class="text-xs font-bold">23.7% Share</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LAYER 08: END SCREENS, MID-VIDEO CARDS & PINNED 11-LANG COMMENT -->
+      <div class="bg-[#EFECE4] hairline-box p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-2">
+          <div class="flex items-center justify-between font-mono-tech text-xs">
+            <span class="px-2.5 py-1 bg-[#121211] text-[#F5F2EB] font-semibold">LAYER 08 // SESSION WATCH-TIME ARCHITECTURE</span>
+            <span class="text-[#5A5852]">CARDS + END SCREEN + PINNED COMMENT</span>
+          </div>
+          <h3 class="text-2xl font-extrabold tracking-tight pt-1">
+            We wire every episode to trigger multi-video binge sessions across all 11 languages.
+          </h3>
+          <p class="text-xs sm:text-sm text-[#5A5852] leading-relaxed">
+            Getting an international viewer to click once is good; getting them to watch 4 episodes in a row is what triggers the YouTube homepage algorithm. We configure <strong>2 Mid-Video Info Cards</strong> (`35%` and `68%`), a <strong>3-Element End Screen</strong>, Official Playlist placement, and a <strong>Pinned 11-Language Creator Comment</strong>:
+          </p>
+        </div>
+
+        <!-- Visual End-Screen + Timeline Schematic -->
+        <div class="space-y-3">
+          <div class="relative aspect-video bg-[#121211] hairline-box overflow-hidden">
+            <img src="assets/still_6.jpg" alt="End Screen Architecture Visual" class="w-full h-full object-cover opacity-65" />
+
+            <!-- Simulated 3-Element End Screen Overlay -->
+            <div class="absolute inset-0 p-4 flex flex-col justify-between font-mono-tech text-[10px] text-white">
+              <div class="flex justify-between items-center">
+                <span class="bg-black/80 px-2 py-0.5 border border-white/20">FINAL 20 SECONDS // 3-ELEMENT END SCREEN OVERLAY</span>
+                <span class="bg-[#D9381E] px-2 py-0.5 font-bold">ⓘ CARDS AT 35% &amp; 68%</span>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2.5 items-center my-auto">
+                <div class="bg-black/85 border border-white/40 p-2.5 aspect-video flex flex-col justify-between">
+                  <span class="text-[#D9381E] font-bold">[ELEMENT 01]</span>
+                  <span class="text-xs font-sans font-bold">Best For Viewer</span>
+                  <span class="text-[9px] text-[#A09D95]">Auto-personalized</span>
+                </div>
+                <div class="mx-auto w-16 h-16 rounded-full bg-[#D9381E]/90 border-2 border-white flex flex-col items-center justify-center text-center">
+                  <span class="font-bold text-[10px]">SUBSCRIBE</span>
+                  <span class="text-[8px]">ELEMENT 02</span>
+                </div>
+                <div class="bg-black/85 border border-white/40 p-2.5 aspect-video flex flex-col justify-between">
+                  <span class="text-emerald-400 font-bold">[ELEMENT 03]</span>
+                  <span class="text-xs font-sans font-bold">Series Playlist</span>
+                  <span class="text-[9px] text-[#A09D95]">37-Ep Binge Loop</span>
+                </div>
+              </div>
+
+              <div class="bg-black/90 border border-white/20 px-2.5 py-1.5 flex items-center justify-between text-[10px]">
+                <span>📌 PINNED 11-LANG COMMENT: "🎧 Switch Audio Track in Settings ⚙ (EN/ES/PT/AR/HI/FR/DE/ID/IT/JA/BN)"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =============================================================== -->
+    <!-- ZERO-PASSWORD WORKFLOW DIAGRAM (HOW WE WORK TOGETHER)           -->
+    <!-- =============================================================== -->
+    <div class="bg-[#121211] text-[#F5F2EB] p-6 sm:p-10 border border-[#2E2E2B] space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#2E2E2B] pb-5">
+        <div>
+          <div class="font-mono-tech text-xs uppercase text-[#D9381E]">HOW DELIVERY WORKS // ZERO PASSWORD SHARING</div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">
+            You never upload 23 files per video yourself. We deploy via YouTube Studio Editor role.
+          </h3>
+        </div>
+        <span class="font-mono-tech text-xs px-3 py-1.5 bg-[#1E1E1C] border border-[#2E2E2B] text-emerald-400">
+          TURNAROUND: 24 HOURS PER EPISODE
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono-tech text-xs">
+        <div class="p-5 bg-[#1A1A18] border border-[#2E2E2B] space-y-2">
+          <div class="text-[#D9381E] font-bold">STEP 01 // GRANT STUDIO EDITOR ROLE</div>
+          <div class="text-base font-sans font-bold text-white">Invite `studio@toonghuri.com` as Editor</div>
+          <p class="font-sans text-xs text-[#A09D95] leading-relaxed">
+            Inside YouTube Studio → Settings → Permissions, assign us the standard <strong>Editor</strong> role. Editors cannot delete videos, cannot view or touch AdSense payouts, and require zero password sharing.
+          </p>
+        </div>
+        <div class="p-5 bg-[#1A1A18] border border-[#2E2E2B] space-y-2">
+          <div class="text-[#D9381E] font-bold">STEP 02 //AUTOMATED 8-LAYER DEPLOYMENT</div>
+          <div class="text-base font-sans font-bold text-white">We engineer &amp; upload all 26 assets per video</div>
+          <p class="font-sans text-xs text-[#A09D95] leading-relaxed">
+            Whenever you upload a new draft (or select back-catalog videos), we run Demucs stem separation, synthesize 11 audio tracks, clamp to `-80ms` Ogg Opus, and upload all 11 audio tracks, 12 SRTs, 12 titles/chapters, and 3 A/B/C thumbnails.
+          </p>
+        </div>
+        <div class="p-5 bg-[#1A1A18] border border-[#2E2E2B] space-y-2">
+          <div class="text-[#D9381E] font-bold">STEP 03 // REVIEW &amp; PUBLISH</div>
+          <div class="text-base font-sans font-bold text-white">All 11 tracks show `PROCESSED`—you click Publish</div>
+          <p class="font-sans text-xs text-[#A09D95] leading-relaxed">
+            You open YouTube Studio, verify every language track, caption, and A/B/C thumbnail experiment is live, and publish on your normal schedule.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 03 // THE 60-HOUR OUTPUT CALCULATOR                                   -->
+  <!-- ===================================================================== -->
+  <section id="volume-calculator" class="max-w-7xl mx-auto px-4 sm:px-8 py-16 hairline-b">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5 space-y-4">
+        <div class="font-mono-tech text-xs uppercase tracking-widest text-[#D9381E]">03 // PRODUCTION OUTPUT CALCULATOR</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#121211]">
+          300 original minutes equals <span class="font-serif-editorial italic font-normal text-[#D9381E]">60 hours</span> of global watch-time inventory.
+        </h2>
+        <p class="text-sm text-[#5A5852] leading-relaxed">
+          If your channel uploads two 30-minute episodes a week (240 mins/month), our <strong>300 Original Minute Growth Pool</strong> covers 100% of your new releases plus 60 minutes of your top historical episodes every month. Use the sliders to calculate your exact monthly output and savings against DIY SaaS rates:
+        </p>
+
+        <div class="space-y-4 pt-2">
+          <div class="p-4 bg-[#EFECE4] hairline-box space-y-2">
+            <div class="flex justify-between font-mono-tech text-xs uppercase">
+              <span>Episodes Per Month (New + Back-Catalog):</span>
+              <span id="lbl-eps" class="font-bold text-[#D9381E]">10 EPISODES / MO</span>
+            </div>
+            <input id="rng-eps" type="range" min="2" max="24" value="10" oninput="updateCalculator()" class="w-full cursor-pointer" />
+          </div>
+
+          <div class="p-4 bg-[#EFECE4] hairline-box space-y-2">
+            <div class="flex justify-between font-mono-tech text-xs uppercase">
+              <span>Average Runtime Per Episode:</span>
+              <span id="lbl-mins" class="font-bold text-[#D9381E]">30 MINUTES</span>
+            </div>
+            <input id="rng-mins" type="range" min="5" max="45" step="5" value="30" oninput="updateCalculator()" class="w-full cursor-pointer" />
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 bg-[#EFECE4] hairline-box p-6 sm:p-8 space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 hairline-b pb-6">
+          <div class="p-4 bg-[#F5F2EB] hairline-box">
+            <div class="font-mono-tech text-xs uppercase text-[#5A5852]">Original Video Pool</div>
+            <div id="out-source-mins" class="text-2xl font-extrabold mt-1">300 Mins / mo</div>
+            <div class="font-mono-tech text-[11px] text-[#5A5852] mt-1">100% schedule coverage</div>
+          </div>
+          <div class="p-4 bg-[#F5F2EB] hairline-box">
+            <div class="font-mono-tech text-xs uppercase text-[#5A5852]">11-Lang Dubbed Audio</div>
+            <div id="out-dub-hours" class="text-2xl font-extrabold mt-1">55.0 Hours</div>
+            <div class="font-mono-tech text-[11px] text-[#5A5852] mt-1">3,300 studio-mixed mins</div>
+          </div>
+          <div class="p-4 bg-[#F5F2EB] hairline-box">
+            <div class="font-mono-tech text-xs uppercase text-[#5A5852]">12-Lang SRT Captions</div>
+            <div id="out-sub-hours" class="text-2xl font-extrabold mt-1">60.0 Hours</div>
+            <div class="font-mono-tech text-[11px] text-[#5A5852] mt-1">3,600 search-indexed mins</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="font-mono-tech text-xs uppercase text-[#5A5852]">Recommended Monthly Retainer</div>
+            <div id="out-plan-price" class="text-3xl font-extrabold text-[#121211] mt-0.5">€1,000 / month</div>
+            <div id="out-per-min" class="font-mono-tech text-xs text-[#D9381E] font-semibold mt-0.5">
+              EFFECTIVE RATE: €0.28 PER LOCALIZED MINUTE (GROWTH STUDIO PLAN)
+            </div>
+          </div>
+          <div class="p-4 bg-[#121211] text-[#F5F2EB] font-mono-tech text-xs space-y-1">
+            <div class="text-[#A09D95]">DIY SaaS Equivalent (ElevenLabs/Rask): <span id="out-saas-cost" class="line-through text-white">€7,260/mo</span></div>
+            <div id="out-savings" class="text-sm font-bold text-[#D9381E]">NET SAVINGS: €6,260 / MONTH + 35 HRS SAVED</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Zero-Password Security & Onboarding Section -->
-  <section id="security" class="max-w-6xl mx-auto px-4 sm:px-6 py-10 border-t border-gray-800">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="p-5 rounded-2xl bg-gray-900 border border-gray-800 space-y-2">
-        <div class="text-xs font-bold text-indigo-400">STEP 1 • ZERO RISK</div>
-        <h3 class="text-base font-bold text-white">1. Test a 90s Clip + 1 Full Video Free</h3>
-        <p class="text-xs text-gray-400 leading-relaxed">
-          We first send you a Google Drive folder with a 90-second clip of your own video speaking 10 languages over your original background music. Love it? We localize 1 full episode live on your channel for free.
-        </p>
+  <!-- ===================================================================== -->
+  <!-- 04 // MONTHLY RETAINER TIERS                                          -->
+  <!-- ===================================================================== -->
+  <section id="retainers" class="max-w-7xl mx-auto px-4 sm:px-8 py-16 space-y-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 hairline-b pb-6">
+      <div class="space-y-2 max-w-2xl">
+        <div class="font-mono-tech text-xs uppercase tracking-widest text-[#D9381E]">04 // MONTHLY STUDIO RETAINERS</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#121211]">
+          Transparent monthly minute pools. Cancel anytime.
+        </h2>
       </div>
-      <div class="p-5 rounded-2xl bg-gray-900 border border-gray-800 space-y-2">
-        <div class="text-xs font-bold text-emerald-400">STEP 2 • 100% SECURE</div>
-        <h3 class="text-base font-bold text-white">2. Official YouTube Studio "Editor" Role</h3>
-        <p class="text-xs text-gray-400 leading-relaxed">
-          You never share your password. You simply invite our studio email as a standard <strong>Editor</strong> in <code class="text-xs">YouTube Studio → Settings → Permissions</code>. Editors cannot delete videos or view bank details—we just upload your 11 audio tracks &amp; 12 subtitles for you.
-        </p>
+      <div class="font-mono-tech text-xs text-[#5A5852]">
+        ALL PLANS START WITH A FREE 90-SECOND TEST REEL + 1 LIVE PILOT EPISODE
       </div>
-      <div class="p-5 rounded-2xl bg-gray-900 border border-gray-800 space-y-2">
-        <div class="text-xs font-bold text-amber-400">STEP 3 • AUTOPILOT GROWTH</div>
-        <h3 class="text-base font-bold text-white">3. 60 Hours of Global Content Every Month</h3>
-        <p class="text-xs text-gray-400 leading-relaxed">
-          Every time you upload a new episode, all 11 dubbed audio tracks, 12 subtitles, 12 localized titles/chapters, and 3-Arm A/B/C thumbnail tests go live within 24–48 hours—plus we upgrade your best older videos every month.
-        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0 hairline-box bg-[#EFECE4]">
+      
+      <!-- Plan 1 -->
+      <div class="p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#F5F2EB] md:hairline-r">
+        <div class="space-y-4">
+          <div class="font-mono-tech text-xs uppercase text-[#5A5852]">TIER 01 // STARTER GLOBAL</div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-extrabold">€600</span>
+            <span class="font-mono-tech text-xs text-[#5A5852]">/ MONTH</span>
+          </div>
+          <div class="p-3.5 bg-[#EFECE4] hairline-box font-mono-tech text-xs space-y-1">
+            <div class="font-bold text-[#121211]">UP TO 150 ORIGINAL MINS / MO</div>
+            <div class="text-[#5A5852]">→ 27.5 Hours (1,650m) Dubbed Audio</div>
+            <div class="text-[#5A5852]">→ 30.0 Hours (1,800m) Published SRTs</div>
+            <div class="text-[#D9381E] font-semibold">→ €0.33 per localized minute</div>
+          </div>
+          <ul class="space-y-2.5 text-xs text-[#5A5852] leading-relaxed">
+            <li>— <strong class="text-[#121211]">Layer 01–06 Included:</strong> 11 Dubbed Audio Tracks with isolated Demucs M&amp;E stem</li>
+            <li>— <strong class="text-[#121211]">Character-Locked Voices</strong> across episodes</li>
+            <li>— <strong class="text-[#121211]">12 Published .srt Captions</strong> + 12 Localized Titles &amp; <code class="font-mono-tech">0:00</code> Chapters</li>
+            <li>— <strong class="text-[#121211]">Direct YouTube Studio Upload</strong> via Editor permission</li>
+          </ul>
+        </div>
+        <a href="#commission" onclick="selectPlan('Starter Global (€600/mo - 150 Original Mins)')" class="block w-full py-3 hairline-box bg-[#EFECE4] hover:bg-[#121211] hover:text-white text-center font-mono-tech text-xs uppercase tracking-wider font-semibold transition">
+          Request Free Pilot (150m Pool)
+        </a>
       </div>
+
+      <!-- Plan 2 (Core) -->
+      <div class="p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#121211] text-[#F5F2EB] md:hairline-r">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between font-mono-tech text-xs uppercase">
+            <span class="text-[#D9381E] font-semibold">TIER 02 // GROWTH STUDIO</span>
+            <span class="px-2 py-0.5 bg-[#D9381E] text-white text-[11px]">MOST POPULAR</span>
+          </div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-extrabold">€1,000</span>
+            <span class="font-mono-tech text-xs text-[#A09D95]">/ MONTH</span>
+          </div>
+          <div class="p-3.5 bg-[#1E1E1C] border border-[#2E2E2B] font-mono-tech text-xs space-y-1">
+            <div class="font-bold text-white">UP TO 300 ORIGINAL MINS / MO</div>
+            <div class="text-[#A09D95]">→ 55.0 Hours (3,300m) Dubbed Audio</div>
+            <div class="text-[#A09D95]">→ 60.0 Hours (3,600m) Published SRTs</div>
+            <div class="text-[#D9381E] font-semibold">→ €0.28 per localized minute</div>
+          </div>
+          <ul class="space-y-2.5 text-xs text-[#A09D95] leading-relaxed">
+            <li>— <strong class="text-white">Covers 2× 30-min episodes/week (240m)</strong> + <strong class="text-white">60m of back-catalog</strong> upgrades every month</li>
+            <li>— <strong class="text-white">All 8 Visual Architecture Layers Included</strong></li>
+            <li>— <strong class="text-white">3 Text-Free Universal A/B/C Thumbnails</strong> per video</li>
+            <li>— <strong class="text-white">3-Arm YouTube Test &amp; Compare Experiments</strong></li>
+            <li>— <strong class="text-white">3-Element End Screens, 2 Info Cards &amp; Pinned 11-Lang Comment</strong></li>
+          </ul>
+        </div>
+        <a href="#commission" onclick="selectPlan('Growth Studio (€1,000/mo - 300 Original Mins = 60 Hours)')" class="block w-full py-3.5 bg-[#D9381E] hover:bg-white hover:text-[#121211] text-white text-center font-mono-tech text-xs uppercase tracking-wider font-semibold transition">
+          Request Free Pilot (300m Pool) →
+        </a>
+      </div>
+
+      <!-- Plan 3 -->
+      <div class="p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#F5F2EB]">
+        <div class="space-y-4">
+          <div class="font-mono-tech text-xs uppercase text-[#5A5852]">TIER 03 // SCALE &amp; MCN STUDIO</div>
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-extrabold">€1,750</span>
+            <span class="font-mono-tech text-xs text-[#5A5852]">/ MONTH</span>
+          </div>
+          <div class="p-3.5 bg-[#EFECE4] hairline-box font-mono-tech text-xs space-y-1">
+            <div class="font-bold text-[#121211]">UP TO 600 ORIGINAL MINS / MO</div>
+            <div class="text-[#5A5852]">→ 110 Hours (6,600m) Dubbed Audio</div>
+            <div class="text-[#5A5852]">→ 120 Hours (7,200m) Published SRTs</div>
+            <div class="text-[#D9381E] font-semibold">→ €0.24 per localized minute</div>
+          </div>
+          <ul class="space-y-2.5 text-xs text-[#5A5852] leading-relaxed">
+            <li>— <strong class="text-[#121211]">All 8 Visual Architecture Layers Included</strong></li>
+            <li>— <strong class="text-[#121211]">Full Library Back-Catalog Transformation</strong> (up to 20× 30-min episodes/mo)</li>
+            <li>— <strong class="text-[#121211]">Priority 24-Hour Turnaround SLA</strong></li>
+            <li>— <strong class="text-[#121211]">Optional Hybrid Rev-Share</strong> (€450/mo base + 25% International AdSense) for channels with 500k+ subscribers</li>
+          </ul>
+        </div>
+        <a href="#commission" onclick="selectPlan('Scale Studio (€1,750/mo - 600 Original Mins = 120 Hours)')" class="block w-full py-3 hairline-box bg-[#EFECE4] hover:bg-[#121211] hover:text-white text-center font-mono-tech text-xs uppercase tracking-wider font-semibold transition">
+          Request Free Pilot (600m Pool)
+        </a>
+      </div>
+
     </div>
   </section>
 
-  <footer class="max-w-6xl mx-auto px-4 sm:px-6 py-8 border-t border-gray-800 text-center text-xs text-gray-400">
-    © 2026 ToonGhuri Studio — Powered by Demucs M&amp;E Stem Isolation, Character-Locked Gemini 3.8 TTS &amp; Direct YouTube Studio Automation. Live Portfolio: <a href="https://www.youtube.com/@ToonGhuri" target="_blank" class="text-indigo-400 underline">@ToonGhuri (60 Videos / 645 Audio Tracks)</a>
+  <!-- Footer -->
+  <footer class="hairline-t bg-[#EFECE4] py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono-tech text-xs text-[#5A5852]">
+      <div>
+        © 2026 TOONGHURI STUDIO (TOONGHURI.COM) — ALL RIGHTS RESERVED.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="https://www.youtube.com/@ToonGhuri" target="_blank" class="hover:text-[#121211] underline">@TOONGHURI YOUTUBE (60 EPISODES)</a>
+        <a href="mailto:studio@toonghuri.com" class="hover:text-[#121211] underline">STUDIO@TOONGHURI.COM</a>
+      </div>
+    </div>
   </footer>
 
   <script>
-    const LANG_DATA = [
-      {
-        code: "es",
-        name: "Spanish (es)",
-        rpm: "$3.20 – $5.80 RPM",
-        title: "¿Quién Robó los Mangos de la Aldea? 🥭🐒 | Misterio Animado en Español",
-        chapters: "0:00 El árbol de mango vacío al amanecer\n2:15 Bodu encuentra la pista secreta junto al río\n5:40 ¡La trampa nocturna revela al verdadero ladrón!",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "Amanece en Patapukur, pero hoy es diferente. El árbol de mango de tía Rubi quedó vacío." },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "¡Sorpresa! ¡Yo sé quién dejó esas huellas junto al río!" }
-        ]
+    const SEO_DATA = {
+      es: {
+        badge: "AUDIO TRACK: ESPAÑOL (LATAM) • CC: ES.SRT",
+        region: "YOUTUBE SEARCH PREVIEW // MADRID, MEXICO CITY & BOGOTÁ",
+        title: "El Robo de Mangos de Bodu | Historias Animadas de la Aldea Patapukur (Doblaje Español)",
+        desc: "Bodu y sus amigos planean robar los mangos más dulces del huerto antes de la tormenta, pero un inesperado guardián cambia todo en la aldea de Patapukur...",
+        srt: "«¡Si el abuelo descubre que tomamos los mangos del jardín, estaremos en problemas!»",
+        ch1: "El huerto prohibido",
+        ch2: "El plan secreto de Bodu",
+        ch3: "Atrapados en el árbol",
+        ch4: "La lección de la abuela"
       },
-      {
-        code: "en-US",
-        name: "English (en-US)",
-        rpm: "$5.50 – $9.20 RPM",
-        title: "Who Stole Every Mango in the Village Overnight?! 🥭🔍 | Animated Mystery Story",
-        chapters: "0:00 Aunt Rubi's Empty Mango Tree at Dawn\n2:15 Bodu Discovers a Hidden Clue by the River\n5:40 The Midnight Trap Reveals the Real Thief!",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "Morning arrived in Patapukur, but today was unlike any other. Aunt Rubi's mango tree was completely empty." },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "Surprise! Follow me—I found footprints leading straight to the old banyan cave!" }
-        ]
+      en: {
+        badge: "AUDIO TRACK: ENGLISH (US) • CC: EN-US.SRT & EN.SRT",
+        region: "YOUTUBE SEARCH PREVIEW // NEW YORK, LONDON & TORONTO",
+        title: "Bodu’s Midnight Mango Heist! | Patapukur Village Animated Stories (English Dub)",
+        desc: "Bodu and his friends sneak into the orchard to steal the sweetest mangoes before the monsoon hits—until the village watchman catches them red-handed...",
+        srt: "\"If Grandpa finds out we took the mangoes from the orchard, we're in huge trouble!\"",
+        ch1: "The Forbidden Orchard",
+        ch2: "Bodu’s Secret Plan",
+        ch3: "Trapped in the Branches",
+        ch4: "Grandma’s Unexpected Lesson"
       },
-      {
-        code: "ar",
-        name: "Arabic (ar)",
-        rpm: "$2.80 – $5.10 RPM",
-        title: "من سرق جميع ثمار المانجو في القرية ليلاً؟! 🥭🐒 | قصة رسوم متحركة غامضة",
-        chapters: "0:00 شجرة المانجو الفارغة عند الفجر\n2:15 بودو يكتشف دليلاً سرياً قرب النهر\n5:40 فخ منتصف الليل يكشف السارق الحقيقي!",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "صباح جديد في باتابوكور، لكن هذا الصباح مختلف تماماً. اختفت المانجو عن شجرة العمة روبي." },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "مفاجأة! لقد وجدت آثار أقدام تقود إلى الكهف القديم!" }
-        ]
+      pt: {
+        badge: "AUDIO TRACK: PORTUGUÊS (BRASIL) • CC: PT.SRT",
+        region: "YOUTUBE SEARCH PREVIEW // SÃO PAULO, RIO & LISBOA",
+        title: "O Roubo de Mangas do Bodu! | Histórias Animadas da Vila Patapukur (Dublado PT-BR)",
+        desc: "Bodu e seus amigos entram escondidos no pomar para pegar as mangas mais doces antes da tempestade, mas uma surpresa muda tudo na vila...",
+        srt: "«Se o vovô descobrir que pegamos as mangas do pomar, estaremos muito encrencados!»",
+        ch1: "O pomar proibido",
+        ch2: "O plano secreto de Bodu",
+        ch3: "Presos na mangueira",
+        ch4: "A lição da vovó"
       },
-      {
-        code: "hi",
-        name: "Hindi (hi)",
-        rpm: "$1.20 – $2.60 RPM (Massive Volume)",
-        title: "रातों-रात गाँव के सारे आम किसने चुराए?! 🥭🐒 | पातापुखुर रहस्य और मजेदार कहानी",
-        chapters: "0:00 सुबह खाली मिला रूबी फूफी का आम का पेड़\n2:15 बद्दू को नदी के पास मिला रहस्यमयी सुराग\n5:40 आधी रात के जाल में फंसा असली चोर!",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "पातापुखुर में सुबह हुई, पर आज की सुबह कुछ अलग है। रूबी फूफी के पेड़ से सारे आम गायब हैं।" },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "सरप्राइज! मुझे पता है नदी के किनारे वो निशान किसके हैं!" }
-        ]
+      ar: {
+        badge: "AUDIO TRACK: العربية (ARABIC) • CC: AR.SRT",
+        region: "YOUTUBE SEARCH PREVIEW // RIYADH, DUBAI & CAIRO",
+        title: "سرقة المانجو في منتصف الليل! | حكايات قرية باتابوكور الكرتونية (مدبلج بالعربية)",
+        desc: "يتسلل بودو وأصدقاؤه إلى البستان لقطف أحلى ثمار المانجو قبل هبوب العاصفة، لكن مفاجأة غير متوقعة تنتظرهم فوق الشجرة...",
+        srt: "«إذا اكتشف جدي أننا أخذنا المانجو من البستان،فسنكون في ورطة كبيرة!»",
+        ch1: "البستان الممنوع",
+        ch2: "خطة بودو السرية",
+        ch3: "محاصرون فوق الشجرة",
+        ch4: "درس الجدة الحكيم"
       },
-      {
-        code: "pt",
-        name: "Portuguese (pt)",
-        rpm: "$2.90 – $5.40 RPM",
-        title: "Quem Roubou Todas as Mangas da Vila Durante a Noite?! 🥭🐒 | Mistério Animado",
-        chapters: "0:00 O pé de manga vazio ao amanhecer\n2:15 Bodu encontra uma pista secreta no rio\n5:40 A armadilha noturna revela o verdadeiro ladrão!",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "A manhã chega em Patapukur, mas hoje é diferente. O pé de manga da tia Rubi está completamente vazio." },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "Surpresa! Encontrei pegadas misteriosas perto da velha figueira!" }
-        ]
+      hi: {
+        badge: "AUDIO TRACK: हिन्दी (HINDI) • CC: HI.SRT",
+        region: "YOUTUBE SEARCH PREVIEW // MUMBAI, DELHI & JAIPUR",
+        title: "बोदू की आम की चोरी! | पातापुकुर गाँव की मजेदार कहानियाँ (Hindi Dubbed)",
+        desc: "तूफ़ान आने से पहले बोदू और उसके दोस्त बगीचे के सबसे मीठे आम चुराने की योजना बनाते हैं, लेकिन तभी वहाँ रखवाला आ पहुँचता है...",
+        srt: "“अगर दादाजी को पता चला कि हमने बगीचे से आम तोड़े हैं, तो आज हमारी खैर नहीं!”",
+        ch1: "अनोखा आम का बगीचा",
+        ch2: "बोदू की गुप्त योजना",
+        ch3: "पेड़ पर फँसे दोस्त",
+        ch4: "दादी माँ की सीख"
       },
-      {
-        code: "fr",
-        name: "French (fr)",
-        rpm: "$4.80 – $7.90 RPM",
-        title: "Qui a Volé Toutes les Mangues du Village cette Nuit ?! 🥭🔍 | Histoire Animée",
-        chapters: "0:00 L'arbre à mangues vide au lever du jour\n2:15 Bodu découvre un indice secret près de la rivière\n5:40 Le piège de minuit révèle le vrai voleur !",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "Le matin se lève sur Patapukur, mais ce jour est bien étrange. Les mangues de tante Rubi ont disparu." },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "Surprise ! Suivez-moi, j'ai trouvé des traces près de la rivière !" }
-        ]
+      fr: {
+        badge: "AUDIO TRACK: FRANÇAIS • CC: FR.SRT",
+        region: "YOUTUBE SEARCH PREVIEW // PARIS, MONTRÉAL & DAKAR",
+        title: "Le Vol des Mangues de Bodu | Contes Animés du Village de Patapukur (VF)",
+        desc: "Bodu et ses amis s'infiltrent dans le verger pour cueillir les mangues les plus sucrées avant l'orage, mais rien ne se passe comme prévu...",
+        srt: "« Si grand-père découvre qu'on a pris les mangues du verger, on aura de gros ennuis ! »",
+        ch1: "Le verger interdit",
+        ch2: "Le plan secret de Bodu",
+        ch3: "Piégés dans l'arbre",
+        ch4: "La leçon de grand-mère"
       },
-      {
-        code: "de",
-        name: "German (de)",
-        rpm: "$5.20 – $8.80 RPM",
-        title: "Wer hat nachts alle Mangos im Dorf gestohlen?! 🥭🔍 | Spannende Animationsgeschichte",
-        chapters: "0:00 Der leere Mangobaum im Morgengrauen\n2:15 Bodu entdeckt eine geheime Spur am Fluss\n5:40 Die Mitternachtsfalle entlarvt den wahren Dieb!",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "Ein Morgen in Patapukur, doch heute ist alles anders. Tante Rubis Mangobaum ist völlig kahl." },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "Überraschung! Ich habe Fußspuren direkt am alten Flussufer entdeckt!" }
-        ]
+      de: {
+        badge: "AUDIO TRACK: DEUTSCH • CC: DE.SRT",
+        region: "YOUTUBE SEARCH PREVIEW // BERLIN, WIEN & ZÜRICH",
+        title: "Bodus geheimer Mango-Raub! | Patapukur Dorfgeschichten (Deutsch Synchronisiert)",
+        desc: "Bodu und seine Freunde schleichen sich vor dem Sturm in den Obstgarten, um die süßesten Mangos zu stehlen – doch der Wächter wartet schon...",
+        srt: "„Wenn Opa herausfindet, dass wir die Mangos aus dem Garten geholt haben, gibt es Ärger!“",
+        ch1: "Der verbotene Garten",
+        ch2: "Bodus geheimer Plan",
+        ch3: "Auf dem Baum gefangen",
+        ch4: "Omas weise Lektion"
       },
-      {
-        code: "id",
-        name: "Indonesian (id)",
-        rpm: "$1.50 – $3.10 RPM (High Viral Reach)",
-        title: "Siapa Pencuri Semua Mangga Desa Tadi Malam?! 🥭🐒 | Cerita Misteri Animasi",
-        chapters: "0:00 Pohon Mangga Bibi Rubi Kosong Saat Fajar\n2:15 Bodu Menemukan Jejak Rahasia di Tepi Sungai\n5:40 Jebakan Tengah Malam Mengungkap Pencuri Asli!",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "Pagi tiba di Patapukur, tapi pagi ini terasa berbeda. Mangga di pohon Bibi Rubi raib semuanya." },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "Kejutan! Aku menemukan jejak kaki misterius menuju gua tua!" }
-        ]
-      },
-      {
-        code: "it",
-        name: "Italian (it)",
-        rpm: "$4.10 – $6.80 RPM",
-        title: "Chi Ha Rubato Tutti i Mango del Villaggio di Notte?! 🥭🔍 | Storia Animata",
-        chapters: "0:00 L'albero di mango vuoto all'alba\n2:15 Bodu scopre un indizio segreto vicino al fiume\n5:40 La trappola di mezzanotte svela il vero ladro!",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "È mattina a Patapukur, ma oggi è un giorno diverso. L'albero di mango di zia Rubi è completamente spoglio." },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "Sorpresa! Guardate queste impronte nascoste vicino al fiume!" }
-        ]
-      },
-      {
-        code: "ja",
-        name: "Japanese (ja)",
-        rpm: "$5.00 – $8.50 RPM",
-        title: "一晩で村のマンゴーを全部盗んだ犯人は誰！？🥭🐒 | パタプクル謎解きアニメ",
-        chapters: "0:00 夜明けに空っぽになったマンゴーの木\n2:15 ボドゥが川辺で見つけた秘密の手がかり\n5:40 真夜中の作戦で本当の犯人が明らかに！",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "パタプクルの朝。でも今朝はいつもと違います。ルビおばさんのマンゴーが消えてしまいました。" },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "サプライズ！川のそばで不思議な足跡を見つけたよ！" }
-        ]
-      },
-      {
-        code: "bn",
-        name: "Bangla (bn)",
-        rpm: "Original Studio Master Track",
-        title: "বদুর আম চুরি: গ্রামের আসল চোর কে? 🥭🐒 | পাতাপুকুর রহস্য ও মজার গল্প",
-        chapters: "0:00 রুবি ফুপুর খালি আম গাছের রহস্য\n2:15 নদীর ধারে বদুর গোপন সূত্র আবিষ্কার\n5:40 রাতের আঁধারে ধরা পড়ল আসল চোর!",
-        lines: [
-          { speaker: "Narrator (Locked Voice: Aoede)", text: "পাতাপুকুরে সকাল, কিন্তু আজকের সকালটা অন্যরকম। রুবি ফুপুর আম গাছে একটিও আম নেই।" },
-          { speaker: "Bodu (Locked Voice: Puck)", text: "চমক! আমি জানি নদীর ধারে ওই পায়ের ছাপ কার!" }
-        ]
+      ja: {
+        badge: "AUDIO TRACK: 日本語 (JAPANESE) • CC: JA.SRT",
+        region: "YOUTUBE SEARCH PREVIEW // TOKYO & OSAKA",
+        title: "ボドゥの真夜中のマンゴー泥棒！| パタプクル村のアニメ物語（日本語吹き替え）",
+        desc: "嵐が来る前に果樹園の甘いマンゴーをこっそり採ろうとしたボドゥたち。しかし木の上で思わぬハプニングが待ち受けていた…",
+        srt: "「おじいちゃんに果樹園のマンゴーを取ったことがバレたら、大変なことになるぞ！」",
+        ch1: "秘密のマンゴー果樹園",
+        ch2: "ボドゥの作戦会議",
+        ch3: "木の上で大ピンチ",
+        ch4: "おばあちゃんの教え"
       }
-    ];
+    };
 
-    function renderLangPills(activeCode) {
-      const container = document.getElementById("lang-pills");
-      container.innerHTML = "";
-      LANG_DATA.forEach((item) => {
-        const btn = document.createElement("button");
-        const isActive = item.code === activeCode;
-        btn.className = isActive
-          ? "px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-bold shadow cursor-pointer transition"
-          : "px-3 py-1.5 rounded-lg bg-gray-900 hover:bg-indigo-500/20 text-gray-200 border border-gray-800 text-xs font-medium cursor-pointer transition";
-        btn.textContent = item.name;
-        btn.onclick = () => selectLang(item.code);
-        container.appendChild(btn);
+    function setSeoPreview(lang) {
+      const d = SEO_DATA[lang];
+      if (!d) return;
+      document.getElementById("seo-badge").textContent = d.badge;
+      document.getElementById("seo-region-label").textContent = d.region;
+      document.getElementById("seo-title").textContent = d.title;
+      document.getElementById("seo-desc").textContent = d.desc;
+      document.getElementById("seo-srt-line").textContent = d.srt;
+      document.getElementById("seo-ch1").textContent = d.ch1;
+      document.getElementById("seo-ch2").textContent = d.ch2;
+      document.getElementById("seo-ch3").textContent = d.ch3;
+      document.getElementById("seo-ch4").textContent = d.ch4;
+
+      ["es", "en", "pt", "ar", "hi", "fr", "de", "ja"].forEach((code) => {
+        const btn = document.getElementById(`seo-btn-${code}`);
+        if (!btn) return;
+        if (code === lang) {
+          btn.className = "px-3 py-1.5 bg-[#D9381E] text-white font-semibold cursor-pointer";
+        } else {
+          btn.className = "px-3 py-1.5 bg-[#F5F2EB] text-[#121211] hairline-box hover:bg-[#121211] hover:text-white cursor-pointer";
+        }
       });
     }
 
-    function selectLang(code) {
-      const item = LANG_DATA.find((d) => d.code === code) || LANG_DATA[0];
-      renderLangPills(item.code);
-      document.getElementById("sim-lang-badge").textContent = item.name;
-      document.getElementById("sim-title").textContent = item.title;
-      document.getElementById("sim-chapters").textContent = item.chapters;
-      document.getElementById("sim-rpm").textContent = item.rpm;
-
-      const diag = document.getElementById("sim-dialogue");
-      diag.innerHTML = item.lines
-        .map(
-          (l) => `
-          <div class="p-3 rounded-xl bg-[#090d16] border border-gray-800">
-            <div class="text-xs font-bold text-indigo-400 mb-0.5">${l.speaker}</div>
-            <div class="text-sm text-white">"${l.text}"</div>
-          </div>`
-        )
-        .join("");
+    function switchScreeningVideo(videoId, title, specs) {
+      document.getElementById("yt-screening-frame").src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+      document.getElementById("screening-caption").textContent = `NOW SCREENING: ${title} — ${specs}`;
+      const ids = ["tab-1", "tab-2", "tab-3"];
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el.getAttribute("onclick").includes(videoId)) {
+          el.className = "px-3.5 py-2 bg-[#D9381E] text-white uppercase cursor-pointer";
+        } else {
+          el.className = "px-3.5 py-2 bg-[#1E1E1C] text-[#A09D95] hover:text-white border border-[#2E2E2B] uppercase cursor-pointer";
+        }
+      });
     }
 
     function updateCalculator() {
@@ -664,39 +1135,39 @@
       const dubMins = sourceMins * 11;
       const subMins = sourceMins * 12;
 
-      document.getElementById("lbl-eps").textContent = `${eps} episodes / mo`;
-      document.getElementById("lbl-mins").textContent = `${mins} minutes`;
-      document.getElementById("out-source-mins").textContent = `${sourceMins.toLocaleString()} Mins`;
-      document.getElementById("out-dub-hours").textContent = `${dubMins.toLocaleString()} Mins (${(dubMins / 60).toFixed(1)} hrs)`;
-      document.getElementById("out-sub-hours").textContent = `${subMins.toLocaleString()} Mins (${(subMins / 60).toFixed(1)} hrs)`;
+      document.getElementById("lbl-eps").textContent = `${eps} EPISODES / MO`;
+      document.getElementById("lbl-mins").textContent = `${mins} MINUTES`;
+      document.getElementById("out-source-mins").textContent = `${sourceMins.toLocaleString()} Mins / mo`;
+      document.getElementById("out-dub-hours").textContent = `${(dubMins / 60).toFixed(1)} Hours`;
+      document.getElementById("out-sub-hours").textContent = `${(subMins / 60).toFixed(1)} Hours`;
 
       let price = 1000;
-      let planLabel = "Growth Studio (€1,000/mo)";
+      let planLabel = "GROWTH STUDIO PLAN";
       if (sourceMins <= 150) {
         price = 600;
-        planLabel = "Starter Global (€600/mo)";
+        planLabel = "STARTER GLOBAL PLAN";
       } else if (sourceMins <= 300) {
         price = 1000;
-        planLabel = "Growth Studio (€1,000/mo)";
+        planLabel = "GROWTH STUDIO PLAN";
       } else {
         price = 1750;
-        planLabel = "Scale Studio (€1,750/mo)";
+        planLabel = "SCALE STUDIO PLAN";
       }
 
       const perMin = (price / subMins).toFixed(2);
       const saasCost = Math.round(dubMins * 2.2);
       const savings = Math.max(0, saasCost - price);
 
-      document.getElementById("out-plan-price").textContent = `€${price.toLocaleString()} / mo`;
-      document.getElementById("out-per-min").textContent = `Only €${perMin} / localized min (${planLabel})`;
-      document.getElementById("out-saas-cost").textContent = `€${saasCost.toLocaleString()} / month + ${Math.round(eps * 3.5)} hours of manual work`;
-      document.getElementById("out-savings").textContent = `You Save €${savings.toLocaleString()} / mo`;
+      document.getElementById("out-plan-price").textContent = `€${price.toLocaleString()} / month`;
+      document.getElementById("out-per-min").textContent = `EFFECTIVE RATE: €${perMin} PER LOCALIZED MINUTE (${planLabel})`;
+      document.getElementById("out-saas-cost").textContent = `€${saasCost.toLocaleString()}/mo`;
+      document.getElementById("out-savings").textContent = `NET SAVINGS: €${savings.toLocaleString()} / MONTH + ${Math.round(eps * 3.5)} HRS SAVED`;
     }
 
     function selectPlan(planName) {
       const contactInput = document.getElementById("inp-contact");
-      if (contactInput && !contactInput.value.includes(planName)) {
-        contactInput.placeholder = `Interested in: ${planName}`;
+      if (contactInput) {
+        contactInput.placeholder = `Selected: ${planName} — Enter Email/WhatsApp`;
       }
     }
 
@@ -705,28 +1176,28 @@
       const channel = document.getElementById("inp-channel").value.trim() || "ProspectChannel";
       const length = document.getElementById("inp-length").value;
       const contact = document.getElementById("inp-contact").value.trim() || "Not provided";
-      const safeSlug = channel.replace(/[^a-zA-Z0-9_-]/g, "_");
 
-      const subject = encodeURIComponent(`Free 10-Language ToonGhuri Studio Sample Request — ${channel}`);
+      const subject = encodeURIComponent(`90-Second 10-Language Test Reel Request — ${channel}`);
       const body = encodeURIComponent(
-        `Hi ToonGhuri Studio Team,\n\nI'd love a free 90-second 10-language sample pack for our channel!\n\n` +
+        `Hi ToonGhuri Studio,\n\nWe would like to request a free 90-second 10-language test reel for our channel:\n\n` +
         `• Channel Name: ${channel}\n` +
         `• Video URL: ${url}\n` +
-        `• Typical Video Length: ${length}\n` +
-        `• My Contact: ${contact}\n\n` +
-        `Looking forward to hearing the 10-language dub with our original music/SFX intact!`
+        `• Typical Runtime: ${length}\n` +
+        `• Contact: ${contact}\n`
       );
 
       document.getElementById("mailto-link").href = `mailto:studio@toonghuri.com?subject=${subject}&body=${body}`;
       document.getElementById("wa-link").href = `https://wa.me/?text=${body}`;
-      document.getElementById("owner-cmd").textContent =
-        `uv run .agents/skills/youtube-multilang-autodub-optimizer/scripts/toonghuri_pipeline.py client-sample --video "prospect.mp4" --channel-name "${channel}" --clip-seconds 90 --output-dir "client_samples/${safeSlug}" --output "client_samples/${safeSlug}/sample_report.json"`;
+
+      fetch("submit-sample.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url, channel, length, contact })
+      }).catch(() => {});
 
       document.getElementById("sample-result").classList.remove("hidden");
     }
 
-    // Initialize interactive widgets
-    selectLang("es");
     updateCalculator();
   </script>
 </body>
