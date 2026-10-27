@@ -18,22 +18,24 @@ if (!$data) {
     exit;
 }
 
-$channel = isset($data['channel']) ? trim(strip_tags($data['channel'])) : 'Unknown Channel';
-$url     = isset($data['url']) ? trim(strip_tags($data['url'])) : '';
-$length  = isset($data['length']) ? trim(strip_tags($data['length'])) : '';
-$contact = isset($data['contact']) ? trim(strip_tags($data['contact'])) : '';
-$plan    = isset($data['plan']) ? trim(strip_tags($data['plan'])) : 'Free 90s 10-Language Pilot';
-$date    = gmdate('Y-m-d H:i:s') . ' UTC';
+$channel     = isset($data['channel']) ? trim(strip_tags($data['channel'])) : 'Unknown Channel';
+$url         = isset($data['url']) ? trim(strip_tags($data['url'])) : '';
+$length      = isset($data['length']) ? trim(strip_tags($data['length'])) : '';
+$contact     = isset($data['contact']) ? trim(strip_tags($data['contact'])) : '';
+$plan        = isset($data['plan']) ? trim(strip_tags($data['plan'])) : 'Growth Plan (€1,000/mo)';
+$customNotes = isset($data['customNotes']) ? trim(strip_tags($data['customNotes'])) : '';
+$date        = gmdate('Y-m-d H:i:s') . ' UTC';
 
 // 1. Append lead to a protected JSON log file on Hostinger so no lead is ever lost
 $leadEntry = [
-    'timestamp' => $date,
-    'channel'   => $channel,
-    'video_url' => $url,
-    'length'    => $length,
-    'contact'   => $contact,
-    'plan'      => $plan,
-    'ip'        => $_SERVER['REMOTE_ADDR'] ?? ''
+    'timestamp'    => $date,
+    'channel'      => $channel,
+    'video_url'    => $url,
+    'length'       => $length,
+    'contact'      => $contact,
+    'plan'         => $plan,
+    'custom_notes' => $customNotes,
+    'ip'           => $_SERVER['REMOTE_ADDR'] ?? ''
 ];
 
 $logFile = __DIR__ . '/_leads_submissions.jsonl';
@@ -41,13 +43,14 @@ $logFile = __DIR__ . '/_leads_submissions.jsonl';
 
 // 2. Send instant email notification to studio@toonghuri.com via Hostinger PHP mail()
 $to      = 'studio@toonghuri.com';
-$subject = "New 10-Language Sample Lead: {$channel}";
-$message = "New YouTube Creator Sample Request on ToonGhuri Studio (toonghuri.com):\n\n"
+$subject = "New YouTube Sample / Custom Offer Lead: {$channel}";
+$message = "New YouTube Creator Sample / Custom Offer Request:\n\n"
+         . "• Selected Offer: {$plan}\n"
          . "• Channel Name: {$channel}\n"
          . "• Video / Channel URL: {$url}\n"
          . "• Typical Video Length: {$length}\n"
          . "• Creator Contact: {$contact}\n"
-         . "• Selected Plan: {$plan}\n"
+         . ($customNotes !== '' ? "• Custom Offer Notes: {$customNotes}\n" : '')
          . "• Submitted At: {$date}\n";
 $headers = "From: ToonGhuri Studio <noreply@toonghuri.com>\r\n"
          . "Reply-To: {$to}\r\n"

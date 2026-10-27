@@ -463,6 +463,52 @@
       </div>
 
     </div>
+
+    <!-- Custom Offer Box (For Channels Wanting Custom Volume, Languages, Single Videos, or Rev-Share) -->
+    <div class="bg-white border-2 border-dashed border-gray-300 rounded-xl p-6 sm:p-8 shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <div class="lg:col-span-8 space-y-3">
+          <div class="inline-block px-2.5 py-0.5 bg-gray-100 text-gray-700 text-xs font-bold uppercase rounded">
+            Custom Channel Package
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">
+            Need a custom offer for your channel?
+          </h3>
+          <p class="text-sm text-gray-600">
+            If your channel doesn’t fit the standard monthly pools above, we build custom packages tailored to your exact upload schedule and budget:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-gray-700">
+            <div class="p-2.5 bg-gray-50 border border-gray-200 rounded-lg">
+              <strong class="text-gray-900 block">1. Pay-Per-Video / Single Episode</strong>
+              Ideal if you upload 1–2 times a month or want to localize a single viral video first.
+            </div>
+            <div class="p-2.5 bg-gray-50 border border-gray-200 rounded-lg">
+              <strong class="text-gray-900 block">2. Back-Catalog Bulk Bundle (50–200+ Videos)</strong>
+              Discounted bulk rate to dub and optimize your entire library of older videos.
+            </div>
+            <div class="p-2.5 bg-gray-50 border border-gray-200 rounded-lg">
+              <strong class="text-gray-900 block">3. Custom Languages or Audio-Only</strong>
+              Pick only specific languages (e.g., Top 5 instead of 11) or Dubbing + Subtitles only.
+            </div>
+            <div class="p-2.5 bg-gray-50 border border-gray-200 rounded-lg">
+              <strong class="text-gray-900 block">4. Hybrid Revenue-Share (500k+ Subs)</strong>
+              Reduced monthly base fee + a percentage share of new international AdSense revenue.
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 bg-gray-50 border border-gray-200 rounded-xl p-5 text-center space-y-3">
+          <div class="text-xs font-bold uppercase text-gray-500">Tailored Quote in 24 Hours</div>
+          <div class="text-2xl font-extrabold text-gray-900">Custom Pricing</div>
+          <p class="text-xs text-gray-600">
+            Tell us your video length, monthly upload frequency, and which languages you want—plus get a free 90-second sample.
+          </p>
+          <a href="#free-sample" onclick="selectCustomOffer()" class="block w-full py-3 bg-gray-900 hover:bg-blue-600 text-white text-sm font-semibold rounded-lg transition">
+            Request Custom Offer →
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SECTION 4: HOW IT WORKS IN 3 SIMPLE STEPS -->
@@ -518,6 +564,24 @@
 
       <div class="space-y-4">
         <div>
+          <label class="block text-xs font-semibold uppercase text-gray-700 mb-1">Which Offer Are You Interested In? *</label>
+          <select id="inp-plan" onchange="toggleCustomNotes()" class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:border-blue-600">
+            <option value="Growth Plan (€1,000/mo - 300 Original Mins) + Free 90s Sample">Growth Plan (€1,000/mo — 300 Original Mins) + Free Sample</option>
+            <option value="Starter Plan (€600/mo - 150 Original Mins) + Free 90s Sample">Starter Plan (€600/mo — 150 Original Mins) + Free Sample</option>
+            <option value="Scale Plan (€1,750/mo - 600 Original Mins) + Free 90s Sample">Scale Plan (€1,750/mo — 600 Original Mins) + Free Sample</option>
+            <option value="CUSTOM OFFER: Single Video / Pay-Per-Episode">Custom Offer — Single Video / Pay-Per-Episode</option>
+            <option value="CUSTOM OFFER: Back-Catalog Bulk Bundle (50+ Old Videos)">Custom Offer — Back-Catalog Bulk Bundle (50+ Videos)</option>
+            <option value="CUSTOM OFFER: Custom Languages or Audio-Only">Custom Offer — Specific Languages Only / Audio-Only</option>
+            <option value="CUSTOM OFFER: Hybrid Revenue-Share Partnership (500k+ Subs)">Custom Offer — Hybrid Revenue-Share (500k+ Subs)</option>
+          </select>
+        </div>
+
+        <div id="custom-notes-box" class="hidden p-4 bg-blue-50/60 border border-blue-200 rounded-lg space-y-2">
+          <label class="block text-xs font-bold uppercase text-blue-800">Custom Offer Details (Tell us what you need)</label>
+          <textarea id="inp-custom-notes" rows="3" placeholder="Example: We upload 3 videos per month (40 mins each) and only need Spanish, Portuguese, Arabic, and Hindi dubbing + subtitles..." class="w-full px-3.5 py-2 bg-white border border-blue-300 rounded-lg text-sm focus:outline-none focus:border-blue-600"></textarea>
+        </div>
+
+        <div>
           <label class="block text-xs font-semibold uppercase text-gray-700 mb-1">Your YouTube Video Link *</label>
           <input id="inp-url" type="url" placeholder="https://www.youtube.com/watch?v=..." class="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-blue-600" />
         </div>
@@ -530,9 +594,10 @@
           <div>
             <label class="block text-xs font-semibold uppercase text-gray-700 mb-1">Typical Video Length</label>
             <select id="inp-length" class="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-blue-600">
-              <option value="20–30 min episodes (Growth Plan - 300m Pool)">20–30 minutes</option>
-              <option value="8–15 min episodes (Starter/Growth Plan)">8–15 minutes</option>
-              <option value="30–45+ min episodes (Growth/Scale Plan)">30–45+ minutes</option>
+              <option value="20–30 minutes">20–30 minutes</option>
+              <option value="8–15 minutes">8–15 minutes</option>
+              <option value="30–45+ minutes">30–45+ minutes</option>
+              <option value="Mixed / Custom Lengths">Mixed / Custom lengths</option>
             </select>
           </div>
         </div>
@@ -542,8 +607,8 @@
           <input id="inp-contact" type="text" placeholder="you@channel.com or +1 ..." class="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-blue-600" />
         </div>
 
-        <button onclick="handleSampleSubmit()" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition cursor-pointer">
-          Get My Free 90-Second Sample →
+        <button onclick="handleSampleSubmit()" id="submit-btn" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg text-sm transition cursor-pointer">
+          Get My Free 90-Second Sample &amp; Quote →
         </button>
       </div>
 
@@ -604,27 +669,60 @@
       document.getElementById("out-per-min").textContent = `Just €${perMin} per localized minute`;
     }
 
-    function selectPlan(planName) {
-      const contactInput = document.getElementById("inp-contact");
-      if (contactInput) {
-        contactInput.placeholder = `Selected: ${planName} — Enter your Email or WhatsApp`;
+    function toggleCustomNotes() {
+      const planVal = document.getElementById("inp-plan").value;
+      const box = document.getElementById("custom-notes-box");
+      if (planVal.startsWith("CUSTOM OFFER:")) {
+        box.classList.remove("hidden");
+      } else {
+        box.classList.add("hidden");
       }
     }
 
+    function selectPlan(planName) {
+      const selectEl = document.getElementById("inp-plan");
+      if (planName.includes("Starter")) {
+        selectEl.selectedIndex = 1;
+      } else if (planName.includes("Growth")) {
+        selectEl.selectedIndex = 0;
+      } else if (planName.includes("Scale")) {
+        selectEl.selectedIndex = 2;
+      }
+      toggleCustomNotes();
+    }
+
+    function selectCustomOffer() {
+      const selectEl = document.getElementById("inp-plan");
+      selectEl.selectedIndex = 3;
+      toggleCustomNotes();
+      setTimeout(() => {
+        const notes = document.getElementById("inp-custom-notes");
+        if (notes) notes.focus();
+      }, 300);
+    }
+
     function handleSampleSubmit() {
+      const plan = document.getElementById("inp-plan").value;
+      const customNotes = document.getElementById("inp-custom-notes").value.trim();
       const url = document.getElementById("inp-url").value.trim() || "https://www.youtube.com/watch?v=EXAMPLE";
       const channel = document.getElementById("inp-channel").value.trim() || "My Channel";
       const length = document.getElementById("inp-length").value;
       const contact = document.getElementById("inp-contact").value.trim() || "Not provided";
 
-      const subject = encodeURIComponent(`Free 90-Second Dubbing Sample Request — ${channel}`);
-      const body = encodeURIComponent(
-        `Hi,\n\nI would like to request a free 90-second 10-language sample for my YouTube channel:\n\n` +
+      const subject = encodeURIComponent(`${plan} — ${channel}`);
+      let bodyText =
+        `Hi,\n\nI would like to request a free 90-second sample / quote for my YouTube channel:\n\n` +
+        `• Selected Offer: ${plan}\n` +
         `• Channel Name: ${channel}\n` +
         `• Video URL: ${url}\n` +
         `• Typical Video Length: ${length}\n` +
-        `• Contact: ${contact}\n`
-      );
+        `• Contact: ${contact}\n`;
+
+      if (customNotes) {
+        bodyText += `• Custom Offer Details: ${customNotes}\n`;
+      }
+
+      const body = encodeURIComponent(bodyText);
 
       document.getElementById("mailto-link").href = `mailto:studio@toonghuri.com?subject=${subject}&body=${body}`;
       document.getElementById("wa-link").href = `https://wa.me/?text=${body}`;
@@ -632,7 +730,7 @@
       fetch("submit-sample.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url, channel, length, contact })
+        body: JSON.stringify({ plan, customNotes, url, channel, length, contact })
       }).catch(() => {});
 
       document.getElementById("sample-result").classList.remove("hidden");
