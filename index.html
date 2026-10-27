@@ -9,6 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: #FAFAFA;
@@ -16,15 +19,16 @@
     }
   </style>
 </head>
-<body class="antialiased">
+<body id="top" class="antialiased">
 
   <!-- Simple Header -->
   <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <div class="font-bold text-lg tracking-tight text-gray-900">
+      <a href="#top" class="font-bold text-lg tracking-tight text-gray-900 hover:opacity-80 transition">
         GlobalDub <span class="text-blue-600">Studio</span>
-      </div>
+      </a>
       <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-gray-600">
+        <a href="#top" class="text-gray-900 font-semibold hover:text-blue-600">Home</a>
         <a href="#what-you-get" class="hover:text-gray-900">What We Implement</a>
         <a href="#how-minutes-work" class="hover:text-gray-900">60-Hour Math</a>
         <a href="#pricing" class="hover:text-gray-900">12-Lang Plans</a>
