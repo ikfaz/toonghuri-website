@@ -464,49 +464,201 @@
 
     </div>
 
-    <!-- Custom Offer Box (For Channels Wanting Custom Volume, Languages, Single Videos, or Rev-Share) -->
-    <div class="bg-white border-2 border-dashed border-gray-300 rounded-xl p-6 sm:p-8 shadow-sm">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-        <div class="lg:col-span-8 space-y-3">
-          <div class="inline-block px-2.5 py-0.5 bg-gray-100 text-gray-700 text-xs font-bold uppercase rounded">
-            Custom Channel Package
+    <!-- INSTANT INTERACTIVE CUSTOM PLAN BUILDER (Zero Emails Needed — Build & Price Instantly) -->
+    <div id="custom-builder" class="bg-white border-2 border-gray-900 rounded-2xl p-6 sm:p-8 shadow-md space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-200 pb-4">
+        <div>
+          <div class="inline-block px-2.5 py-0.5 bg-blue-50 text-blue-700 text-xs font-bold uppercase rounded mb-1">
+            Build Your Own Custom Offer — Instant Price
           </div>
-          <h3 class="text-xl font-bold text-gray-900">
-            Need a custom offer for your channel?
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900">
+            Configure your exact videos, languages &amp; features
           </h3>
-          <p class="text-sm text-gray-600">
-            If your channel doesn’t fit the standard monthly pools above, we build custom packages tailored to your exact upload schedule and budget:
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-gray-700">
-            <div class="p-2.5 bg-gray-50 border border-gray-200 rounded-lg">
-              <strong class="text-gray-900 block">1. Pay-Per-Video / Single Episode</strong>
-              Ideal if you upload 1–2 times a month or want to localize a single viral video first.
+        </div>
+        <div class="text-xs text-gray-500 font-medium">
+          Select your exact options below — price updates automatically
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Left Controls (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+
+          <!-- 1. Order Type Toggle -->
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase text-gray-700">1. Choose Order Type</label>
+            <div class="grid grid-cols-2 gap-3">
+              <button type="button" id="btn-type-monthly" onclick="setCustomOrderType('monthly')" class="py-2.5 px-4 rounded-lg border-2 border-blue-600 bg-blue-50 text-blue-700 font-semibold text-xs sm:text-sm cursor-pointer transition">
+                Monthly Plan (Save 15%)
+              </button>
+              <button type="button" id="btn-type-onetime" onclick="setCustomOrderType('onetime')" class="py-2.5 px-4 rounded-lg border border-gray-300 bg-white text-gray-700 font-semibold text-xs sm:text-sm cursor-pointer transition">
+                One-Time / Single Video Order
+              </button>
             </div>
-            <div class="p-2.5 bg-gray-50 border border-gray-200 rounded-lg">
-              <strong class="text-gray-900 block">2. Back-Catalog Bulk Bundle (50–200+ Videos)</strong>
-              Discounted bulk rate to dub and optimize your entire library of older videos.
+          </div>
+
+          <!-- 2. Video Count & Length Sliders -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-gray-50 p-4 rounded-xl border border-gray-200">
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs font-semibold text-gray-700">
+                <span id="cb-lbl-videos-title">Number of Videos:</span>
+                <span id="cb-val-videos" class="text-blue-600 font-bold">4 Videos</span>
+              </div>
+              <input id="cb-rng-videos" type="range" min="1" max="40" value="4" oninput="updateCustomBuilder()" class="w-full accent-blue-600 cursor-pointer" />
+              <div class="flex justify-between text-[11px] text-gray-400"><span>1 video</span><span>40 videos</span></div>
             </div>
-            <div class="p-2.5 bg-gray-50 border border-gray-200 rounded-lg">
-              <strong class="text-gray-900 block">3. Custom Languages or Audio-Only</strong>
-              Pick only specific languages (e.g., Top 5 instead of 11) or Dubbing + Subtitles only.
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs font-semibold text-gray-700">
+                <span>Minutes Per Video:</span>
+                <span id="cb-val-mins" class="text-blue-600 font-bold">20 Mins</span>
+              </div>
+              <input id="cb-rng-mins" type="range" min="5" max="60" step="5" value="20" oninput="updateCustomBuilder()" class="w-full accent-blue-600 cursor-pointer" />
+              <div class="flex justify-between text-[11px] text-gray-400"><span>5 mins</span><span>60 mins</span></div>
             </div>
-            <div class="p-2.5 bg-gray-50 border border-gray-200 rounded-lg">
-              <strong class="text-gray-900 block">4. Hybrid Revenue-Share (500k+ Subs)</strong>
-              Reduced monthly base fee + a percentage share of new international AdSense revenue.
+          </div>
+
+          <!-- 3. Pick Exact Languages (Checkboxes) -->
+          <div class="space-y-2.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <label class="text-xs font-bold uppercase text-gray-700">
+                3. Select Dubbing Languages (<span id="cb-lang-count" class="text-blue-600">10</span> selected)
+              </label>
+              <div class="flex gap-2 text-xs">
+                <button type="button" onclick="selectCustomLangs('all')" class="px-2.5 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded cursor-pointer">Select All 10</button>
+                <button type="button" onclick="selectCustomLangs('top5')" class="px-2.5 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded cursor-pointer">Top 5 Only</button>
+              </div>
             </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+              <label class="flex items-center gap-2 p-2 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <input type="checkbox" class="cb-lang accent-blue-600" value="English" checked onchange="updateCustomBuilder()" />
+                <span>🇺🇸 English</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <input type="checkbox" class="cb-lang accent-blue-600" value="Spanish" checked onchange="updateCustomBuilder()" />
+                <span>🇪🇸 Spanish</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <input type="checkbox" class="cb-lang accent-blue-600" value="Portuguese" checked onchange="updateCustomBuilder()" />
+                <span>🇧🇷 Portuguese</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <input type="checkbox" class="cb-lang accent-blue-600" value="Arabic" checked onchange="updateCustomBuilder()" />
+                <span>🇸🇦 Arabic</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <input type="checkbox" class="cb-lang accent-blue-600" value="Hindi" checked onchange="updateCustomBuilder()" />
+                <span>🇮🇳 Hindi</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <input type="checkbox" class="cb-lang accent-blue-600" value="French" checked onchange="updateCustomBuilder()" />
+                <span>🇫🇷 French</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <input type="checkbox" class="cb-lang accent-blue-600" value="German" checked onchange="updateCustomBuilder()" />
+                <span>🇩🇪 German</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <input type="checkbox" class="cb-lang accent-blue-600" value="Indonesian" checked onchange="updateCustomBuilder()" />
+                <span>🇮🇩 Indonesian</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <input type="checkbox" class="cb-lang accent-blue-600" value="Italian" checked onchange="updateCustomBuilder()" />
+                <span>🇮🇹 Italian</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <input type="checkbox" class="cb-lang accent-blue-600" value="Japanese" checked onchange="updateCustomBuilder()" />
+                <span>🇯🇵 Japanese</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 4. Select Deliverables / Add-Ons -->
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase text-gray-700">4. Choose Included Deliverables</label>
+            <div class="space-y-2 text-xs sm:text-sm">
+              <label class="flex items-center justify-between p-3 bg-gray-100 border border-gray-200 rounded-lg opacity-90">
+                <div class="flex items-center gap-2.5">
+                  <input type="checkbox" checked disabled class="accent-blue-600" />
+                  <span class="font-semibold text-gray-900">Multi-Character Dubbing + 100% Preserved Music &amp; SFX</span>
+                </div>
+                <span class="text-xs font-semibold text-gray-500">Always Included</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <div class="flex items-center gap-2.5">
+                  <input type="checkbox" id="cb-opt-seo" checked onchange="updateCustomBuilder()" class="accent-blue-600" />
+                  <span class="font-medium text-gray-800">Synced Subtitles (.SRT) + Translated Titles &amp; 0:00 Chapters</span>
+                </div>
+                <span class="text-xs font-semibold text-blue-600">+SEO &amp; CC</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <div class="flex items-center gap-2.5">
+                  <input type="checkbox" id="cb-opt-thumbs" checked onchange="updateCustomBuilder()" class="accent-blue-600" />
+                  <span class="font-medium text-gray-800">3 Text-Free A/B/C Test Thumbnails per video</span>
+                </div>
+                <span class="text-xs font-semibold text-blue-600">+3 Thumbs / video</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer hover:bg-blue-50/40">
+                <div class="flex items-center gap-2.5">
+                  <input type="checkbox" id="cb-opt-upload" checked onchange="updateCustomBuilder()" class="accent-blue-600" />
+                  <span class="font-medium text-gray-800">Done-For-You YouTube Studio Upload (Tracks, End Screens &amp; Cards)</span>
+                </div>
+                <span class="text-xs font-semibold text-blue-600">We Upload All Files</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Instant Live Quote Summary (5 cols) -->
+        <div class="lg:col-span-5 bg-gray-900 text-white rounded-xl p-6 space-y-5">
+          <div class="border-b border-gray-800 pb-4">
+            <div class="text-xs font-bold uppercase tracking-wider text-blue-400" id="cb-summary-badge">
+              Instant Custom Monthly Plan
+            </div>
+            <div class="mt-2 flex items-baseline gap-2">
+              <span id="cb-total-price" class="text-4xl sm:text-5xl font-extrabold">€320</span>
+              <span id="cb-billing-suffix" class="text-sm text-gray-400">/ month</span>
+            </div>
+            <div id="cb-per-min-rate" class="text-xs text-blue-300 font-medium mt-1">
+              €0.36 per localized minute
+            </div>
+          </div>
+
+          <!-- Breakdown List -->
+          <div class="space-y-2.5 text-xs text-gray-300">
+            <div class="flex justify-between py-1 border-b border-gray-800">
+              <span class="text-gray-400">Original Video Volume:</span>
+              <strong id="cb-out-volume" class="text-white">4 videos × 20m = 80 mins</strong>
+            </div>
+            <div class="flex justify-between py-1 border-b border-gray-800">
+              <span class="text-gray-400">Dubbed Audio Produced:</span>
+              <strong id="cb-out-dubs" class="text-white">800 mins (13.3 Hours)</strong>
+            </div>
+            <div class="flex justify-between py-1 border-b border-gray-800">
+              <span class="text-gray-400">Languages Included:</span>
+              <strong id="cb-out-langs" class="text-white">10 Languages</strong>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-gray-400">Delivery Method:</span>
+              <strong id="cb-out-delivery" class="text-green-400">Uploaded to YouTube Studio</strong>
+            </div>
+          </div>
+
+          <button type="button" onclick="lockInCustomPlan()" class="w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg text-sm transition cursor-pointer">
+            Select This Custom Offer &amp; Get Free Sample →
+          </button>
+
+          <div class="text-[11px] text-center text-gray-400">
+            You still get a Free 90-Second Sample first before paying a cent.
           </div>
         </div>
 
-        <div class="lg:col-span-4 bg-gray-50 border border-gray-200 rounded-xl p-5 text-center space-y-3">
-          <div class="text-xs font-bold uppercase text-gray-500">Tailored Quote in 24 Hours</div>
-          <div class="text-2xl font-extrabold text-gray-900">Custom Pricing</div>
-          <p class="text-xs text-gray-600">
-            Tell us your video length, monthly upload frequency, and which languages you want—plus get a free 90-second sample.
-          </p>
-          <a href="#free-sample" onclick="selectCustomOffer()" class="block w-full py-3 bg-gray-900 hover:bg-blue-600 text-white text-sm font-semibold rounded-lg transition">
-            Request Custom Offer →
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -669,10 +821,155 @@
       document.getElementById("out-per-min").textContent = `Just €${perMin} per localized minute`;
     }
 
+    let customOrderType = "monthly"; // 'monthly' or 'onetime'
+
+    function setCustomOrderType(type) {
+      customOrderType = type;
+      const btnMonthly = document.getElementById("btn-type-monthly");
+      const btnOnetime = document.getElementById("btn-type-onetime");
+      if (type === "monthly") {
+        btnMonthly.className = "py-2.5 px-4 rounded-lg border-2 border-blue-600 bg-blue-50 text-blue-700 font-semibold text-xs sm:text-sm cursor-pointer transition";
+        btnOnetime.className = "py-2.5 px-4 rounded-lg border border-gray-300 bg-white text-gray-700 font-semibold text-xs sm:text-sm cursor-pointer transition";
+        document.getElementById("cb-summary-badge").textContent = "Instant Custom Monthly Plan";
+        document.getElementById("cb-billing-suffix").textContent = "/ month";
+        document.getElementById("cb-lbl-videos-title").textContent = "Videos Per Month:";
+      } else {
+        btnOnetime.className = "py-2.5 px-4 rounded-lg border-2 border-blue-600 bg-blue-50 text-blue-700 font-semibold text-xs sm:text-sm cursor-pointer transition";
+        btnMonthly.className = "py-2.5 px-4 rounded-lg border border-gray-300 bg-white text-gray-700 font-semibold text-xs sm:text-sm cursor-pointer transition";
+        document.getElementById("cb-summary-badge").textContent = "Instant One-Time Order Price";
+        document.getElementById("cb-billing-suffix").textContent = "one-time";
+        document.getElementById("cb-lbl-videos-title").textContent = "Number of Videos:";
+      }
+      updateCustomBuilder();
+    }
+
+    function selectCustomLangs(mode) {
+      const boxes = document.querySelectorAll(".cb-lang");
+      const top5 = ["English", "Spanish", "Portuguese", "Arabic", "Hindi"];
+      boxes.forEach((b) => {
+        if (mode === "all") {
+          b.checked = true;
+        } else {
+          b.checked = top5.includes(b.value);
+        }
+      });
+      updateCustomBuilder();
+    }
+
+    function getCustomBuilderData() {
+      const videos = parseInt(document.getElementById("cb-rng-videos").value, 10);
+      const minsPerVideo = parseInt(document.getElementById("cb-rng-mins").value, 10);
+      const sourceMins = videos * minsPerVideo;
+
+      const selectedLangs = [];
+      document.querySelectorAll(".cb-lang:checked").forEach((b) => selectedLangs.push(b.value));
+      if (selectedLangs.length === 0) {
+        selectedLangs.push("English");
+        document.querySelector(".cb-lang").checked = true;
+      }
+
+      const langCount = selectedLangs.length;
+      const includeSeo = document.getElementById("cb-opt-seo").checked;
+      const includeThumbs = document.getElementById("cb-opt-thumbs").checked;
+      const includeUpload = document.getElementById("cb-opt-upload").checked;
+
+      // Pricing calculation:
+      // Base audio stem separation + character diarization: €1.10 / source min
+      // Per language dubbing: €0.20 / source min per language
+      // SEO (.SRT + translated titles/chapters): +€0.25 / source min
+      let ratePerSourceMin = 1.10 + (langCount * 0.20) + (includeSeo ? 0.25 : 0);
+
+      // Volume discount tiers
+      let volumeMultiplier = 1.0;
+      if (sourceMins > 600) {
+        volumeMultiplier = 0.72;
+      } else if (sourceMins > 300) {
+        volumeMultiplier = 0.78;
+      } else if (sourceMins > 150) {
+        volumeMultiplier = 0.88;
+      }
+
+      let rawPrice = sourceMins * ratePerSourceMin * volumeMultiplier;
+
+      // Per-video add-ons
+      if (includeThumbs) rawPrice += videos * 12;
+      if (includeUpload) rawPrice += videos * 8;
+
+      // One-time order vs Monthly 15% discount
+      if (customOrderType === "onetime") {
+        rawPrice = rawPrice * 1.15;
+      }
+
+      const totalPrice = Math.max(45, Math.round(rawPrice / 5) * 5);
+      const totalDubMins = sourceMins * langCount;
+      const perLocalizedMin = (totalPrice / Math.max(1, totalDubMins)).toFixed(2);
+
+      return {
+        orderType: customOrderType === "monthly" ? "Monthly Plan" : "One-Time Order",
+        videos,
+        minsPerVideo,
+        sourceMins,
+        langCount,
+        selectedLangs,
+        includeSeo,
+        includeThumbs,
+        includeUpload,
+        totalPrice,
+        totalDubMins,
+        perLocalizedMin
+      };
+    }
+
+    function updateCustomBuilder() {
+      const d = getCustomBuilderData();
+
+      document.getElementById("cb-val-videos").textContent = `${d.videos} ${d.videos === 1 ? "Video" : "Videos"}`;
+      document.getElementById("cb-val-mins").textContent = `${d.minsPerVideo} Mins`;
+      document.getElementById("cb-lang-count").textContent = d.langCount;
+
+      document.getElementById("cb-total-price").textContent = `€${d.totalPrice.toLocaleString()}`;
+      document.getElementById("cb-per-min-rate").textContent = `€${d.perLocalizedMin} per dubbed minute (${d.langCount} ${d.langCount === 1 ? "language" : "languages"})`;
+
+      document.getElementById("cb-out-volume").textContent = `${d.videos} × ${d.minsPerVideo}m = ${d.sourceMins.toLocaleString()} original mins`;
+      document.getElementById("cb-out-dubs").textContent = `${d.totalDubMins.toLocaleString()} mins (${(d.totalDubMins / 60).toFixed(1)} Hours)`;
+      document.getElementById("cb-out-langs").textContent = d.langCount === 10 ? "All 10 Languages" : `${d.langCount} (${d.selectedLangs.slice(0, 4).join(", ")}${d.langCount > 4 ? "..." : ""})`;
+      document.getElementById("cb-out-delivery").textContent = d.includeUpload ? "Uploaded to YouTube Studio" : "Delivered via Google Drive";
+    }
+
+    function lockInCustomPlan() {
+      const d = getCustomBuilderData();
+      const addons = [
+        "Multi-Character Dubbing + Music/SFX Kept",
+        d.includeSeo ? "SRT Subtitles + Translated Titles/Chapters" : "No SRT/Titles",
+        d.includeThumbs ? "3 A/B/C Test Thumbnails/video" : "No Thumbnails",
+        d.includeUpload ? "Uploaded to YouTube Studio" : "Google Drive Delivery"
+      ].join(" • ");
+
+      const summary = `Custom ${d.orderType}: €${d.totalPrice.toLocaleString()}${d.orderType === "Monthly Plan" ? "/mo" : ""} — ${d.videos} videos × ${d.minsPerVideo}m (${d.sourceMins} original mins) | ${d.langCount} Languages (${d.selectedLangs.join(", ")}) | ${addons}`;
+
+      const selectEl = document.getElementById("inp-plan");
+      // Create or update a dynamic option at the top of the dropdown with the exact locked-in custom price
+      let customOpt = document.getElementById("opt-locked-custom");
+      if (!customOpt) {
+        customOpt = document.createElement("option");
+        customOpt.id = "opt-locked-custom";
+        selectEl.insertBefore(customOpt, selectEl.firstChild);
+      }
+      customOpt.value = summary;
+      customOpt.textContent = `✓ Selected Custom Offer: €${d.totalPrice.toLocaleString()}${d.orderType === "Monthly Plan" ? "/mo" : " one-time"} (${d.videos} videos × ${d.minsPerVideo}m, ${d.langCount} langs)`;
+      selectEl.value = summary;
+
+      const box = document.getElementById("custom-notes-box");
+      box.classList.remove("hidden");
+      document.getElementById("inp-custom-notes").value = summary;
+
+      document.getElementById("free-sample").scrollIntoView({ behavior: "smooth" });
+    }
+
     function toggleCustomNotes() {
       const planVal = document.getElementById("inp-plan").value;
       const box = document.getElementById("custom-notes-box");
-      if (planVal.startsWith("CUSTOM OFFER:")) {
+      if (planVal.startsWith("CUSTOM") || planVal.startsWith("Custom")) {
         box.classList.remove("hidden");
       } else {
         box.classList.add("hidden");
@@ -681,24 +978,13 @@
 
     function selectPlan(planName) {
       const selectEl = document.getElementById("inp-plan");
-      if (planName.includes("Starter")) {
-        selectEl.selectedIndex = 1;
-      } else if (planName.includes("Growth")) {
-        selectEl.selectedIndex = 0;
-      } else if (planName.includes("Scale")) {
-        selectEl.selectedIndex = 2;
+      for (let i = 0; i < selectEl.options.length; i++) {
+        if (selectEl.options[i].value.includes(planName.split(" ")[0])) {
+          selectEl.selectedIndex = i;
+          break;
+        }
       }
       toggleCustomNotes();
-    }
-
-    function selectCustomOffer() {
-      const selectEl = document.getElementById("inp-plan");
-      selectEl.selectedIndex = 3;
-      toggleCustomNotes();
-      setTimeout(() => {
-        const notes = document.getElementById("inp-custom-notes");
-        if (notes) notes.focus();
-      }, 300);
     }
 
     function handleSampleSubmit() {
@@ -737,6 +1023,7 @@
     }
 
     updateCalculator();
+    updateCustomBuilder();
   </script>
 </body>
 </html>
