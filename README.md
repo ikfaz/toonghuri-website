@@ -1,31 +1,29 @@
 # ToonGhuri Studio
 
-A buildless, responsive homepage for YouTube dubbing and localization.
+A buildless, responsive website for automated YouTube dubbing and localization.
 
 ## Run locally
 
 Use a static server for visual review, for example `python -m http.server 8767`. On the existing PHP host, keep `index.html`, `assets/`, `submit-sample.php`, and `.htaccess` together.
 
-## Featured video
+## Featured example
 
-The homepage embeds the owner-selected YouTube video `JCj6V_AqaOQ` (Pip the Little Cloud). The player loads after a visitor presses play. Its native **Settings → Audio track** menu provides Arabic, Bangla (original), English (US), French, German, Hindi, Indonesian, Italian, Japanese, Portuguese, and Spanish. These tracks were verified in the watch-page and embedded-player menus.
+The whole page uses the owner-selected Pip the Little Cloud video, `JCj6V_AqaOQ`. Its native **Settings → Audio track** menu provides Arabic, Bangla (original), English (US), French, German, Hindi, Indonesian, Italian, Japanese, Portuguese, and Spanish. The available tracks were checked in the watch-page and embedded-player menus.
 
-Language chips list available tracks; they do not pretend to change the embedded player's audio. YouTube handles track choice, seeking, captions, and playback.
+The player loads after the visitor presses play. Language chips list the available tracks; YouTube handles actual audio selection and playback. Pip, the sunflower, and Pip’s friends are shown using the real video thumbnail. There are no waveform measurements or character images from another story.
 
-The supporting Patapukur stills and waveform data come from the owner's supplied local media. The localized title and Studio delivery panels are labeled examples.
+## Simple customer flow
+
+Watch the example, choose a free sample or project quote, then send a video link and target languages. The three offers are a free 90-second sample, a one-video quote, and an ongoing monthly quote. Fixed monthly rates and the previous estimator have been removed from the public page while production costs are being assessed.
+
+Production is handled by the owner’s agents, with owner monitoring when needed. The page does not promise manual language review, human voice actors, or native-speaker quality checks.
 
 ## Sample requests
 
-The production page posts JSON to the existing `submit-sample.php` endpoint. A request is shown as received only after the endpoint returns a successful JSON response with `ok: true`. If the endpoint is unavailable, the page prepares an email request for the visitor to send. It never silently reports a failed request as received.
+The production page posts JSON to the existing `submit-sample.php` endpoint. It reports receipt only after a successful JSON response with `ok: true`. If the endpoint is unavailable, it prepares an email for the visitor to send.
 
-The owner-private static review copy uses email delivery because PHP is not executed by static hosting. It does not include the PHP source or lead logs.
+The owner-private static review copy uses email delivery because static hosting does not execute PHP. It excludes PHP source and lead logs. Keep the production `.htaccess` file alongside the PHP endpoint to protect the existing lead log.
 
-## Pricing
+## Dependencies
 
-The Starter (€600), Growth (€1,000), and Scale (€1,750) monthly plans retain the existing prices and source-minute allowances. Custom pricing retains the original three language tiers, source-minute volume discounts, optional deliverables, minimum price, and 15% one-time multiplier. Run `node tests/pricing.test.cjs` to verify representative cases and tier boundaries.
-
-## Asset and deployment notes
-
-No build step or frontend package installation is needed. Fonts load from Google Fonts. The video loads from YouTube. Keep `.htaccess` alongside the PHP endpoint to protect its existing lead log.
-
-Generated full audio/video clips used during exploration are ignored by Git and excluded from the review copy. The final homepage uses the native YouTube player.
+No build step or frontend package installation is needed. Fonts load from Google Fonts. Video playback uses YouTube. Supporting images use the same featured Pip thumbnail.
