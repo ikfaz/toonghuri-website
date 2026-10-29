@@ -30,7 +30,7 @@
 
   // YouTube owns audio selection. Its native Settings > Audio track menu
   // exposes the eleven verified tracks without rebuilding their playback.
-  $("youtube-play").addEventListener(
+  $("youtube-play")?.addEventListener(
     "click",
     () => {
       const frame = document.createElement("iframe");
@@ -50,7 +50,7 @@
     },
     { once: true },
   );
-  $("more-languages").addEventListener("click", () => {
+  $("more-languages")?.addEventListener("click", () => {
     const open = $("more-languages").getAttribute("aria-expanded") !== "true";
     $("more-languages").setAttribute("aria-expanded", String(open));
     $("more-languages").textContent = open ? "Show less" : "+6 more";
@@ -67,13 +67,13 @@
     .forEach((link) =>
       link.addEventListener("click", () => setPlan(link.dataset.plan)),
     );
-  $("clear-plan").addEventListener("click", () => {
+  $("clear-plan")?.addEventListener("click", () => {
     $("sample-plan").value = "Free sample · Help me choose a plan";
     $("selected-plan").hidden = true;
   });
 
   const form = $("sample-form");
-  form.addEventListener("submit", async (event) => {
+  form?.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
     const url = new URL($("sample-url").value.trim());
@@ -139,7 +139,7 @@
       $("form-result").hidden = false;
     }
   });
-  $("sample-url").addEventListener("input", () =>
+  $("sample-url")?.addEventListener("input", () =>
     $("sample-url").setCustomValidity(""),
   );
   $("copyright-year").textContent = new Date().getFullYear();

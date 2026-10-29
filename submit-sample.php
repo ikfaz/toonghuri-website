@@ -22,7 +22,7 @@ $channel     = isset($data['channel']) ? trim(strip_tags($data['channel'])) : 'U
 $url         = isset($data['url']) ? trim(strip_tags($data['url'])) : '';
 $length      = isset($data['length']) ? trim(strip_tags($data['length'])) : '';
 $contact     = isset($data['contact']) ? trim(strip_tags($data['contact'])) : '';
-$plan        = isset($data['plan']) ? trim(strip_tags($data['plan'])) : 'Growth Plan (€1,000/mo)';
+$plan        = isset($data['plan']) ? trim(strip_tags($data['plan'])) : 'Free sample · Help me choose a plan';
 $customNotes = isset($data['customNotes']) ? trim(strip_tags($data['customNotes'])) : '';
 $date        = gmdate('Y-m-d H:i:s') . ' UTC';
 
