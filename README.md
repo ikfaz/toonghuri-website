@@ -14,7 +14,7 @@ The player loads after the visitor presses play. Language chips list the availab
 
 ## Simple customer flow
 
-Watch the example, choose a free sample or project quote, then send a video link and target languages. The three offers are a free 90-second sample, a one-video quote, and an ongoing monthly quote. Fixed monthly rates and the previous estimator have been removed from the public page while production costs are being assessed.
+Watch the example, choose a free sample or package, then send a video link and target languages. The three offers are a free 90-second sample in one language (once per new customer), a full release package from €99/video for up to 10 minutes and 3 additional languages, and custom quotes for larger projects or monthly schedules. Dubbing alone is €1.50 per original video minute per additional language, with a €29 minimum per order. Final totals are confirmed before production; the form is an enquiry, not a checkout.
 
 Production is handled by the owner’s agents, with owner monitoring when needed. The page does not promise manual language review, human voice actors, or native-speaker quality checks.
 
@@ -22,7 +22,7 @@ Production is handled by the owner’s agents, with owner monitoring when needed
 
 The homepage gives equal emphasis to localization (dubbing, music/effects and subtitles), packaging (translated titles, descriptions and chapter timestamps), and managed testing (three text-free thumbnail variants, title variants, test setup and results review). YouTube Studio publishing includes the agreed assets; end screens, info cards and pinned comments can be included in the package.
 
-The owner confirmed that agents both set up tests and review outcomes. Native YouTube testing is described as eligibility-dependent, with a linked FAQ covering restrictions and inconclusive results. Pricing remains quote-based: language volume and per-video packaging/testing are separate considerations. No numerical rate has been approved for publication.
+The owner confirmed that agents both set up tests and review outcomes, and approved the €99 starting package. Native YouTube testing is described as eligibility-dependent, with a linked FAQ covering restrictions and inconclusive results. The full package includes dubbing, subtitles, translated titles/descriptions, timestamps, three thumbnail variants, title variants, publishing, and eligible test setup and results review. Additional scope and monthly schedules remain quote-based; no fixed monthly fee or turnaround guarantee is published.
 
 ## Sample requests
 

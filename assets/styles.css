@@ -2470,6 +2470,37 @@ input[type="range"] {
   line-height: 1.8;
   margin: 0;
 }
+.launch-price {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  font-size: 58px;
+  line-height: 1.15;
+  letter-spacing: -2px;
+  margin: 9px 0 15px;
+}
+.launch-price > span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0;
+  font-weight: 500;
+  color: #5c6c87;
+}
+.package-scope {
+  font-weight: 650;
+  color: var(--ink);
+}
+.pricing-details {
+  border-top: 1px solid var(--line);
+  margin-top: 28px;
+  padding-top: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.pricing-details p { margin: 0 0 5px; }
+.pricing-details strong { color: var(--ink); }
+.price-card li a, .micro-copy a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
 .workflow-section {
   padding-block: 52px;
 }
