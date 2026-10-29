@@ -3,6 +3,8 @@
   const $ = (id) => document.getElementById(id);
   const menu = $("mobile-nav");
   const toggle = document.querySelector(".menu-toggle");
+  const setMenuIcon = (open) =>
+    toggle.querySelector("use")?.setAttribute("href", open ? "#i-close" : "#i-menu");
   toggle.addEventListener("click", () => {
     const open = toggle.getAttribute("aria-expanded") !== "true";
     toggle.setAttribute("aria-expanded", String(open));
@@ -11,12 +13,14 @@
       open ? "Close navigation" : "Open navigation",
     );
     menu.hidden = !open;
+    setMenuIcon(open);
   });
   menu.querySelectorAll("a").forEach((link) =>
     link.addEventListener("click", () => {
       menu.hidden = true;
       toggle.setAttribute("aria-expanded", "false");
       toggle.setAttribute("aria-label", "Open navigation");
+      setMenuIcon(false);
     }),
   );
   document.addEventListener("keydown", (event) => {
@@ -24,6 +28,7 @@
       menu.hidden = true;
       toggle.setAttribute("aria-expanded", "false");
       toggle.setAttribute("aria-label", "Open navigation");
+      setMenuIcon(false);
       toggle.focus();
     }
   });
@@ -142,5 +147,36 @@
   $("sample-url")?.addEventListener("input", () =>
     $("sample-url").setCustomValidity(""),
   );
+  // Links that point at a FAQ entry (e.g. "where eligible" -> #testing-faq)
+  // open that answer instead of landing on a collapsed question.
+  const openDetailsFor = (hash) => {
+    const target = hash.length > 1 && document.getElementById(hash.slice(1));
+    if (target instanceof HTMLDetailsElement) target.open = true;
+  };
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href^="#"]');
+    if (link) openDetailsFor(link.getAttribute("href"));
+  });
+  openDetailsFor(location.hash);
   $("copyright-year").textContent = new Date().getFullYear();
+
+  // Mobile sticky CTA: hide it while the hero actions or the sample form are
+  // on screen so it never covers the form it points to.
+  const mobileCta = $("mobile-cta");
+  if (mobileCta && "IntersectionObserver" in window) {
+    const watched = [
+      document.querySelector(".hero-actions"),
+      $("free-sample"),
+    ].filter(Boolean);
+    const visible = new Set();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) =>
+        entry.isIntersecting
+          ? visible.add(entry.target)
+          : visible.delete(entry.target),
+      );
+      mobileCta.classList.toggle("is-hidden", visible.size > 0);
+    });
+    watched.forEach((el) => observer.observe(el));
+  }
 })();

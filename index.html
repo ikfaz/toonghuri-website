@@ -3,633 +3,649 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>
-      ToonGhuri Studio — YouTube localization, thumbnails & A/B testing
-    </title>
+    <title>ToonGhuri Studio — Monthly YouTube localization for animation, kids &amp; documentary channels</title>
     <meta
       name="description"
-      content="YouTube dubbing, translated titles and descriptions, subtitles, chapter timestamps, thumbnails and managed A/B testing. Hear a real example and get a free sample."
+      content="A monthly YouTube localization partner: AI dubbing, subtitles, translated titles, descriptions and chapters, thumbnail variants, publishing and A/B tests where YouTube allows. Hear a real example and request a free 90-second sample."
     />
-    <meta name="theme-color" content="#f8f7f4" />
+    <meta name="theme-color" content="#0e1a33" />
+    <meta property="og:title" content="ToonGhuri Studio — Your content, without borders." />
     <meta
-      property="og:title"
-      content="ToonGhuri Studio — Your content, without borders."
+      property="og:description"
+      content="Every upload, released in more languages. Free 90-second sample · First video $39 · Up to 10 languages from $590/month."
     />
+    <meta property="og:image" content="https://toonghuri.com/assets/media/pip-poster.jpg" />
+    <link rel="canonical" href="https://toonghuri.com/" />
+    <meta property="og:url" content="https://toonghuri.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ToonGhuri Studio" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles.css" />
-
     <script src="assets/app.js" defer></script>
   </head>
-  <body>
+  <body class="home">
     <a href="#main" class="skip-link">Skip to content</a>
-    <svg
-      class="icon-library"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <symbol id="i-arrow" viewBox="0 0 24 24">
-        <path d="M5 12h14M13 6l6 6-6 6" />
-      </symbol>
-      <symbol id="i-diagonal" viewBox="0 0 24 24">
-        <path d="M6 18 18 6M6 6h12v12" />
-      </symbol>
-      <symbol id="i-check" viewBox="0 0 24 24">
-        <path d="m5 12 4 4L19 6" />
-      </symbol>
-      <symbol id="i-play" viewBox="0 0 24 24">
-        <path d="m8 5 11 7-11 7Z" />
-      </symbol>
-      <symbol id="i-pause" viewBox="0 0 24 24">
-        <path d="M8 5v14M16 5v14" />
-      </symbol>
-      <symbol id="i-volume" viewBox="0 0 24 24">
-        <path
-          d="m11 5-6 4H2v6h3l6 4ZM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"
-        />
-      </symbol>
-      <symbol id="i-muted" viewBox="0 0 24 24">
-        <path d="m11 5-6 4H2v6h3l6 4ZM16 9l6 6M22 9l-6 6" />
-      </symbol>
-      <symbol id="i-mic" viewBox="0 0 24 24">
-        <rect x="9" y="2" width="6" height="12" rx="3" />
-        <path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4M8 22h8" />
-      </symbol>
-      <symbol id="i-music" viewBox="0 0 24 24">
-        <path d="M9 18V5l12-3v13M9 9l12-3" />
-        <ellipse cx="6" cy="18" rx="3" ry="3" />
-        <ellipse cx="18" cy="15" rx="3" ry="3" />
-      </symbol>
-      <symbol id="i-upload" viewBox="0 0 24 24">
-        <path d="M12 16V3m-5 5 5-5 5 5M4 16v5h16v-5" />
-      </symbol>
-      <symbol id="i-globe" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="9" />
-        <ellipse cx="12" cy="12" rx="4" ry="9" />
-        <path d="M3 12h18" />
-      </symbol>
-      <symbol id="i-link" viewBox="0 0 24 24">
-        <path
-          d="m9 15 6-6m-7 9-1 1a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m0 8a4 4 0 0 0 6 0l5-5a4 4 0 0 0-6-6l-1 1"
-        />
-      </symbol>
-      <symbol id="i-captions" viewBox="0 0 24 24">
-        <rect x="2" y="4" width="20" height="16" rx="3" />
-        <path d="M5 10h5m4 0h5M5 15h3m4 0h7" />
-      </symbol>
-      <symbol id="i-mail" viewBox="0 0 24 24">
-        <rect x="3" y="5" width="18" height="14" rx="2" />
-        <path d="m3 6 9 7 9-7" />
-      </symbol>
-      <symbol id="i-chevron" viewBox="0 0 24 24">
-        <path d="m6 9 6 6 6-6" />
-      </symbol>
-      <symbol id="i-test" viewBox="0 0 24 24">
-        <path d="M8 3h8M10 3v6l-6 10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2L14 9V3M7 15h10" />
-      </symbol>
-      <symbol id="i-menu" viewBox="0 0 24 24">
-        <path d="M4 7h16M4 12h16M4 17h16" />
-      </symbol>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
+      <symbol id="i-diagonal" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></symbol>
+      <symbol id="i-minus" viewBox="0 0 24 24"><path d="M7 12h10" /></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z" /></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3" /><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4M8 22h8" /></symbol>
+      <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 16v5h16v-5" /></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><ellipse cx="12" cy="12" rx="4" ry="9" /><path d="M3 12h18" /></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" /></symbol>
+      <symbol id="i-captions" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3" /><path d="M5 10h5m4 0h5M5 15h3m4 0h7" /></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 6 9 7 9-7" /></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></symbol>
+      <symbol id="i-test" viewBox="0 0 24 24"><path d="M8 3h8M10 3v6l-6 10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2L14 9V3M7 15h10" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6Z" /><path d="m9 12 2 2 4-4" /></symbol>
+      <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4" /></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z" /><path d="M4 19V5M8 7h7" /></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="m15.5 8.5-2 5-5 2 2-5Z" /></symbol>
+      <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2Z" /><path d="M9 8h6M9 12h6" /></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M3 10h18M8 3v4M16 3v4" /></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6" /></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" /><path d="M10 10h4v4h-4zM9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" /></symbol>
     </svg>
+
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="ToonGhuri Studio home"
-          ><svg class="brand-mark" viewBox="0 0 40 48" aria-hidden="true">
+        <a class="brand" href="#top" aria-label="ToonGhuri Studio home">
+          <svg class="brand-mark" viewBox="0 0 40 48" aria-hidden="true">
             <path d="m20 2 17 15-17 17L3 17Z" fill="currentColor" />
-            <path
-              d="m20 2 0 32M3 17h34"
-              stroke="white"
-              stroke-width="1.3"
-              opacity=".75"
-            />
-            <path
-              d="M20 34c0 7 9 5 7 11"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-            /></svg
-          ><span>ToonGhuri<small>STUDIO</small></span></a
-        >
+            <path d="m20 2 0 32M3 17h34" stroke="white" stroke-width="1.3" opacity=".75" />
+            <path d="M20 34c0 7 9 5 7 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <span>ToonGhuri<small>STUDIO</small></span>
+        </a>
         <nav class="desktop-nav" aria-label="Main navigation">
-          <a href="#demo">Hear the difference</a
-          ><a href="#what-you-get">What you get</a
-          ><a href="#pricing">Pricing</a>
+          <a href="#demo">Demo</a>
+          <a href="#what-you-get">What you get</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
         </nav>
-        <a class="button button-small header-cta" href="#free-sample"
-          >Get a free sample<svg class="icon"><use href="#i-diagonal" /></svg
-        ></a>
-        <button
-          class="menu-toggle icon-button"
-          aria-label="Open navigation"
-          aria-expanded="false"
-          aria-controls="mobile-nav"
-        >
-          <svg class="icon"><use href="#i-menu" /></svg>
+        <a class="button button-small header-cta" href="#free-sample">Request a free sample<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+        <button class="menu-toggle icon-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu" /></svg>
         </button>
       </div>
-      <nav
-        class="mobile-nav"
-        id="mobile-nav"
-        aria-label="Mobile navigation"
-        hidden
-      >
-        <a href="#demo">Hear the difference</a
-        ><a href="#what-you-get">What you get</a><a href="#pricing">Pricing</a
-        ><a href="#free-sample">Get a free sample</a>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#demo">Demo</a>
+        <a href="#what-you-get">What you get</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#free-sample" class="mobile-nav-cta">Request a free sample</a>
       </nav>
     </header>
+
     <main id="main">
-      <section class="hero container" id="top" aria-labelledby="hero-heading">
-        <div class="hero-copy">
-          <p class="eyebrow">
-            <span class="status-dot"></span>YOUR CONTENT. WITHOUT BORDERS.
-          </p>
-          <h1 id="hero-heading">
-            Your video.<br />More languages.<br /><span>Fully handled.</span>
-          </h1>
-          <p class="hero-description">
-            Dubbing, titles, thumbnails and timestamps. We prepare your
-            video for new audiences, publish it, and manage A/B tests.
-          </p>
-          <a class="button hero-cta" href="#free-sample"
-            >Get a free sample<svg class="icon">
-              <use href="#i-diagonal" /></svg
-          ></a>
-          <p class="micro-copy">
-            Free 90-second sample · <a href="#pricing">First video €39 · Monthly plans from €590.</a>
-          </p>
-          <div class="hero-note">
-            <svg class="icon"><use href="#i-globe" /></svg
-            ><span
-              >Made for YouTube creators.<br /><strong
-                >From the first dub to the final test.</strong
-              ></span
-            >
-          </div>
-        </div>
-        <div class="demo-shell" id="demo">
-          <div class="demo-heading">
-            <span class="demo-kicker"
-              ><span class="live-dot"></span>ONE VIDEO. ELEVEN LANGUAGES.</span
-            ><span class="demo-kind">From the ToonGhuri channel</span>
-          </div>
-          <div class="youtube-stage" id="youtube-stage">
-            <img
-              src="assets/media/pip-poster.jpg"
-              alt="Pip the little cloud and a flower, from the featured ToonGhuri story"
-              width="1280"
-              height="720"
-              fetchpriority="high"
-            />
-            <button
-              class="stage-play"
-              id="youtube-play"
-              type="button"
-              aria-label="Play Pip the Little Cloud on YouTube"
-            >
-              <svg class="icon"><use href="#i-play" /></svg>
-            </button>
-            <div class="video-caption">
-              <span class="clip-category">FEATURED STORY · TOONGHURI</span
-              ><span>Pip the Little Cloud</span>
-            </div>
-          </div>
-          <div class="youtube-guide">
-            <span class="guide-heading">Hear it in your language</span>
-            <ol>
-              <li><span>1</span>Press play</li>
-              <li><span>2</span>Open <strong>⚙ Settings</strong></li>
-              <li><span>3</span>Choose <strong>Audio track</strong></li>
-            </ol>
-          </div>
-          <div class="language-area">
-            <div class="language-label">
-              <span>Already available on this video</span
-              ><svg class="icon"><use href="#i-globe" /></svg>
-            </div>
-            <div class="language-chips">
-              <span class="language-chip original-chip"
-                >বাংলা <small>Original</small></span
-              ><span class="language-chip">English</span
-              ><span class="language-chip">Español</span
-              ><span class="language-chip">日本語</span
-              ><span class="language-chip" lang="ar">العربية</span
-              ><button
-                class="language-chip more-languages"
-                type="button"
-                id="more-languages"
-                aria-expanded="false"
-                aria-controls="extra-languages"
-              >
-                +6 more
-              </button>
-            </div>
-            <div
-              id="extra-languages"
-              class="language-chips extra-languages"
-              hidden
-            >
-              <span class="language-chip">Français</span
-              ><span class="language-chip">Deutsch</span
-              ><span class="language-chip">हिन्दी</span
-              ><span class="language-chip">Indonesia</span
-              ><span class="language-chip">Italiano</span
-              ><span class="language-chip">Português</span>
-            </div>
-          </div>
-          <div class="demo-footnote">
-            <span>Same story. Same player. More possibilities.</span
-            ><a
-              href="https://www.youtube.com/watch?v=JCj6V_AqaOQ"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Watch on YouTube ↗</a
-            >
-          </div>
-        </div>
-      </section>
-      <div class="container value-strip" aria-label="Services at a glance">
-        <span><svg class="icon"><use href="#i-mic" /></svg>Dubbing &amp; subtitles</span>
-        <span><svg class="icon"><use href="#i-captions" /></svg>Titles &amp; timestamps</span>
-        <span><svg class="icon"><use href="#i-test" /></svg>Thumbnails &amp; A/B tests</span>
-        <span><svg class="icon"><use href="#i-upload" /></svg>YouTube publishing</span>
-      </div>
-      <section class="section container" id="what-you-get" aria-labelledby="features-heading">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">ONE VIDEO. THE WHOLE PACKAGE.</p>
-            <h2 id="features-heading">Localize. Package. Test.</h2>
-          </div>
-          <p>From how your video sounds to how it appears on YouTube. We handle the details.</p>
-        </div>
-        <div class="service-grid">
-          <article class="service-card service-localize">
-            <div class="feature-heading"><span class="feature-number">01 / LOCALIZE</span><svg class="icon"><use href="#i-globe" /></svg></div>
-            <h3>Sound like you.<br />In more languages.</h3>
-            <p>Distinct voices, your original music and effects, and synced subtitles.</p>
-            <div class="localize-visual">
-              <img src="assets/media/pip-poster.jpg" alt="Pip and friends in the featured multilingual story" loading="lazy" width="1280" height="720" />
-              <span class="subtitle-preview">Pip the Little Cloud <span>CC</span></span>
-            </div>
-            <div class="track-preview" aria-label="Example languages available in the featured video">
-              <span>বাংলা <small>Original</small></span><svg class="icon"><use href="#i-arrow" /></svg><span>English</span><span>Español</span>
-            </div>
-            <a class="text-button service-link" href="#demo">Hear Pip in 11 languages<svg class="icon"><use href="#i-arrow" /></svg></a>
-          </article>
-          <article class="service-card service-package">
-            <div class="feature-heading"><span class="feature-number">02 / PACKAGE</span><svg class="icon"><use href="#i-captions" /></svg></div>
-            <h3>Every title.<br />Every timestamp.</h3>
-            <p>Translated titles and descriptions, with chapter timestamps that guide viewers through your video.</p>
-            <div class="metadata-visual" aria-label="Illustrative titles and chapter layout for Pip">
-              <div class="metadata-title"><span>EN</span><strong>Pip the Little Cloud</strong></div>
-              <div class="metadata-title"><span>ES</span><strong lang="es">Pip, la pequeña nube</strong></div>
-              <div class="metadata-description">A little cloud. A flower in need. One brave choice.</div>
-              <div class="chapter-preview">
-                <span class="visual-label">CHAPTER LAYOUT EXAMPLE</span>
-                <div><time>00:00</time><span>Meet Pip</span></div>
-                <div><time>00:30</time><span>A flower needs help</span></div>
-                <div><time>02:30</time><span>A little courage</span></div>
-              </div>
-            </div>
-            <span class="service-detail">Titles + descriptions + chapter timestamps</span>
-          </article>
-          <article class="service-card service-test">
-            <div class="feature-heading"><span class="feature-number">03 / TEST</span><svg class="icon"><use href="#i-test" /></svg></div>
-            <h3>Three versions.<br />Let viewers decide.</h3>
-            <p>We create title and thumbnail variants, set up A/B tests, and review the results for you.</p>
-            <div class="test-visual" aria-label="Three illustrative thumbnail and title variants, not live test results">
-              <div class="variant-row"><span class="variant-letter">A</span><div class="variant-thumb variant-wide"><img src="assets/media/pip-poster.jpg" alt="Wide scene with Pip and friends" loading="lazy" /></div><span>Pip’s first brave rain</span></div>
-              <div class="variant-row"><span class="variant-letter">B</span><div class="variant-thumb variant-pip"><img src="assets/media/pip-poster.jpg" alt="Close crop of Pip the cloud" loading="lazy" /></div><span>The cloud afraid of rain</span></div>
-              <div class="variant-row"><span class="variant-letter">C</span><div class="variant-thumb variant-flower"><img src="assets/media/pip-poster.jpg" alt="Close crop of the sunflower in Pip’s story" loading="lazy" /></div><span>One flower changed everything</span></div>
-            </div>
-            <span class="service-detail">3 text-free thumbnails · Test setup · Results review</span>
-          </article>
-        </div>
-        <div class="publishing-strip">
-          <svg class="icon"><use href="#i-upload" /></svg>
-          <div><h3>All brought together in your YouTube Studio.</h3><p>Audio, subtitles, titles, descriptions and chapters uploaded for you. End screens, info cards and pinned comments can be included in your package.</p></div>
-          <a href="#free-sample" class="text-button" data-plan="Full video package · Dubbing, titles, descriptions, timestamps, thumbnails, A/B testing and publishing">Get my full-package quote<svg class="icon"><use href="#i-arrow" /></svg></a>
-        </div>
-        <p class="service-note">Pip shows our dubbing in action. Titles, chapter times and thumbnail crops above illustrate the package; they are not test results. A/B testing is available for <a href="#testing-faq">eligible videos</a>.</p>
-      </section>
-      <section
-        class="workflow-section"
-        id="how-it-works"
-        aria-labelledby="workflow-heading"
-      >
-        <div class="container">
-          <div class="workflow-intro">
-            <p class="eyebrow">HOW IT WORKS</p>
-            <h2 id="workflow-heading">Three simple steps.</h2>
-          </div>
-          <div class="workflow-steps">
-            <article>
-              <div class="step-line">
-                <span>01</span><svg class="icon"><use href="#i-link" /></svg>
-              </div>
-              <h3>Send a link.</h3>
-              <p>Choose your video, languages and package.</p>
-            </article>
-            <article>
-              <div class="step-line">
-                <span>02</span><svg class="icon"><use href="#i-play" /></svg>
-              </div>
-              <h3>Hear your sample.</h3>
-              <p>Review a free 90-second dub.</p>
-            </article>
-            <article>
-              <div class="step-line">
-                <span>03</span><svg class="icon"><use href="#i-upload" /></svg>
-              </div>
-              <h3>We take it from here.</h3>
-              <p>We localize, package and publish. Then we run the agreed tests and review the results.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section
-        class="section container pricing-section"
-        id="pricing"
-        aria-labelledby="pricing-heading"
-      >
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">ONE PARTNER. EVERY UPLOAD.</p>
-            <h2 id="pricing-heading">
-              Try one video.<br /><span class="text-soft"
-                >Then go global every month.</span
-              >
-            </h2>
-          </div>
-          <p>
-            Start with a free sample and one paid video. When you’re happy, we
-            localize, package and publish every upload on a simple monthly plan.
-          </p>
-        </div>
-        <div class="pricing-grid">
-          <article class="price-card">
-            <p class="plan-name">TRY IT FIRST</p>
-            <h3 class="simple-plan-title">€39 first video.</h3>
-            <p class="simple-plan-description">
-              Free 90-second sample, then one full video at a one-time price.
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="top" aria-labelledby="hero-heading">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow-on-dark"><span class="status-dot" aria-hidden="true"></span>YouTube localization agency · Monthly plans</p>
+            <h1 id="hero-heading">Every upload, in more languages. <span class="accent">Fully handled.</span></h1>
+            <p class="hero-description">
+              A monthly localization partner for <strong>animation studios, kids &amp; education and documentary channels</strong>.
+              AI dubbing, subtitles, translated titles, descriptions and chapters, thumbnail variants, YouTube Studio publishing
+              and A/B tests where YouTube allows. One team, every upload.
             </p>
-            <ul>
-              <li>Up to 10 minutes · 3 additional languages</li>
-              <li>The complete package, exactly as on a monthly plan</li>
-              <li>One trial video for each new channel</li>
-              <li>No monthly commitment</li>
+            <div class="hero-actions">
+              <a class="button button-accent button-large" href="#free-sample">Request a free sample<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <a class="button button-ghost-dark button-large" href="#pricing">See plans &amp; pricing</a>
+            </div>
+            <p class="micro-copy">Free 90-second sample · First video $39 · Up to 10 languages from $590/month</p>
+            <ul class="hero-trust" aria-label="Our commitments">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg>No passwords. You add us via YouTube Studio permissions.</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-calendar" /></svg>Monthly plans: cancel any month.</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>We promise the work, not the views.</li>
             </ul>
-            <a
-              href="#free-sample"
-              class="button button-secondary"
-              data-plan="Try it first · Free sample, then first video €39 (up to 10 minutes, 3 additional languages)"
-              >Get a free sample<svg class="icon"><use href="#i-arrow" /></svg
-            ></a>
-          </article>
-          <article class="price-card price-card-featured">
-            <span class="plan-badge">MONTHLY · MOST POPULAR</span>
-            <p class="plan-name">CHANNEL PLAN</p>
-            <h3 class="launch-price">€590 <span>/month</span></h3>
-            <p class="simple-plan-description package-scope">
-              4 videos a month · up to 10 minutes each · 3 additional languages
-            </p>
-            <ul>
-              <li>Dubbing + subtitles with consistent voices</li>
-              <li>Titles, descriptions + chapter timestamps</li>
-              <li>3 thumbnail variants + title variants per video</li>
-              <li>YouTube Studio publishing</li>
-              <li>A/B test setup + results review <a href="#testing-faq">where eligible</a></li>
-              <li>Monthly per-language results report</li>
-            </ul>
-            <a
-              href="#free-sample"
-              class="button"
-              data-plan="Channel plan · €590/month · 4 videos up to 10 minutes, 3 additional languages, full package and monthly report"
-              >Start with my free sample<svg class="icon"><use href="#i-arrow" /></svg
-            ></a>
-          </article>
-          <article class="price-card">
-            <p class="plan-name">GROWTH PLAN</p>
-            <h3 class="simple-plan-title">€990/month.</h3>
-            <p class="simple-plan-description">
-              8 videos a month in 3 additional languages. Larger libraries and more languages get a custom quote.
-            </p>
-            <ul>
-              <li>Everything in the Channel plan</li>
-              <li>Back-catalog videos can count toward your 8</li>
-              <li>Priority scheduling for your uploads</li>
-              <li>Monthly review of what’s working</li>
-            </ul>
-            <a
-              href="#free-sample"
-              class="button button-secondary"
-              data-plan="Growth plan · €990/month · 8 videos, 3 additional languages · or custom quote for more videos/languages"
-              >Talk about Growth<svg class="icon">
-                <use href="#i-arrow" /></svg
-            ></a>
-          </article>
-        </div>
-        <div class="pricing-details">
-          <p><strong>Monthly plans:</strong> cancel any month. Extra languages and longer videos are quoted before production starts.</p>
-          <p>We promise the work, not the views. Every item in your plan is delivered; how viewers respond is up to them.</p>
-        </div>
-      </section>
-      <section
-        class="sample-section"
-        id="free-sample"
-        aria-labelledby="sample-heading"
-      >
-        <div class="container sample-grid">
-          <div class="sample-copy">
-            <p class="eyebrow">YOUR VIDEO. YOUR NEXT LANGUAGE.</p>
-            <h2 id="sample-heading">
-              Try it with<br /><span>your own video.</span>
-            </h2>
-            <p>
-              Send a link. Choose your languages. Hear a free 90-second sample.
-            </p>
-            <div class="sample-mini-scene">
+          </div>
+
+          <section class="demo-shell" id="demo" aria-labelledby="demo-heading">
+            <div class="demo-heading">
+              <h2 class="demo-kicker" id="demo-heading"><span class="live-dot" aria-hidden="true"></span>Real demo · One video, eleven languages</h2>
+              <span class="demo-kind">From the ToonGhuri channel</span>
+            </div>
+            <div class="youtube-stage" id="youtube-stage">
               <img
                 src="assets/media/pip-poster.jpg"
-                alt="Pip and friends from the featured ToonGhuri story"
-                loading="lazy"
-              /><span
-                ><svg class="icon"><use href="#i-play" /></svg>Your story could
-                travel like Pip’s.</span
-              >
+                alt="Pip the little cloud and a flower, from the featured ToonGhuri story"
+                width="1280"
+                height="720"
+                fetchpriority="high"
+              />
+              <button class="stage-play" id="youtube-play" type="button" aria-label="Play Pip the Little Cloud on YouTube">
+                <svg class="icon" aria-hidden="true"><use href="#i-play" /></svg>
+              </button>
+              <div class="video-caption">
+                <span class="clip-category">Featured story · ToonGhuri</span>
+                <span>Pip the Little Cloud</span>
+              </div>
             </div>
-            <a class="sample-contact" href="mailto:studio@toonghuri.com"
-              >studio@toonghuri.com<svg class="icon">
-                <use href="#i-diagonal" /></svg
-            ></a>
+            <div class="youtube-guide">
+              <span class="guide-heading">Hear it in your language</span>
+              <ol>
+                <li><span aria-hidden="true">1</span>Press play</li>
+                <li><span aria-hidden="true">2</span>Open <strong>⚙ Settings</strong></li>
+                <li><span aria-hidden="true">3</span>Choose <strong>Audio track</strong></li>
+              </ol>
+            </div>
+            <div class="language-area">
+              <p class="language-label">Already available on this video</p>
+              <div class="language-chips">
+                <span class="language-chip original-chip" lang="bn">বাংলা <small lang="en">Original</small></span>
+                <span class="language-chip">English</span>
+                <span class="language-chip" lang="es">Español</span>
+                <span class="language-chip" lang="ja">日本語</span>
+                <span class="language-chip" lang="ar">العربية</span>
+                <button class="language-chip more-languages" type="button" id="more-languages" aria-expanded="false" aria-controls="extra-languages">+6 more</button>
+              </div>
+              <div id="extra-languages" class="language-chips extra-languages" hidden>
+                <span class="language-chip" lang="fr">Français</span>
+                <span class="language-chip" lang="de">Deutsch</span>
+                <span class="language-chip" lang="hi">हिन्दी</span>
+                <span class="language-chip" lang="id">Indonesia</span>
+                <span class="language-chip" lang="it">Italiano</span>
+                <span class="language-chip" lang="pt">Português</span>
+              </div>
+            </div>
+            <div class="demo-footnote">
+              <span>Same story. Same player. More possibilities.</span>
+              <a href="https://www.youtube.com/watch?v=JCj6V_AqaOQ" target="_blank" rel="noopener noreferrer">Watch on YouTube<span class="visually-hidden"> (opens in a new tab)</span> ↗</a>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- ============ WHO IT'S FOR ============ -->
+      <section class="section audience-section" id="who-its-for" aria-labelledby="audience-heading">
+        <div class="container">
+          <div class="section-heading section-heading-center">
+            <p class="eyebrow">Built for channels with a library</p>
+            <h2 id="audience-heading">For teams that publish every month, not once.</h2>
+            <p>We work best as an ongoing partner for channels that release regularly and want every upload to reach viewers in their own language, without adding hours to their week.</p>
           </div>
-          <form
-            class="sample-form"
-            id="sample-form"
-            data-delivery="php"
-            action="submit-sample.php"
-            method="post"
-          >
+          <div class="audience-grid">
+            <article class="audience-card">
+              <span class="audience-icon"><svg class="icon" aria-hidden="true"><use href="#i-film" /></svg></span>
+              <h3>Animation studios</h3>
+              <p>Distinct voices kept consistent from episode to episode, with your original music and effects, synced subtitles and a matching title, description and chapters in every language.</p>
+            </article>
+            <article class="audience-card">
+              <span class="audience-icon"><svg class="icon" aria-hidden="true"><use href="#i-book" /></svg></span>
+              <h3>Kids &amp; education</h3>
+              <p>Dubbed audio, subtitles and translated titles, descriptions and chapters. Made for Kids videos can’t use YouTube’s A/B tests; we tell you upfront, and the rest of the package still applies.</p>
+            </article>
+            <article class="audience-card">
+              <span class="audience-icon"><svg class="icon" aria-hidden="true"><use href="#i-compass" /></svg></span>
+              <h3>Documentary &amp; explainer</h3>
+              <p>Chapter timestamps in every language help viewers navigate. Videos up to 60 minutes fit your monthly minutes, and on the Growth plan back-catalog videos can count toward your 12 uploads.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WHAT YOU GET ============ -->
+      <section class="section services-section" id="what-you-get" aria-labelledby="features-heading">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">One video. The whole package.</p>
+              <h2 id="features-heading">Localize. Package. Test.</h2>
+            </div>
+            <p>From how your video sounds to how it appears on YouTube. We handle the details, then publish everything in your YouTube Studio.</p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card">
+              <div class="feature-heading"><span class="feature-number">01 · Localize</span><svg class="icon" aria-hidden="true"><use href="#i-mic" /></svg></div>
+              <h3>Sound like you. In more languages.</h3>
+              <p>Distinct voices, your original music and effects, and synced closed captions (.srt) in your original language and every new one.</p>
+              <div class="localize-visual">
+                <img src="assets/media/pip-poster.jpg" alt="Pip and friends in the featured multilingual story" loading="lazy" decoding="async" width="1280" height="720" />
+                <span class="subtitle-preview">Pip the Little Cloud <span>CC</span></span>
+              </div>
+              <div class="track-preview" aria-label="Example languages available in the featured video">
+                <span lang="bn">বাংলা <small lang="en">Original</small></span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg><span>English</span><span lang="es">Español</span>
+              </div>
+              <a class="text-button service-link" href="#demo">Hear Pip in 11 languages<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </article>
+            <article class="service-card">
+              <div class="feature-heading"><span class="feature-number">02 · Package</span><svg class="icon" aria-hidden="true"><use href="#i-captions" /></svg></div>
+              <h3>Every title. Every timestamp.</h3>
+              <p>Translated titles and descriptions, with chapter timestamps that guide viewers through your video.</p>
+              <div class="metadata-visual" aria-label="Illustrative titles and chapter layout for Pip">
+                <div class="metadata-title"><span>EN</span><strong>Pip the Little Cloud</strong></div>
+                <div class="metadata-title"><span>ES</span><strong lang="es">Pip, la pequeña nube</strong></div>
+                <div class="metadata-description">A little cloud. A flower in need. One brave choice.</div>
+                <div class="chapter-preview">
+                  <span class="visual-label">Chapter layout example</span>
+                  <div><time>00:00</time><span>Meet Pip</span></div>
+                  <div><time>00:30</time><span>A flower needs help</span></div>
+                  <div><time>02:30</time><span>A little courage</span></div>
+                </div>
+              </div>
+              <span class="service-detail">Titles + descriptions + chapter timestamps</span>
+            </article>
+            <article class="service-card">
+              <div class="feature-heading"><span class="feature-number">03 · Test</span><svg class="icon" aria-hidden="true"><use href="#i-test" /></svg></div>
+              <h3>Three versions. Let viewers decide.</h3>
+              <p>We create title and thumbnail variants, set up A/B tests, and review the results for you.</p>
+              <div class="test-visual" aria-label="Three illustrative thumbnail and title variants, not live test results">
+                <div class="variant-row"><span class="variant-letter">A</span><div class="variant-thumb variant-wide"><img src="assets/media/pip-poster.jpg" alt="Wide scene with Pip and friends" loading="lazy" decoding="async" width="1280" height="720" /></div><span>Pip’s first brave rain</span></div>
+                <div class="variant-row"><span class="variant-letter">B</span><div class="variant-thumb variant-pip"><img src="assets/media/pip-poster.jpg" alt="Close crop of Pip the cloud" loading="lazy" decoding="async" width="1280" height="720" /></div><span>The cloud afraid of rain</span></div>
+                <div class="variant-row"><span class="variant-letter">C</span><div class="variant-thumb variant-flower"><img src="assets/media/pip-poster.jpg" alt="Close crop of the sunflower in Pip’s story" loading="lazy" decoding="async" width="1280" height="720" /></div><span>One flower changed everything</span></div>
+              </div>
+              <span class="service-detail">3 text-free thumbnails · Test setup · Results review</span>
+            </article>
+          </div>
+          <div class="publishing-strip">
+            <span class="publishing-icon"><svg class="icon" aria-hidden="true"><use href="#i-upload" /></svg></span>
+            <div>
+              <h3>All brought together in your YouTube Studio.</h3>
+              <p>Audio tracks, .srt closed captions, titles, descriptions and chapters uploaded for you. End screens, info cards and pinned comments can be included in your package.</p>
+            </div>
+            <a href="#free-sample" class="button button-secondary" data-plan="Full video package · Dubbing, titles, descriptions, timestamps, thumbnails, A/B testing and publishing">Get my full-package quote<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+          </div>
+          <p class="service-note">Pip shows our dubbing in action. Titles, chapter times and thumbnail crops above illustrate the package; they are not test results. A/B testing is available for <a href="#testing-faq">eligible videos</a>.</p>
+        </div>
+      </section>
+
+      <!-- ============ HOW IT WORKS ============ -->
+      <section class="section workflow-section" id="how-it-works" aria-labelledby="workflow-heading">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">How it works</p>
+              <h2 id="workflow-heading">From free sample to monthly partner.</h2>
+            </div>
+            <p>Low risk at every step. You hear your own video before you pay anything, and try one full video before any monthly plan.</p>
+          </div>
+          <ol class="workflow-steps">
+            <li>
+              <span class="step-number">01</span>
+              <h3>Request a free sample</h3>
+              <p>Send a video link and the language you’d like to hear. Hear a free 90-second dub of your own video. One free sample per new customer.</p>
+            </li>
+            <li>
+              <span class="step-number">02</span>
+              <h3>Try one full video for $39</h3>
+              <p>Up to 20 minutes in 5 languages, the complete package exactly as on a monthly plan. No monthly commitment.</p>
+            </li>
+            <li>
+              <span class="step-number">03</span>
+              <h3>Add our team in YouTube Studio</h3>
+              <p>You invite us through YouTube Studio’s channel permissions. You never share your password, and you can remove access at any time.</p>
+            </li>
+            <li>
+              <span class="step-number">04</span>
+              <h3>Go global every month</h3>
+              <p>We localize, package and publish your uploads, run the agreed tests where eligible and send a monthly per-language results report.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ PRICING ============ -->
+      <section class="section pricing-section" id="pricing" aria-labelledby="pricing-heading">
+        <div class="container">
+          <div class="section-heading section-heading-center">
+            <p class="eyebrow">One partner. Every upload.</p>
+            <h2 id="pricing-heading">Try one video. Then go global every month.</h2>
+            <p>Start with a free sample and one paid video. When you’re happy, we localize, package and publish every upload on a simple monthly plan.</p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card price-card-featured" aria-labelledby="plan-channel">
+              <span class="plan-badge">Recommended</span>
+              <h3 class="plan-name" id="plan-channel">Channel plan</h3>
+              <p class="plan-price"><span class="amount">$590</span><span class="per">/month</span></p>
+              <p class="plan-scope">2 uploads a week (8 a month) · 240 video minutes · up to 10 languages, you choose</p>
+              <ul class="check-list">
+                <li>Up to 2,400 dubbed minutes a month (240 min × 10 languages)</li>
+                <li>Dubbing + subtitles with consistent voices</li>
+                <li>.srt closed captions in every language, files included</li>
+                <li>Titles, descriptions + chapter timestamps</li>
+                <li>3 thumbnail variants + title variants per video</li>
+                <li>YouTube Studio publishing</li>
+                <li>A/B test setup + results review <a href="#testing-faq">where eligible</a></li>
+                <li>Monthly per-language results report</li>
+              </ul>
+              <a
+                href="#free-sample"
+                class="button button-accent button-block"
+                data-plan="Channel plan · $590/month · 8 uploads, 240 video minutes, up to 10 languages, full package and monthly report"
+                >Start with my free sample<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <p class="plan-footnote">Cancel any month.</p>
+            </article>
+
+            <article class="price-card" aria-labelledby="plan-growth">
+              <h3 class="plan-name" id="plan-growth">Growth plan</h3>
+              <p class="plan-price"><span class="amount">$990</span><span class="per">/month</span></p>
+              <p class="plan-scope">3 uploads a week (12 a month) · 360 video minutes · up to 12 languages, you choose</p>
+              <ul class="check-list">
+                <li>Everything in the Channel plan</li>
+                <li>Up to 4,320 dubbed minutes a month (360 min × 12 languages)</li>
+                <li>Back-catalog videos can count toward your 12</li>
+                <li>Priority scheduling for your uploads</li>
+                <li>Monthly review of what’s working</li>
+              </ul>
+              <a
+                href="#free-sample"
+                class="button button-secondary button-block"
+                data-plan="Growth plan · $990/month · 12 uploads, 360 video minutes, up to 12 languages"
+                >Talk about Growth<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <p class="plan-footnote">Cancel any month.</p>
+            </article>
+
+            <article class="price-card price-card-trial" aria-labelledby="plan-trial">
+              <span class="plan-step">Start here</span>
+              <h3 class="plan-name" id="plan-trial">Try it first</h3>
+              <p class="plan-price"><span class="amount">$39</span><span class="per">first video</span></p>
+              <p class="plan-scope">Free 90-second sample, then one full video at a one-time price.</p>
+              <ul class="check-list">
+                <li>Up to 20 minutes · 5 languages (100 dubbed minutes)</li>
+                <li>The complete package, exactly as on a monthly plan</li>
+                <li>One trial video per new customer</li>
+                <li>No monthly commitment</li>
+              </ul>
+              <a
+                href="#free-sample"
+                class="button button-secondary button-block"
+                data-plan="Try it first · Free sample, then first video $39 (up to 20 minutes, 5 languages)"
+                >Get a free sample<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <p class="plan-footnote">One free sample per new customer.</p>
+            </article>
+          </div>
+
+          <div class="pricing-details">
+            <p><strong>Monthly plans:</strong> cancel any month. Video minutes are a monthly pool, so one long video and a few short ones both fit; any single video can be up to 60 minutes. Captions in your original language are always included.</p>
+            <p>We promise the work, not the views. Every item in your plan is delivered; how viewers respond is up to them.</p>
+            <p>
+              <strong>Studio:</strong> up to 15 languages, videos over 60 minutes or larger libraries get a custom quote.
+              <a href="#free-sample" class="inline-link" data-plan="Studio · Custom quote for up to 15 languages, longer videos or larger libraries">Ask for a custom quote</a>
+            </p>
+          </div>
+
+          <!-- What's included comparison -->
+          <div class="compare" id="compare">
+            <h3 class="compare-heading">What’s included, side by side</h3>
+            <div class="table-scroll" role="region" aria-labelledby="compare-caption" tabindex="0">
+              <table class="compare-table">
+                <caption id="compare-caption" class="visually-hidden">Comparison of the $39 trial video, the Channel plan and the Growth plan</caption>
+                <thead>
+                  <tr>
+                    <th scope="col"><span class="visually-hidden">Feature</span></th>
+                    <th scope="col">Trial video<span>$39 once</span></th>
+                    <th scope="col" class="is-featured">Channel<span>$590/month</span></th>
+                    <th scope="col">Growth<span>$990/month</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Uploads</th><td>1 video</td><td class="is-featured">8 a month (2 a week)</td><td>12 a month (3 a week)</td></tr>
+                  <tr><th scope="row">Video minutes</th><td>Up to 20</td><td class="is-featured">240 a month</td><td>360 a month</td></tr>
+                  <tr><th scope="row">Longest single video</th><td>20 min</td><td class="is-featured">60 min</td><td>60 min</td></tr>
+                  <tr><th scope="row">Languages (you choose)</th><td>5</td><td class="is-featured">Up to 10</td><td>Up to 12</td></tr>
+                  <tr><th scope="row">Dubbed minutes</th><td>100</td><td class="is-featured">Up to 2,400</td><td>Up to 4,320</td></tr>
+                  <tr><th scope="row">Dubbing + synced subtitles</th><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td class="is-featured"><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td></tr>
+                  <tr><th scope="row">.srt caption files (original + every new language)</th><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td class="is-featured"><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td></tr>
+                  <tr><th scope="row">Translated titles, descriptions + chapters</th><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td class="is-featured"><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td></tr>
+                  <tr><th scope="row">3 thumbnail variants + title variants</th><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td class="is-featured"><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td></tr>
+                  <tr><th scope="row">YouTube Studio publishing</th><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td class="is-featured"><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td></tr>
+                  <tr><th scope="row">A/B test setup + results review <a href="#testing-faq">(where eligible)</a></th><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td class="is-featured"><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td></tr>
+                  <tr><th scope="row">Monthly per-language results report</th><td><svg class="icon no" role="img" aria-label="Monthly plans only"><use href="#i-minus" /></svg></td><td class="is-featured"><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td></tr>
+                  <tr><th scope="row">Back-catalog videos can count</th><td><svg class="icon no" role="img" aria-label="Not included"><use href="#i-minus" /></svg></td><td class="is-featured"><svg class="icon no" role="img" aria-label="Not included"><use href="#i-minus" /></svg></td><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td></tr>
+                  <tr><th scope="row">Priority scheduling + monthly review of what’s working</th><td><svg class="icon no" role="img" aria-label="Not included"><use href="#i-minus" /></svg></td><td class="is-featured"><svg class="icon no" role="img" aria-label="Not included"><use href="#i-minus" /></svg></td><td><svg class="icon yes" role="img" aria-label="Included"><use href="#i-check" /></svg></td></tr>
+                  <tr><th scope="row">Commitment</th><td>None</td><td class="is-featured">Cancel any month</td><td>Cancel any month</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TRUST / TRANSPARENCY ============ -->
+      <section class="section trust-section" id="trust" aria-labelledby="trust-heading">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Honest by design</p>
+              <h2 id="trust-heading">Clear promises. No surprises.</h2>
+            </div>
+            <p>What you can count on, and what we will never claim.</p>
+          </div>
+          <div class="trust-grid">
+            <article class="trust-card">
+              <svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>
+              <h3>We promise the work, not the views.</h3>
+              <p>Every item in your plan is delivered; how viewers respond is up to them. We show you what happened, including tests with no clear winner.</p>
+            </article>
+            <article class="trust-card">
+              <svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg>
+              <h3>No passwords, ever.</h3>
+              <p>You invite our team through YouTube Studio’s channel permissions. You never share your password, and you can remove access at any time.</p>
+            </article>
+            <article class="trust-card">
+              <svg class="icon" aria-hidden="true"><use href="#i-cpu" /></svg>
+              <h3>AI voices, team oversight.</h3>
+              <p>The dubbed voices are AI-generated, not human voice actors. An AI production pipeline does the work; our team checks it and steps in when needed.</p>
+            </article>
+            <article class="trust-card">
+              <svg class="icon" aria-hidden="true"><use href="#i-test" /></svg>
+              <h3>A/B tests only where YouTube allows.</h3>
+              <p>YouTube’s native tests don’t support Shorts, private, age-restricted or Made for Kids videos. We check eligibility first.</p>
+            </article>
+            <article class="trust-card">
+              <svg class="icon" aria-hidden="true"><use href="#i-receipt" /></svg>
+              <h3>Your total, confirmed first.</h3>
+              <p>We confirm your package and final total before production starts. Anything beyond your plan’s uploads, minutes or languages is quoted upfront.</p>
+            </article>
+            <article class="trust-card">
+              <svg class="icon" aria-hidden="true"><use href="#i-calendar" /></svg>
+              <h3>Cancel any month.</h3>
+              <p>Monthly plans have no long contract. Start with the free sample and a $39 trial video before you commit to anything.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!--
+        ============ CASE STUDIES (HIDDEN PLACEHOLDER) ============
+        Reserved slot for future, REAL client case studies only.
+        Keep the `hidden` attribute until you have written client permission
+        and verifiable details. Do not add invented names, logos, quotes or numbers.
+        To publish: remove `hidden`, duplicate one .case-card per client, fill in
+        the facts, and add a "Results" link to the main navigation if desired.
+      -->
+      <section class="section case-studies-section" id="case-studies" aria-labelledby="case-studies-heading" hidden>
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Client work</p>
+              <h2 id="case-studies-heading">Case studies</h2>
+            </div>
+            <p><!-- Short intro sentence --></p>
+          </div>
+          <div class="case-grid">
+            <article class="case-card">
+              <p class="case-meta"><!-- Channel type · languages added --></p>
+              <h3><!-- Client / channel name (with permission) --></h3>
+              <p><!-- What we delivered and what happened, in verifiable terms --></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FAQ ============ -->
+      <section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+        <div class="container faq-grid">
+          <div class="faq-intro">
+            <p class="eyebrow">Good to know</p>
+            <h2 id="faq-heading">Quick answers.</h2>
+            <p>Anything else? Email <a href="mailto:studio@toonghuri.com">studio@toonghuri.com</a>.</p>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>What does the free sample include?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>A free 90-second dub of your own video in one language you choose, so you can hear the result before paying anything. One free sample per new customer; no plan required.</p>
+            </details>
+            <details id="testing-faq">
+              <summary>Can every video use A/B testing?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>We check your channel and video eligibility first. YouTube’s native tests require advanced features and do not support Shorts, private, age-restricted or Made for Kids videos. We set up eligible tests and review the outcome, including when there is no clear winner. <a href="https://support.google.com/youtube/answer/16391400?hl=en" target="_blank" rel="noopener noreferrer">See YouTube’s requirements<span class="visually-hidden"> (opens in a new tab)</span> ↗</a></p>
+            </details>
+            <details>
+              <summary>Is this only for animation?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>No. Pip is our featured example. Send content from any YouTube niche so we can review what it needs.</p>
+            </details>
+            <details>
+              <summary>How is my quote calculated?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>
+                Your first video is $39 for up to 20 minutes in 5 languages.
+                The Channel plan is $590/month for 8 uploads (240 video minutes, up to 10 languages) and the Growth plan is
+                $990/month for 12 uploads (360 video minutes, up to 12 languages),
+                with the full package: dubbing, subtitles, translated titles and descriptions,
+                chapter timestamps, 3 thumbnail variants, title variants, publishing, A/B test
+                setup and results review where eligible, and a monthly results report.
+                Up to 15 languages, videos over 60 minutes and larger libraries receive a custom Studio quote.
+                We confirm your total before starting.
+              </p>
+            </details>
+            <details>
+              <summary>Can I cancel a monthly plan?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>Yes. Monthly plans can be cancelled any month. Anything beyond your plan’s uploads, minutes or languages is quoted before production starts.</p>
+            </details>
+            <details>
+              <summary>Which languages should I choose?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>You choose up to 10 (Channel) or 12 (Growth). Most channels get the biggest reach from a handful of large audiences, such as Spanish, Portuguese, Hindi and Indonesian, so we recommend starting with the 4–6 that fit your channel and audience, then adding more. You can change languages from month to month.</p>
+            </details>
+            <details>
+              <summary>Do I get the .srt subtitle files?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>Yes. Every video gets timed .srt closed captions in your original language and in each new language. We upload them to YouTube for you, and you also receive the .srt files to keep and reuse on other platforms.</p>
+            </details>
+            <details>
+              <summary>Do you guarantee more views?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>No, and nobody honestly can. Views depend on your content, your audience and YouTube. We guarantee the work: dubbed audio, subtitles, translated titles, descriptions and chapters, thumbnail and title variants, publishing, and test setup where eligible. Then we show you what happened, including tests with no clear winner.</p>
+            </details>
+            <details>
+              <summary>Are the voices human or AI?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>The dubbed voices are AI-generated, not human voice actors. ToonGhuri Studio combines an AI production pipeline with a team that oversees every job. <a href="about.html">How the work is done</a></p>
+            </details>
+            <details>
+              <summary>Why not just use YouTube’s automatic dubbing?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>Where it’s available, YouTube’s automatic dubbing covers the audio. We handle the whole release: distinct voices with your original music and effects, synced subtitles, translated titles, descriptions and chapters, thumbnail and title variants, and publishing and testing in your YouTube Studio.</p>
+            </details>
+            <details>
+              <summary>Do I share my YouTube password?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>No. For uploads, you invite our team through YouTube Studio’s channel permissions.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FREE SAMPLE FORM ============ -->
+      <section class="sample-section" id="free-sample" aria-labelledby="sample-heading">
+        <div class="container sample-grid">
+          <div class="sample-copy">
+            <p class="eyebrow eyebrow-on-dark">Your video. Your next language.</p>
+            <h2 id="sample-heading">Hear your own video in another language.</h2>
+            <p class="sample-lead">Send a link. Choose a language. Hear a free 90-second sample.</p>
+            <ol class="next-steps" aria-label="What happens next">
+              <li><span aria-hidden="true">1</span><div><strong>Send your link</strong>A YouTube video or channel, plus the language you’d like to hear.</div></li>
+              <li><span aria-hidden="true">2</span><div><strong>Hear your free sample</strong>90 seconds of your own video, dubbed. One per new customer.</div></li>
+              <li><span aria-hidden="true">3</span><div><strong>Decide with no pressure</strong>Like it? Your first full video is $39, then monthly plans from $590.</div></li>
+            </ol>
+            <div class="sample-mini-scene">
+              <img src="assets/media/pip-poster.jpg" alt="" loading="lazy" decoding="async" width="1280" height="720" />
+              <span><svg class="icon" aria-hidden="true"><use href="#i-play" /></svg>Your story could travel like Pip’s.</span>
+            </div>
+            <p class="sample-contact-line">Prefer email? <a class="sample-contact" href="mailto:studio@toonghuri.com">studio@toonghuri.com</a></p>
+          </div>
+          <form class="sample-form" id="sample-form" data-delivery="php" action="submit-sample.php" method="post">
             <div class="form-heading">
               <h3>Let’s hear your story.</h3>
               <span>Free sample · No plan required</span>
             </div>
             <div class="selected-plan" id="selected-plan" hidden>
-              <span id="selected-plan-text"></span
-              ><button
-                class="text-button"
-                type="button"
-                id="clear-plan"
-                aria-label="Remove selected plan"
-              >
-                Remove
-              </button>
+              <span id="selected-plan-text"></span>
+              <button class="text-button" type="button" id="clear-plan" aria-label="Remove selected plan">Remove</button>
             </div>
-            <input
-              type="hidden"
-              id="sample-plan"
-              name="plan"
-              value="Free sample · Help me choose a plan"
-            /><label for="sample-url"
-              >YouTube video or channel link <span>*</span></label
-            ><input
-              type="url"
-              id="sample-url"
-              name="url"
-              placeholder="https://www.youtube.com/watch?v=…"
-              required
-              autocomplete="url"
-            /><label for="sample-contact">Your email <span>*</span></label
-            ><input
-              type="email"
-              id="sample-contact"
-              name="contact"
-              placeholder="you@yourchannel.com"
-              required
-              autocomplete="email"
-            /><label for="sample-channel"
-              >Your name or channel
-              <span class="optional">Optional</span></label
-            ><input
-              type="text"
-              id="sample-channel"
-              name="channel"
-              placeholder="What should we call you?"
-              autocomplete="name"
-              maxlength="150"
-            /><label for="sample-languages"
-              >Which languages would you like to hear? <span>*</span></label
-            ><input
-              type="text"
-              id="sample-languages"
-              name="languages"
-              placeholder="e.g. Spanish, Japanese, Arabic"
-              required
-              maxlength="200"
-            /><button type="submit" class="button" id="sample-submit">
-              Get my free 90-second sample<svg class="icon">
-                <use href="#i-arrow" />
-              </svg>
-            </button>
+            <input type="hidden" id="sample-plan" name="plan" value="Free sample · Help me choose a plan" />
+            <div class="field">
+              <label for="sample-url">YouTube video or channel link <span class="req" aria-hidden="true">*</span></label>
+              <input type="url" id="sample-url" name="url" placeholder="https://www.youtube.com/watch?v=…" required autocomplete="url" />
+            </div>
+            <div class="field">
+              <label for="sample-contact">Your email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="sample-contact" name="contact" placeholder="you@yourstudio.com" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="sample-channel">Your name, studio or channel <span class="optional">Optional</span></label>
+              <input type="text" id="sample-channel" name="channel" placeholder="What should we call you?" autocomplete="organization" maxlength="150" />
+            </div>
+            <div class="field">
+              <label for="sample-languages">Which language would you like to hear? <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="sample-languages" name="languages" placeholder="e.g. Spanish" required maxlength="200" />
+            </div>
+            <button type="submit" class="button button-accent button-block button-large" id="sample-submit">Get my free 90-second sample<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
             <p class="form-small">
-              We’ll use your email to follow up about your sample.
-              See our <a href="privacy.html">Privacy Policy</a>.
+              <svg class="icon" aria-hidden="true"><use href="#i-shield" /></svg>
+              <span>We’ll use your email to follow up about your sample. See our <a href="privacy.html">Privacy Policy</a>.</span>
             </p>
             <div id="form-result" class="form-result" role="status" hidden>
               <p id="form-result-text"></p>
-              <a href="#" id="email-request" class="text-button" hidden
-                >Send my request by email<svg class="icon">
-                  <use href="#i-mail" /></svg
-              ></a>
+              <a href="#" id="email-request" class="text-button" hidden>Send my request by email<svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg></a>
             </div>
           </form>
         </div>
       </section>
-      <section
-        class="section container faq-section"
-        aria-labelledby="faq-heading"
-      >
-        <div>
-          <p class="eyebrow">GOOD TO KNOW</p>
-          <h2 id="faq-heading">Quick answers.</h2>
-        </div>
-        <div class="faq-list">
-          <details id="testing-faq">
-            <summary>Can every video use A/B testing?<svg class="icon"><use href="#i-chevron" /></svg></summary>
-            <p>We check your channel and video eligibility first. YouTube’s native tests require advanced features and do not support Shorts, private, age-restricted or Made for Kids videos. We set up eligible tests and review the outcome, including when there is no clear winner. <a href="https://support.google.com/youtube/answer/16391400?hl=en" target="_blank" rel="noopener noreferrer">See YouTube’s requirements ↗</a></p>
-          </details>
-          <details>
-            <summary>
-              Is this only for animation?<svg class="icon">
-                <use href="#i-chevron" />
-              </svg>
-            </summary>
-            <p>
-              No. Pip is our featured example. Send content from any YouTube
-              niche so we can review what it needs.
-            </p>
-          </details>
-          <details>
-            <summary>
-              How is my quote calculated?<svg class="icon">
-                <use href="#i-chevron" />
-              </svg>
-            </summary>
-            <p>
-              Your first video is €39 for up to 10 minutes and 3 additional languages.
-              The Channel plan is €590/month for 4 videos and the Growth plan is
-              €990/month for 8 videos, each up to 10 minutes in 3 additional languages,
-              with the full package: dubbing, subtitles, translated titles and descriptions,
-              chapter timestamps, 3 thumbnail variants, title variants, publishing, A/B test
-              setup and results review where eligible, and a monthly results report.
-              Longer videos, more languages and larger libraries receive a custom quote.
-              We confirm your total before starting.
-            </p>
-          </details>
-          <details>
-            <summary>Do you guarantee more views?<svg class="icon"><use href="#i-chevron" /></svg></summary>
-            <p>No, and nobody honestly can. Views depend on your content, your audience and YouTube. We guarantee the work: dubbed audio, subtitles, translated titles, descriptions and chapters, thumbnail and title variants, publishing, and test setup where eligible. Then we show you what happened, including tests with no clear winner.</p>
-          </details>
-          <details>
-            <summary>Why not just use YouTube’s automatic dubbing?<svg class="icon"><use href="#i-chevron" /></svg></summary>
-            <p>Where it’s available, YouTube’s automatic dubbing covers the audio. We handle the whole release: distinct voices with your original music and effects, synced subtitles, translated titles, descriptions and chapters, thumbnail and title variants, and publishing and testing in your YouTube Studio.</p>
-          </details>
-          <details>
-            <summary>
-              Do I share my YouTube password?<svg class="icon">
-                <use href="#i-chevron" />
-              </svg>
-            </summary>
-            <p>
-              No. For uploads, you invite our team through YouTube Studio’s
-              channel permissions.
-            </p>
-          </details>
-        </div>
-      </section>
     </main>
+
     <footer class="site-footer">
       <div class="container footer-top">
-        <a class="brand" href="#top"
-          ><span>ToonGhuri<small>STUDIO</small></span></a
-        >
-        <p>Your content. Without borders.</p>
-        <a href="mailto:studio@toonghuri.com"
-          >studio@toonghuri.com<svg class="icon"><use href="#i-diagonal" /></svg
-        ></a>
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="ToonGhuri Studio home">
+            <svg class="brand-mark" viewBox="0 0 40 48" aria-hidden="true">
+              <path d="m20 2 17 15-17 17L3 17Z" fill="currentColor" />
+              <path d="M20 34c0 7 9 5 7 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <span>ToonGhuri<small>STUDIO</small></span>
+          </a>
+          <p>Your content. Without borders.</p>
+          <a class="footer-mail" href="mailto:studio@toonghuri.com">studio@toonghuri.com<svg class="icon" aria-hidden="true"><use href="#i-diagonal" /></svg></a>
+        </div>
+        <nav class="footer-col" aria-label="Services">
+          <h2>Service</h2>
+          <a href="#demo">Demo</a>
+          <a href="#what-you-get">What you get</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#free-sample">Free sample</a>
+        </nav>
+        <nav class="footer-col footer-links" aria-label="Company and legal">
+          <h2>Company</h2>
+          <a href="about.html">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
       </div>
       <div class="container footer-bottom">
-        <span>© <span id="copyright-year">2026</span> ToonGhuri Studio</span
-        ><span>YouTube localization, packaging &amp; testing</span
-        ><nav class="footer-links" aria-label="Company and legal"><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav
-        ><a href="#top">Back to top ↑</a>
+        <span>© <span id="copyright-year">2026</span> ToonGhuri Studio</span>
+        <span>YouTube localization, packaging &amp; testing</span>
+        <a href="#top">Back to top ↑</a>
       </div>
     </footer>
+
+    <a class="mobile-cta" href="#free-sample" id="mobile-cta">Request a free sample<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
   </body>
 </html>

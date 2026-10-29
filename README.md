@@ -14,7 +14,7 @@ The player loads after the visitor presses play. Language chips list the availab
 
 ## Simple customer flow
 
-Watch the example, get a free 90-second sample (once per new customer), then try one full video for €39 (up to 10 minutes, 3 additional languages). The main offer is monthly: Channel plan €590/month (4 videos) and Growth plan €990/month (8 videos), each up to 10 minutes in 3 additional languages with the full package and a monthly per-language results report. Larger libraries, longer videos and more languages are quoted. Strategy: a few monthly clients (about 5-9) to reach €5,000/month, not many one-off videos, so dubbing-only pricing is no longer advertised. Run tools/job_cost_calculator.py in the pipeline workspace to check margins. Final totals are confirmed before production; the form is an enquiry, not a checkout.
+Watch the example, get a free 90-second sample in one language (once per new customer), then try one full video for $39 (up to 20 minutes, 5 languages = 100 dubbed minutes). The main offer is monthly with a minutes pool: Channel plan $590/month (2 uploads a week = 8 videos, 240 video minutes, up to 10 languages = up to 2,400 dubbed minutes) and Growth plan $990/month (3 uploads a week = 12 videos, 360 video minutes, up to 12 languages = up to 4,320 dubbed minutes). Any single video up to 60 minutes; no carry-over of unused allowance. Studio (custom quote): up to 15 languages, longer videos, larger libraries. Clients choose languages; we recommend starting with 4-6 high-reach languages. Run tools/job_cost_calculator.py in the pipeline workspace to check margins. Final totals are confirmed before production; the form is an enquiry, not a checkout.
 
 Production is handled by an AI pipeline with team oversight. The page does not promise manual language review, human voice actors, or native-speaker quality checks.
 
@@ -22,7 +22,7 @@ Production is handled by an AI pipeline with team oversight. The page does not p
 
 The homepage gives equal emphasis to localization (dubbing, music/effects and subtitles), packaging (translated titles, descriptions and chapter timestamps), and managed testing (three text-free thumbnail variants, title variants, test setup and results review). YouTube Studio publishing includes the agreed assets; end screens, info cards and pinned comments can be included in the package.
 
-The owner confirmed that agents both set up tests and review outcomes, and moved to a monthly-plan model (€39 trial video, €590 and €990 monthly plans). Native YouTube testing is described as eligibility-dependent, with a linked FAQ covering restrictions and inconclusive results. The full package includes dubbing, subtitles, translated titles/descriptions, timestamps, three thumbnail variants, title variants, publishing, and eligible test setup and results review. Monthly plans are cancel-any-month; additional scope is quote-based; no turnaround guarantee is published.
+The owner confirmed that agents both set up tests and review outcomes, and moved to a monthly-plan model ($39 trial video; $590 and $990 monthly plans with minute pools of up to 10/12 languages). Native YouTube testing is described as eligibility-dependent, with a linked FAQ covering restrictions and inconclusive results. The full package includes dubbing, subtitles, translated titles/descriptions, timestamps, three thumbnail variants, title variants, publishing, and eligible test setup and results review. Monthly plans are cancel-any-month; additional scope is quote-based; no turnaround guarantee is published.
 
 ## Sample requests
 
@@ -42,10 +42,7 @@ The site promises deliverables, not outcomes. It states plainly that views are n
 
 `about.html`, `privacy.html` and `terms.html` share the homepage header, footer and stylesheet, and are linked from every footer and from the sample form's small print. The privacy policy describes what `submit-sample.php` actually collects (link, email, optional name/channel, languages, selected plan, timestamp and IP address), stored in the protected `_leads_submissions.jsonl` log and emailed to the studio inbox. It also lists Google Fonts, the click-to-load YouTube player and Google AI services.
 
-Privacy and terms are **templates**: review them (ideally with a lawyer) before relying on them. All placeholders have been filled.
-
-
-Placeholders render as yellow highlights; search the HTML for `[[` to confirm none remain.
+Privacy and terms are **templates**: review them (ideally with a lawyer) before relying on them. All placeholders have been filled; search the HTML for `[[` to confirm none remain.
 
 The site presents ToonGhuri Studio as an agency: no personal names are published. Legal pages identify the operating business entity only.
 
@@ -54,3 +51,5 @@ The site presents ToonGhuri Studio as an agency: no personal names are published
 - Business address published: Sofias Sliman 30, 11526 Ambelokipi, Athens, Greece. When the business is registered, add the registered business name, tax number (AFM) and VAT status to privacy.html and terms.html.
 - Privacy states the Gemini API paid tier is used for client work; free-tier keys must not process client videos.
 - Defaults chosen for review: lead retention 12 months, production files 90 days after delivery, Stripe invoices due on receipt, trial paid upfront, monthly plans billed in advance and cancellable at month end.
+
+Prices are published in US dollars (USD). The trial video is limited to one per new customer.
