@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# The enquiry endpoint and lead storage are not pages.
+Disallow: /submit-sample.php
+Disallow: /_private/
+
+Sitemap: https://toonghuri.com/sitemap.xml

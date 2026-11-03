@@ -26,9 +26,11 @@ The owner confirmed that agents both set up tests and review outcomes, and moved
 
 ## Sample requests
 
-The production page posts JSON to the existing `submit-sample.php` endpoint. It reports receipt only after a successful JSON response with `ok: true`. If the endpoint is unavailable, it prepares an email for the visitor to send.
+The production page posts JSON to `submit-sample.php`. It reports receipt only after a successful JSON response with `ok: true`. If the endpoint is unavailable, rate-limited, or rejects the payload, it prepares an email for the visitor to send.
 
-The owner-private static review copy uses email delivery because static hosting does not execute PHP. It excludes PHP source and lead logs. Keep the production `.htaccess` file alongside the PHP endpoint to protect the existing lead log.
+The handler checks that the `Origin` (or, if that is missing, the `Referer`) is `toonghuri.com`, `www.toonghuri.com`, or localhost. It validates the YouTube link and email, strips control characters so names cannot break the mail headers, ignores submissions that fill the hidden `tg_leave_blank` honeypot, and allows 5 submissions per IP per hour. Leads are appended to `leads.jsonl` in a `toonghuri-private` directory next to the web root when PHP can create it, and otherwise in `_private/` (denied by `.htaccess`). An older `_leads_submissions.jsonl` in the web root, if one already exists on the server, stays blocked and is no longer written. Notification email still goes to `studio@toonghuri.com`.
+
+The owner-private static review copy uses email delivery because static hosting does not execute PHP. It excludes PHP source and lead logs. Keep the production `.htaccess` file alongside the PHP endpoint.
 
 ## Dependencies
 
@@ -53,3 +55,28 @@ The site presents ToonGhuri Studio as an agency: no personal names are published
 - Defaults chosen for review: lead retention 12 months, production files 90 days after delivery, Stripe invoices due on receipt, trial paid upfront, monthly plans billed in advance and cancellable at month end.
 
 Prices are published in US dollars (USD). The trial video is limited to one per new customer.
+
+## Canonical host
+
+`https://toonghuri.com` is the canonical host. `.htaccess` 301s `www.toonghuri.com` to that host, and 301s plain HTTP only when `X-Forwarded-Proto` is `http`.
+
+Do not add a `RewriteCond %{HTTPS} off` rule. Hostinger terminates TLS at the edge and talks to Apache over HTTP, so `%{HTTPS}` is off even for visitors who already used HTTPS. Redirecting those requests loops, and the loop is what shows up as a 500 on `http://toonghuri.com`. Checked on 3 November 2026, the live edge already returned `301` from `http://toonghuri.com` to `https://toonghuri.com/`. The repository `.htaccess` had no redirect rules, so that 500 is not explained by this repo. `https://www.toonghuri.com` was still serving the site (`200`) instead of redirecting to the apex.
+
+In hPanel, keep Force HTTPS on, and set the primary domain to the non-www host so `http://www` goes straight to `https://toonghuri.com` rather than stopping at `https://www`. If plain HTTP still returns 500 after this file is deployed, the cause is in Hostinger (edge redirect, an `.htaccess` edited on the server outside git, or the HTTP vhost). Check hPanel → Logs, and remove any extra Force HTTPS snippet that is not in this repository.
+
+## Search engines
+
+`robots.txt` allows the public pages and points at `sitemap.xml`. The sitemap lists `/`, `/about.html`, `/privacy.html` and `/terms.html`. `submit-sample.php` and `/_private/` are disallowed. After deploy, submit `https://toonghuri.com/sitemap.xml` in Google Search Console.
+
+## Analytics
+
+No analytics script is loaded. Each public page has two commented snippets at the end of `<head>`:
+
+- Plausible (preferred). Uncomment the one-line script. `data-domain="toonghuri.com"` is the site hostname, not a secret. Create the site in Plausible first. Plausible’s default script does not use cookies.
+- Google Analytics 4. Replace both `G-XXXXXXXXXX` placeholders with the measurement ID from the GA4 property, then uncomment that block. Do not invent an ID. GA4 sets cookies.
+
+Enable only one. Before enabling either, update the “Cookies and tracking” section of `privacy.html` so it names the provider. The page currently says the site does not use analytics, which is true while the snippets stay commented.
+
+## Performance
+
+The homepage script is loaded with `defer`. Below-the-fold copies of the poster use `loading="lazy"`. The poster JPEG is unchanged in dimensions (1280×720) and was recompressed at quality 85 (about 293 KB to about 240 KB). The Google Fonts stylesheet uses `media="print"` plus `onload` so it does not block first paint; `noscript` still loads it when JavaScript is off. `.htaccess` asks the server to compress text responses and to cache CSS, JS and images. CSS and JS URLs include `?v=20261103` so a long cache does not pin an old file.

@@ -1433,6 +1433,7 @@ summary {
   text-underline-offset: 3px;
 }
 .sample-form {
+  position: relative;
   display: grid;
   gap: 18px;
   padding: clamp(24px, 4vw, 40px);
@@ -1538,6 +1539,22 @@ summary {
   background: #ecf8f2;
   color: #145c3f;
   font-weight: 600;
+}
+.form-result.is-error {
+  background: #fdecec;
+  color: #8a1f11;
+}
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* 7. Footer ---------------------------------------------------------------- */

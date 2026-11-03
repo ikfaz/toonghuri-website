@@ -1,5 +1,70 @@
-# Protect lead log file from public access on Hostinger
-<Files "_leads_submissions.jsonl">
-    Order Allow,Deny
+# ToonGhuri Studio — Apache / LiteSpeed rules for Hostinger.
+#
+# HTTP → HTTPS on the bare domain is done by Hostinger's edge (hCDN), not by
+# this file. Checked 3 Nov 2026: http://toonghuri.com returned 301 to
+# https://toonghuri.com/ (Server: hcdn). This file had no rewrite rules, so it
+# cannot be what produced a 500 on that URL. A naive "RewriteCond %{HTTPS} off"
+# rule is the usual way a 500 appears here: Hostinger terminates TLS at the
+# edge and forwards to Apache over HTTP, so %{HTTPS} is off for visitors who
+# already used HTTPS, the rule redirects them again, and the loop surfaces as
+# a 500. The rules below only redirect when the edge explicitly says the
+# visitor used HTTP, or when the host is www.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Never publish the lead log or the private fallback directory.
+  RewriteRule ^_private(/|$) - [F,L]
+  RewriteRule \.jsonl$ - [F,L]
+
+  # Skip ACME HTTP-01 challenges if one is ever served from this docroot.
+  RewriteCond %{REQUEST_URI} ^/\.well-known/ [NC]
+  RewriteRule ^ - [L]
+
+  # www (http or https) → https://toonghuri.com in one hop when this
+  # request actually reaches Apache. The Hostinger edge currently turns
+  # http://www into https://www before Apache; set the primary domain to
+  # the non-www host in hPanel so that first hop is canonical too.
+  RewriteCond %{HTTP_HOST} ^www\.toonghuri\.com(?::\d+)?$ [NC]
+  RewriteRule ^ https://toonghuri.com%{REQUEST_URI} [R=301,L]
+
+  # Plain HTTP → HTTPS, only when the proxy says so. Do not test %{HTTPS}.
+  RewriteCond %{HTTP_HOST} ^toonghuri\.com(?::\d+)?$ [NC]
+  RewriteCond %{HTTP:X-Forwarded-Proto} =http [NC]
+  RewriteRule ^ https://toonghuri.com%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# Old log name, plus any .jsonl that ends up in the docroot.
+<FilesMatch "(?i)(\.jsonl$|^rate-limit\.json$)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
     Deny from all
-</Files>
+  </IfModule>
+</FilesMatch>
+
+# AddOutputFilterByType lives in mod_filter. Guarding only mod_deflate
+# makes Apache 500 every request when filter is not loaded.
+<IfModule mod_filter.c>
+  <IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/javascript application/json application/xml image/svg+xml
+  </IfModule>
+</IfModule>
+
+# CSS and JS are cache-busted with ?v=. Images change rarely.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 180 days"
+  ExpiresByType image/svg+xml "access plus 180 days"
+  ExpiresByType image/webp "access plus 180 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|svg|jpg|jpeg|webp|png|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>

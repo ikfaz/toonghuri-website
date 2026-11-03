@@ -101,6 +101,7 @@
       channel: $("sample-channel").value.trim() || "Not provided",
       length: "Not provided",
       customNotes: "Preferred languages: " + $("sample-languages").value.trim(),
+      tg_leave_blank: $("tg-leave-blank") ? $("tg-leave-blank").value : "",
     };
     const emailBody = `Hi ToonGhuri Studio,\n\nI'd like a free 90-second sample.\n\nVideo/channel: ${payload.url}\nName/channel: ${payload.channel}\nContact: ${payload.contact}\n${payload.customNotes}\nPlan: ${payload.plan}\n`;
     $("email-request").href =
@@ -116,6 +117,7 @@
     submit.disabled = true;
     submit.textContent = "Preparing your request…";
     $("form-result").hidden = true;
+    $("form-result").classList.remove("is-error");
     try {
       if (form.dataset.delivery === "email") throw new Error("Email delivery");
       const response = await fetch(form.action, {
@@ -124,17 +126,24 @@
         body: JSON.stringify(payload),
         signal: AbortSignal.timeout(12000),
       });
-      if (
-        !response.ok ||
-        !response.headers.get("content-type")?.includes("application/json")
-      )
+      const isJson = response.headers
+        .get("content-type")
+        ?.includes("application/json");
+      const result = isJson ? await response.json() : null;
+      if (response.status === 429) {
+        $("form-result").classList.add("is-error");
+        $("form-result-text").textContent =
+          "Too many requests from this network. Please wait a little, or send the request by email.";
+        $("email-request").hidden = false;
+      } else if (!response.ok || result?.ok !== true) {
         throw new Error("Request not confirmed");
-      const result = await response.json();
-      if (result.ok !== true) throw new Error("Request not confirmed");
-      $("form-result-text").textContent =
-        "Your sample request has been received. We’ll follow up at the email you provided.";
-      $("email-request").hidden = true;
+      } else {
+        $("form-result-text").textContent =
+          "Your sample request has been received. We’ll follow up at the email you provided.";
+        $("email-request").hidden = true;
+      }
     } catch (_) {
+      $("form-result").classList.add("is-error");
       $("form-result-text").textContent =
         "Your request is ready. Send it by email below to complete your sample request.";
       $("email-request").hidden = false;

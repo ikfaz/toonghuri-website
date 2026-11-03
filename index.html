@@ -15,20 +15,50 @@
       content="Every upload, released in more languages. Free 90-second sample · First video $39 · Up to 10 languages from $590/month."
     />
     <meta property="og:image" content="https://toonghuri.com/assets/media/pip-poster.jpg" />
+    <meta property="og:image:alt" content="Pip the little cloud and a flower, from the featured ToonGhuri story" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:locale" content="en_US" />
     <link rel="canonical" href="https://toonghuri.com/" />
     <meta property="og:url" content="https://toonghuri.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ToonGhuri Studio" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ToonGhuri Studio — Your content, without borders." />
+    <meta
+      name="twitter:description"
+      content="Every upload, released in more languages. Free 90-second sample · First video $39 · Up to 10 languages from $590/month."
+    />
+    <meta name="twitter:image" content="https://toonghuri.com/assets/media/pip-poster.jpg" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
-    <link rel="stylesheet" href="assets/styles.css?v=20261031" />
-    <script src="assets/app.js?v=20261031" defer></script>
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      />
+    </noscript>
+    <link rel="stylesheet" href="assets/styles.css?v=20261103" />
+    <script src="assets/app.js?v=20261103" defer></script>
+    <!-- Analytics off. See README. Plausible (no cookies). Uncomment the next line to enable.
+    <script defer data-domain="toonghuri.com" src="https://plausible.io/js/script.js"></script>
+    -->
+    <!-- GA4 alternative. Replace G-XXXXXXXXXX, update privacy.html, then uncomment.
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
   </head>
   <body class="home">
     <a href="#main" class="skip-link">Skip to content</a>
@@ -581,6 +611,10 @@
               <button class="text-button" type="button" id="clear-plan" aria-label="Remove selected plan">Remove</button>
             </div>
             <input type="hidden" id="sample-plan" name="plan" value="Free sample · Help me choose a plan" />
+            <div class="hp-field" aria-hidden="true">
+              <label for="tg-leave-blank">Leave this field blank</label>
+              <input type="text" id="tg-leave-blank" name="tg_leave_blank" tabindex="-1" autocomplete="off" autocapitalize="off" spellcheck="false" value="" />
+            </div>
             <div class="field">
               <label for="sample-url">YouTube video or channel link <span class="req" aria-hidden="true">*</span></label>
               <input type="url" id="sample-url" name="url" placeholder="https://www.youtube.com/watch?v=…" required autocomplete="url" />
