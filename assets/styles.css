@@ -740,7 +740,7 @@ summary {
 }
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 .service-card {
@@ -1033,9 +1033,14 @@ summary {
 }
 .pricing-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   align-items: stretch;
+}
+.pricing-grid-once {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 820px;
+  margin: 36px auto 0;
 }
 .price-card {
   position: relative;
@@ -1189,7 +1194,7 @@ summary {
 }
 .compare-table {
   width: 100%;
-  min-width: 620px;
+  min-width: 920px;
   border-collapse: collapse;
   font-size: 0.95rem;
 }
@@ -1433,6 +1438,7 @@ summary {
   text-underline-offset: 3px;
 }
 .sample-form {
+  position: relative;
   display: grid;
   gap: 18px;
   padding: clamp(24px, 4vw, 40px);
@@ -1538,6 +1544,22 @@ summary {
   background: #ecf8f2;
   color: #145c3f;
   font-weight: 600;
+}
+.form-result.is-error {
+  background: #fdecec;
+  color: #8a1f11;
+}
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* 7. Footer ---------------------------------------------------------------- */
@@ -1715,8 +1737,8 @@ summary {
   .pricing-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .price-card-trial {
-    grid-column: 1 / -1;
+  .pricing-grid-once {
+    max-width: none;
   }
 }
 @media (max-width: 900px) {
@@ -1780,6 +1802,7 @@ summary {
   }
   .workflow-steps,
   .pricing-grid,
+  .pricing-grid-once,
   .trust-grid {
     grid-template-columns: 1fr;
   }

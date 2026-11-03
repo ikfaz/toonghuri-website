@@ -1,3 +1,5 @@
 _leads_submissions.jsonl
+_private/*
+!_private/.htaccess
 assets/media/demo-*
 .qa-responsive.html
