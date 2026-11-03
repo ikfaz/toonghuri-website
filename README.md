@@ -1,6 +1,6 @@
 # ToonGhuri Studio
 
-A buildless, responsive website for automated YouTube localization, publishing and managed title/thumbnail testing.
+A buildless, responsive website for automated YouTube localization and publishing.
 
 ## Run locally
 
@@ -10,19 +10,17 @@ Use a static server for visual review, for example `python -m http.server 8767`.
 
 The whole page uses the owner-selected Pip the Little Cloud video, `JCj6V_AqaOQ`. Its native **Settings → Audio track** menu provides Arabic, Bangla (original), English (US), French, German, Hindi, Indonesian, Italian, Japanese, Portuguese, and Spanish. The available tracks were checked in the watch-page and embedded-player menus.
 
-The player loads after the visitor presses play. Language chips list the available tracks; YouTube handles actual audio selection and playback. All visual examples use the real Pip thumbnail. Title variants, chapter times and thumbnail crops in the service overview are explicitly illustrative; they do not claim to be published assets or test results. There are no waveform measurements or character images from another story.
+The player loads after the visitor presses play. Language chips list the available tracks; YouTube handles actual audio selection and playback. All visual examples use the real Pip still. Title and chapter examples in the service overview are illustrative. There are no waveform measurements or character images from another story. The studio does not offer thumbnail production.
 
 ## Simple customer flow
 
-Watch the example, get a free 90-second sample in one language (once per new customer), then try one full video for $39 (up to 20 minutes, 5 languages = 100 dubbed minutes). The main offer is monthly with a minutes pool: Channel plan $590/month (2 uploads a week = 8 videos, 240 video minutes, up to 10 languages = up to 2,400 dubbed minutes) and Growth plan $990/month (3 uploads a week = 12 videos, 360 video minutes, up to 12 languages = up to 4,320 dubbed minutes). Any single video up to 60 minutes; no carry-over of unused allowance. Studio (custom quote): up to 15 languages, longer videos, larger libraries. Clients choose languages; we recommend starting with 4-6 high-reach languages. Run tools/job_cost_calculator.py in the pipeline workspace to check margins. Final totals are confirmed before production; the form is an enquiry, not a checkout.
+Watch the example, then request a free 90-second sample in 1 language. The paid lineup, in euros and excluding VAT where applicable, is: Pilot €49 one-off (1 episode, up to 20 minutes, 2 languages); Starter €390/month (up to 120 video minutes, 3 languages); Channel €690/month (up to 240 video minutes, 4 languages, marked most popular); Growth €1,090/month (up to 360 video minutes, 6 languages, 48-hour turnaround, 2 extra translated title options per video); Back catalog €690 one-off (20 existing videos, 2 languages). The only add-on is an extra language at +€150/month on monthly plans; for the back catalog, ask us. Larger networks and multiple channels are “Contact us for a quote”, not a plan card. Monthly plans include AI dubbing that keeps original music and effects, .srt captions in the original and each language, translated titles, descriptions and chapters, uploading in the client’s YouTube Studio, a monthly per-language report, and cancel any month. There is no thumbnail work, A/B testing, Shorts add-on, rush fee, native-speaker review, overage price, or 15-language Studio plan. Final totals are confirmed before production; the form is an enquiry, not a checkout.
 
 Production is handled by an AI pipeline with team oversight. The page does not promise manual language review, human voice actors, or native-speaker quality checks.
 
 ## Complete service offer
 
-The homepage gives equal emphasis to localization (dubbing, music/effects and subtitles), packaging (translated titles, descriptions and chapter timestamps), and managed testing (three text-free thumbnail variants, title variants, test setup and results review). YouTube Studio publishing includes the agreed assets; end screens, info cards and pinned comments can be included in the package.
-
-The owner confirmed that agents both set up tests and review outcomes, and moved to a monthly-plan model ($39 trial video; $590 and $990 monthly plans with minute pools of up to 10/12 languages). Native YouTube testing is described as eligibility-dependent, with a linked FAQ covering restrictions and inconclusive results. The full package includes dubbing, subtitles, translated titles/descriptions, timestamps, three thumbnail variants, title variants, publishing, and eligible test setup and results review. Monthly plans are cancel-any-month; additional scope is quote-based; no turnaround guarantee is published.
+The homepage presents localization (AI dubbing with original music and effects, plus subtitles) and packaging (translated titles, descriptions and chapter timestamps), then uploading in YouTube Studio. Growth is the only plan with a published turnaround: 48 hours. Voices are AI, with a quality check, not human dubbing. The site promises the work, not the views.
 
 ## Sample requests
 
@@ -34,11 +32,11 @@ The owner-private static review copy uses email delivery because static hosting 
 
 ## Dependencies
 
-No build step or frontend package installation is needed. Fonts load from Google Fonts. Video playback uses YouTube. Supporting images use the same featured Pip thumbnail.
+No build step or frontend package installation is needed. Fonts load from Google Fonts. Video playback uses YouTube. Supporting images use the same featured Pip still.
 
 ## Promises
 
-The site promises deliverables, not outcomes. It states plainly that views are not guaranteed, and the FAQ explains how the package differs from YouTube's automatic dubbing. No turnaround, redo or results guarantee is published.
+The site promises deliverables, not outcomes. It states plainly that views are not guaranteed, and the FAQ explains how the package differs from YouTube's automatic dubbing. Growth is the only plan with a published turnaround (48 hours). No redo or results guarantee is published.
 
 ## Trust pages
 
@@ -54,7 +52,7 @@ The site presents ToonGhuri Studio as an agency: no personal names are published
 - Privacy states the Gemini API paid tier is used for client work; free-tier keys must not process client videos.
 - Defaults chosen for review: lead retention 12 months, production files 90 days after delivery, Stripe invoices due on receipt, trial paid upfront, monthly plans billed in advance and cancellable at month end.
 
-Prices are published in US dollars (USD). The trial video is limited to one per new customer.
+Prices are published in euros (EUR). Prices exclude VAT where applicable. The free sample is one 90-second dub in one language.
 
 ## Canonical host
 

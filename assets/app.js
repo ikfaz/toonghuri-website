@@ -156,8 +156,8 @@
   $("sample-url")?.addEventListener("input", () =>
     $("sample-url").setCustomValidity(""),
   );
-  // Links that point at a FAQ entry (e.g. "where eligible" -> #testing-faq)
-  // open that answer instead of landing on a collapsed question.
+  // Links that point at a FAQ entry open that answer
+  // instead of landing on a collapsed question.
   const openDetailsFor = (hash) => {
     const target = hash.length > 1 && document.getElementById(hash.slice(1));
     if (target instanceof HTMLDetailsElement) target.open = true;
