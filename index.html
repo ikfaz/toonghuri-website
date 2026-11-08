@@ -45,8 +45,8 @@
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       />
     </noscript>
-    <link rel="stylesheet" href="assets/styles.css?v=20261103p" />
-    <script src="assets/app.js?v=20261103" defer></script>
+    <link rel="stylesheet" href="assets/styles.css?v=20261108" />
+    <script src="assets/app.js?v=20261108" defer></script>
     <!-- Analytics off. See README. Plausible (no cookies). Uncomment the next line to enable.
     <script defer data-domain="toonghuri.com" src="https://plausible.io/js/script.js"></script>
     -->
@@ -325,6 +325,14 @@
             <p>Start with a free 90-second sample. When you’re ready, try one episode or pick a monthly plan. Prices exclude VAT where applicable.</p>
           </div>
 
+          <div id="payment-banner" class="payment-banner" role="status" hidden>
+            <svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>
+            <div>
+              <strong id="payment-banner-title">Payment received — thank you!</strong>
+              <p>We’ve received your Stripe order and will email you shortly to confirm your YouTube channel permissions and target languages. Questions? Email <a href="mailto:studio@toonghuri.com">studio@toonghuri.com</a>.</p>
+            </div>
+          </div>
+
           <div class="pricing-grid">
             <article class="price-card" aria-labelledby="plan-starter">
               <h3 class="plan-name" id="plan-starter">Starter</h3>
@@ -337,8 +345,8 @@
                 <li>Uploaded in your YouTube Studio</li>
                 <li>Monthly per-language report</li>
               </ul>
-              <a href="#free-sample" class="button button-secondary button-block" data-plan="Starter · €390/month · up to 120 video minutes, 3 languages">Start with my free sample<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
-              <p class="plan-footnote">Cancel any month.</p>
+              <a href="https://buy.stripe.com/28E28s7sQcMXfhD97t7g405" class="button button-block" target="_blank" rel="noopener noreferrer">Subscribe to Starter · €390/mo<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <p class="plan-footnote">Cancel any month · <a href="#free-sample" data-plan="Starter · €390/month · up to 120 video minutes, 3 languages">Or get a free sample first</a></p>
             </article>
 
             <article class="price-card price-card-featured" aria-labelledby="plan-channel">
@@ -353,8 +361,8 @@
                 <li>Uploaded in your YouTube Studio</li>
                 <li>Monthly per-language report</li>
               </ul>
-              <a href="#free-sample" class="button button-accent button-block" data-plan="Channel · €690/month · up to 240 video minutes, 4 languages">Start with my free sample<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
-              <p class="plan-footnote">Cancel any month.</p>
+              <a href="https://buy.stripe.com/dRmcN6eVi8wH6L7bfB7g406" class="button button-accent button-block" target="_blank" rel="noopener noreferrer">Subscribe to Channel · €690/mo<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <p class="plan-footnote">Cancel any month · <a href="#free-sample" data-plan="Channel · €690/month · up to 240 video minutes, 4 languages">Or get a free sample first</a></p>
             </article>
 
             <article class="price-card" aria-labelledby="plan-growth">
@@ -367,8 +375,8 @@
                 <li>2 extra translated title options per video</li>
                 <li>Monthly per-language report</li>
               </ul>
-              <a href="#free-sample" class="button button-secondary button-block" data-plan="Growth · €1,090/month · up to 360 video minutes, 6 languages, 48-hour turnaround, 2 extra translated title options">Talk about Growth<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
-              <p class="plan-footnote">Cancel any month.</p>
+              <a href="https://buy.stripe.com/9B600k5kI6oz5H33N97g407" class="button button-block" target="_blank" rel="noopener noreferrer">Subscribe to Growth · €1,090/mo<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <p class="plan-footnote">Cancel any month · <a href="#free-sample" data-plan="Growth · €1,090/month · up to 360 video minutes, 6 languages, 48-hour turnaround, 2 extra translated title options">Or get a free sample first</a></p>
             </article>
           </div>
 
@@ -385,8 +393,8 @@
                 <li>Uploaded in your YouTube Studio</li>
                 <li>No monthly commitment</li>
               </ul>
-              <a href="#free-sample" class="button button-secondary button-block" data-plan="Pilot · €49 one-off · 1 episode up to 20 minutes, 2 languages">Get a free sample<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
-              <p class="plan-footnote">After the free 90-second sample.</p>
+              <a href="https://buy.stripe.com/8x2eVe7sQ5kv6L75Vh7g403" class="button button-block" target="_blank" rel="noopener noreferrer">Buy Pilot episode · €49<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <p class="plan-footnote">Or start with a <a href="#free-sample" data-plan="Pilot · €49 one-off · 1 episode up to 20 minutes, 2 languages">free 90-second sample</a></p>
             </article>
 
             <article class="price-card" aria-labelledby="plan-catalog">
@@ -400,8 +408,8 @@
                 <li>Uploaded in your YouTube Studio</li>
                 <li>Extra language: ask us</li>
               </ul>
-              <a href="#free-sample" class="button button-secondary button-block" data-plan="Back catalog · €690 one-off · 20 existing videos, 2 languages">Ask about my catalog<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
-              <p class="plan-footnote">One payment. Not a monthly plan.</p>
+              <a href="https://buy.stripe.com/6oUdRa7sQeV54CZfvR7g404" class="button button-block" target="_blank" rel="noopener noreferrer">Buy Back catalog · €690<svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+              <p class="plan-footnote">One payment · <a href="#free-sample" data-plan="Back catalog · €690 one-off · 20 existing videos, 2 languages">Or ask about my catalog</a></p>
             </article>
           </div>
 

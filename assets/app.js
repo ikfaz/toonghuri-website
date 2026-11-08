@@ -169,6 +169,23 @@
   openDetailsFor(location.hash);
   $("copyright-year").textContent = new Date().getFullYear();
 
+  const searchParams = new URLSearchParams(location.search);
+  if (searchParams.get("payment") === "success" && $("payment-banner")) {
+    const planLabels = {
+      pilot: "Pilot (€49)",
+      starter: "Starter Plan (€390/month)",
+      channel: "Channel Plan (€690/month)",
+      growth: "Growth Plan (€1,090/month)",
+      "back-catalog": "Back Catalog (€690)",
+    };
+    const planKey = searchParams.get("plan") || "";
+    if (planLabels[planKey] && $("payment-banner-title")) {
+      $("payment-banner-title").textContent =
+        `Payment received for ${planLabels[planKey]} — thank you!`;
+    }
+    $("payment-banner").hidden = false;
+  }
+
   // Mobile sticky CTA: hide it while the hero actions or the sample form are
   // on screen so it never covers the form it points to.
   const mobileCta = $("mobile-cta");
